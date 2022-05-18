@@ -432,23 +432,23 @@ Table of Contents
 
 5.  The Limits of Decentralization
 
-   Over time, various techniques have been developed to decentralize
-   protocols and applications.  While use of these approaches can result
-   in a function which is less centralized or less amenable to some
-   kinds of centralization, they are not adequate to avoid
-   centralization completely.  They are also not indicators of whether a
-   protocol is centralized without further analysis.
+   Various techniques have been developed to decentralize protocols and
+   applications.  While use of these approaches can result in a function
+   which is less centralized or less amenable to some kinds of
+   centralization, they are not adequate to avoid centralization
+   completely.  They are also not indicators of whether a protocol is
+   centralized without further analysis.
 
 5.1.  Federation isn't Enough
 
    A widely known technique for managing centralization in Internet
    protocols is federation -- designing them in such a way that new
-   instances of any centralized function are relatively easy to create,
-   and they can maintain interoperability and connectivity with other
+   instances of any centralized function are relatively easy to create
+   and can maintain interoperability and connectivity with other
    instances.
 
    For example, SMTP [RFC5321] is the basis of the e-mail suite of
-   protocols, which has two functions that are necessarily centralized:
+   protocols, which has two functions that have centralization risk:
 
    1.  Giving each user a globally unique address, and
 
@@ -494,12 +494,10 @@ Table of Contents
 
    The risks associated with a beneficial centralized function (see
    Section 4.2) are sometimes mitigated by delegating that function's
-   administration to a multi-stakeholder body.
-
-   A multi-stakeholder body is an institution that includes
-   representatives of the different kinds of parties that are affected
-   by the system's operation ("stakeholders") in an attempt to make
-   well-reasoned, broadly agreed-to, and authoritative decisions.
+   administration to a multi-stakeholder body -- an institution that
+   includes representatives of the different kinds of parties that are
+   affected by the system's operation ("stakeholders") in an attempt to
+   make well-reasoned, legitimate, and authoritative decisions.
 
    The most widely-studied example of this technique is the
    administration of the DNS, which as a "single source of truth"
@@ -508,12 +506,12 @@ Table of Contents
    centralization, multiple root servers that are administered by
    separate operators (themselves diverse in geography) and a selection
    of corporate entities, non-profits, and government bodies from many
-   jurisdictions and affiliations carry this task out.  The name space
-   itself is regulated by the Internet Corporation for Assigned Names
-   and Numbers (ICANN)
-   (https://www.icann.org/resources/pages/governance/governance-en),
-   which is defined as a globally multi-stakeholder body with
-   representation from end users, governments, operators, and others.
+   jurisdictions and affiliations carry this task out.  Administration
+   of the name space itself is overseen by the Internet Corporation for
+   Assigned Names and Numbers (ICANN)
+   (https://www.icann.org/resources/pages/governance/governance-en), a
+   global multi-stakeholder body with representation from end users,
+   governments, operators, and others.
 
    Another example is the administration of the Web's trust model,
    implemented by Web browsers as relying parties and Certificate
@@ -541,18 +539,17 @@ Table of Contents
 
 5.3.  Blockchains Are Not Magical
 
-   Increasingly, distributed consensus technologies, such as the
-   blockchain, are touted as a solution to centralization issues.  A
-   complete survey of this rapidly changing area is beyond the scope of
-   this document, but at a high level, we can generalise about their
-   properties.
+   Increasingly, distributed consensus technologies (such as blockchain)
+   are touted as a solution to centralization issues.  A complete survey
+   of this rapidly changing area is beyond the scope of this document,
+   but we can generalise about their properties.
 
    These techniques attempt to avoid centralization risk by distributing
-   potentially centralized functions to members of a large pool of
-   protocol participants.  Proper performance of a function is typically
-   guaranteed using cryptographic techniques (often, an append-only
-   transaction ledger).  A particular task's assignment to a node for
-   handling usually cannot be predicted or controlled.
+   potentially centralized functions to members of a sometimes large
+   pool of protocol participants.  Proper performance of a function is
+   typically guaranteed using cryptographic techniques (often, an
+   append-only transaction ledger).  A particular task's assignment to a
+   node for handling usually cannot be predicted or controlled.
 
    Sybil attacks (where enough participants coordinate their activity to
    affect the protocol's operation) are a major concern for these
@@ -589,23 +586,25 @@ Table of Contents
    3.  Distributed consensus protocols are still not proven to scale to
        the degree expected of successful Internet protocols.  In
        particular, relying on unknown third parties to deliver
-       functionality can introduce variability in latency, availability,
-       and throughput.  This is a marked change for applications with
-       high expectations for these properties (e.g., commercial Web
-       services).
+       functionality can introduce significant variability in latency,
+       availability, and throughput.  This is a marked change for
+       applications with high expectations for these properties (e.g.,
+       consumer-oriented Web sites).
 
    4.  By design, distributed consensus protocols diffuse responsibility
        for a function among several difficult-to-identify parties.
        While this may be an effective way to prevent some kinds of
        centralization, it also means that making someone accountable for
-       how the function is performed is impossible, beyond the bounds of
-       the protocol's design.
+       how the function is performed difficult, and often impossible.
+       While the protocol might use cryptographic techniques to assure
+       correct operation, they may not capture all requirements, and may
+       not be correctly used by the protocol designers.
 
    5.  Distributed consensus protocols typically rely on cryptography
        for identity, rather than trusting a third party's assertions
-       about identity.  When a user loses their keys, recovering their
-       identity is not possible in this model, which is an unacceptable
-       usability impact for many applications.
+       about identity.  When a participant loses their keys, recovering
+       their identity is not possible -- an unacceptable usability
+       impact for many applications.
 
    It is also important to recognise that a protocol or an application
    can use distributed consensus for some functions, but still have
@@ -633,26 +632,25 @@ Table of Contents
    scale.  Because permissionless innovation is a core value for the
    Internet, and yet much of the centralization seen on the Internet is
    performed by proprietary platforms that take advantage of this
-   nature, the controls available to standards efforts on their own are
-   very limited.
+   nature, the controls available to standards efforts are very limited.
 
    While standards bodies on their own cannot prevent centralization,
    there are meaningful steps that can be taken to prevent some
-   functions from exhibiting some forms of centralization.  There are
-   also valuable contributions that standards efforts can make to other
-   relevant forms of regulation.
+   functions from exhibiting centralization.  There are also valuable
+   contributions that standards efforts can make to other relevant forms
+   of regulation.
 
 6.1.  Be Realistic
 
-   Some types of centralization risk are relatively easy to manage in
-   standards efforts.  For example, a proprietary protocol, were it to
-   be proposed, would be rejected out of hand by the IETF.  There is a
+   Some kinds of centralization risk are relatively easy to manage in
+   standards efforts.  For example, if a proprietary protocol were to be
+   proposed to the IETF, it would be rejected out of hand.  There is a
    growing body of knowledge and experience with beneficial
    centralization, and a strong inclination to reuse existing
    infrastructure where possible.  As discussed above, encryption is
-   often a way to manage inherited centralization.  These responses are
-   appropriate ways for Internet standards to manage centralization
-   risk.
+   often a way to manage inherited centralization, and has become the
+   norm in standard protocols.  These responses are appropriate ways for
+   Internet standards to manage centralization risk.
 
    However, preventing indirect and platform centralization is much more
    difficult in standards efforts.  Because we have no "protocol
@@ -671,15 +669,15 @@ Table of Contents
    faces similar risks would not be equitable, proportionate, or
    effective.
 
-   When we find centralization risk, we should consider its relationship
-   with other goals, such as privacy.  While there is rarely a pure
-   tradeoff between two abstract goals such as these, when it surfaces
-   attention should be paid to how effective architectural regulation
-   (such as a standards effort) is in achieving each goal.  In this
-   example, a technical mechanism might be much more effective at
-   improving privacy, whereas centralization might be better controlled
-   by other regulators -- leading to the conclusion that the standards
-   effort should focus on privacy.
+   When we do find centralization risk, we should consider its
+   relationship with other goals, such as privacy.  While there is
+   rarely a pure tradeoff between two abstract goals such as these, when
+   it surfaces attention should be paid to how effective architectural
+   regulation (such as a standards effort) is in achieving each goal.
+   In this example, a technical mechanism might be much more effective
+   at improving privacy, whereas centralization might be better
+   controlled by other regulators -- leading to the conclusion that the
+   standards effort should focus on privacy.
 
 6.2.  Decentralize Proprietary Functions
 
@@ -713,7 +711,7 @@ Table of Contents
 
    To minimize inherited centralization risk, standards-defined
    functions should have an explicit goal of broad, diverse
-   implementation and deployment, so that users have as many choices as
+   implementation and deployment so that users have as many choices as
    possible.
 
    Section 2.1 of [RFC5218] explores some factors in protocol design
