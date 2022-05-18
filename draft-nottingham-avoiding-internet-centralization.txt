@@ -682,7 +682,9 @@ Table of Contents
 6.2.  Decentralize Proprietary Functions
 
    It is worthwhile to create specifications for functions that are
-   currently only satisfied by proprietary providers.
+   currently only satisfied by proprietary providers.  By building open
+   specifications on top of already established standards,
+   centralization of emerging Internet functions can be avoided.
 
    A common objection to such efforts is that adoption is voluntary, not
    mandatory; there are no "standards police" to mandate their use or
@@ -690,7 +692,7 @@ Table of Contents
    [W3C.CR-activitystreams-core-20161215]) have been available for some
    time without broad adoption by social networking providers.
 
-   However, legal regulatory mechanisms are often mandatory, and
+   However, while standards aren't mandatory, legal regulation is, and
    regulators around the globe are now focusing their efforts on the
    Internet.  In particular, legal mandates for interoperability are
    increasingly discussed as a remedy for competition issues (see, e.g.,
