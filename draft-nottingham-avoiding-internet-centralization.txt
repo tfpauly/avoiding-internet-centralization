@@ -3,9 +3,9 @@
 
 
 Network Working Group                                      M. Nottingham
-Internet-Draft                                               15 May 2022
+Internet-Draft                                               18 May 2022
 Intended status: Informational                                          
-Expires: 16 November 2022
+Expires: 19 November 2022
 
 
                  Centralization and Internet Standards
@@ -48,7 +48,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 16 November 2022.
+   This Internet-Draft will expire on 19 November 2022.
 
 Copyright Notice
 
@@ -95,14 +95,14 @@ Table of Contents
    The Internet has succeeded in no small part because of its purposeful
    avoidance of any single controlling entity.  While this approach may
    reflect a desire to prevent a single technical failure from having
-   wide impact [RAND]. it has also enabled the Internet's rapid adoption
-   and broad spread, because internetworking did not require networks to
-   get permission from or cede control to another entity -- thereby
+   wide impact [RAND], it has also enabled the Internet's rapid adoption
+   and broad spread.  Internetworking does not require networks to get
+   permission from or cede control to another entity -- thereby
    accommodating a spectrum of requirements and positioning the Internet
    as a public good.
 
-   While avoiding centralization is a widely shared goal for the
-   Internet, achieving it has proven difficult.  Many successful
+   While avoiding centralization of control is a widely shared goal for
+   the Internet, achieving it has proven difficult.  Many successful
    protocols and applications on the Internet today work in a
    centralized fashion -- to the point where some proprietary,
    centralized services have become so well-known that they are commonly
@@ -119,8 +119,8 @@ Table of Contents
    This document discusses aspects of centralization that relate to
    Internet standards efforts.  Section 2 provides a definition of
    centralization.  Section 3 explains why centralization of the
-   Internet's functions is undesirable.  Section 4 surveys the different
-   kinds of centralization that might surface on the Internet.
+   Internet's core functions is undesirable.  Section 4 surveys the
+   different kinds of centralization that might surface on the Internet.
    Section 5 then catalogues high-level approaches to mitigating
    centralization and discusses their limitations.  Finally, Section 6
    considers the role that Internet standards play in avoiding
@@ -151,9 +151,9 @@ Table of Contents
    defined protocols.  User-visible applications built on top of
    standard protocols are also vulnerable to centralization -- for
    example, social networking, file sharing, financial services, and
-   news dissemination.  Likewise, the supply of underlying networking
-   equipment, hardware, operating systems, and software can exhibit
-   centralization that affects the Internet.
+   news dissemination.  Likewise, the supply of underlying Internet
+   connectivity, networking equipment, hardware, operating systems, and
+   software can exhibit centralization risk.
 
    Centralization risk is strongest when it affects the entire Internet.
    However, it can also be present when a substantial portion of the
@@ -163,16 +163,14 @@ Table of Contents
    users.
 
    "Decentralization" is the process of identifying centralization risk
-   in the functions of a protocol or application, followed by the
-   application of techniques used to prevent or mitigate centralization.
+   related to a function, followed by the application of techniques used
+   to prevent or mitigate that risk.
 
-   Decentralization does not require that a function need be so widely
-   distributed that other important factors are sacrificed.  Because the
-   same network effects that cause centralization can also deliver
-   benefits (such as improvements in efficiency, resiliency, latency,
-   and availability; see Section 6.4 for further discussion), the
-   appropriate amount of decentralization for a function might vary,
-   with the optimal balance being determined by many factors.  A
+   Decentralization does not require that provision of a function need
+   be so widely distributed that other important factors are sacrificed.
+   Because centralization can have beneficial effects (see Section 4.1),
+   the techniques used to decentralize a given function might vary, with
+   the optimal balance being determined by many factors.  Notably, a
    function that is only available through a relatively small number of
    providers can still be effectively decentralized (see, for example,
    the Domain Name System [RFC1035]).
@@ -184,11 +182,11 @@ Table of Contents
 
    Note that it is important to distinguish centralization from anti-
    competitive concerns (also known as "anti-trust").  While there are
-   many interactions between them and making the Internet more
-   competitive may be a motivation for avoiding centralization, only
-   courts are authoritative in determining what is and is not anti-
-   competitive in a defined market, not standards bodies and other
-   technical fora.
+   many interactions between these concepts and making provision of the
+   Internet's functions more competitive may be a motivation for
+   avoiding centralization, only courts are authoritative in determining
+   what is and is not anti-competitive in a market, not standards bodies
+   and other technical fora.
 
 3.  Why Avoid Centralization
 
@@ -260,7 +258,7 @@ Table of Contents
 
 4.  Kinds of Centralization
 
-   Centralization of the Internet is not uniform; it presents in a
+   Centralization on the Internet is not uniform; it presents in a
    variety of ways, depending on its relationship to the function in
    question and underlying causes.  The subsections below suggest a
    classification system for Internet centralization.
@@ -274,9 +272,9 @@ Table of Contents
 
    While some argue that such protocols are simpler to design, more
    amenable to evolution, and more likely to meet user needs [MOXIE],
-   this approach most often reflects commercial goals -- in particular,
-   a strong desire to capture the protocols' financial benefits by
-   "locking in" users to a proprietary service.
+   proprietary centralization most often reflects commercial goals -- in
+   particular, a strong desire to capture the protocols' financial
+   benefits by "locking in" users to a proprietary service.
 
    Proprietary protocols and applications are not considered to be part
    of the Internet per se; instead, they are more properly characterized
@@ -387,11 +385,10 @@ Table of Contents
    Some kinds of inherited centralization can be prevented by enforcing
    layer boundaries through use of techniques like encryption.  When the
    number of parties who have access to content of communication are
-   limited, lower-layer implementations, protocols and intermediaries
-   can be prevented from interfering with and observing it.  Although
-   parties at lower layers might still be able to prevent communication,
-   encryption also makes it more difficult to discriminate a target from
-   other traffic.
+   limited, parties at lower layers can be prevented from interfering
+   with and observing it.  Although those lower-layer parties might
+   still be able to prevent communication, encryption also makes it more
+   difficult to discriminate a target from other traffic.
 
    Note that the prohibitive effect of encryption on inherited
    centralization is most pronounced when most (if not all) traffic is
@@ -418,8 +415,7 @@ Table of Contents
    prevent with protocol design.  Because of the layered nature of the
    Internet, most protocols allow considerable flexibility in how they
    are used, often in a way that it becomes attractive to form a
-   dependency on one party's operation.  Notably, this can happen even
-   if the protocol does not accommodate intermediation explicitly.
+   dependency on one party's operation.
 
 5.  The Limits of Decentralization
 
@@ -434,9 +430,9 @@ Table of Contents
 
    A widely known technique for managing centralization in Internet
    protocols is federation -- designing them in such a way that new
-   instances of any intermediary or otherwise centralized function are
-   relatively easy to create, and they can maintain interoperability and
-   connectivity with other instances.
+   instances of any centralized function are relatively easy to create,
+   and they can maintain interoperability and connectivity with other
+   instances.
 
    For example, SMTP [RFC5321] is the basis of the e-mail suite of
    protocols, which has two functions that are necessarily centralized:
@@ -447,9 +443,9 @@ Table of Contents
        locations or are disconnected for long periods of time.
 
    E-mail reuses DNS to help mitigate the first risk.  To mitigate the
-   second, it defines an intermediary role for routing users' messages,
-   the Message Transfer Agent (MTA).  By allowing anyone to deploy an
-   MTA and defining rules for interconnecting them, the protocol's users
+   second, it defines a specific role for routing users' messages, the
+   Message Transfer Agent (MTA).  By allowing anyone to deploy an MTA
+   and defining rules for interconnecting them, the protocol's users
    avoid a requirement for a single central router.
 
    Users can (and often do) choose to delegate that role to someone
@@ -539,12 +535,11 @@ Table of Contents
    properties.
 
    These techniques attempt to avoid centralization risk by distributing
-   intermediary or otherwise potentially centralized functions to
-   members of a large pool of protocol participants.  Proper performance
-   of a function is typically guaranteed using cryptographic techniques
-   (often, an append-only transaction ledger).  A particular task's
-   assignment to a node for handling usually cannot be predicted or
-   controlled.
+   potentially centralized functions to members of a large pool of
+   protocol participants.  Proper performance of a function is typically
+   guaranteed using cryptographic techniques (often, an append-only
+   transaction ledger).  A particular task's assignment to a node for
+   handling usually cannot be predicted or controlled.
 
    Sybil attacks (where enough participants coordinate their activity to
    affect the protocol's operation) are a major concern for these
