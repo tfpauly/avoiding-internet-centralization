@@ -273,8 +273,8 @@ Table of Contents
 
    Centralization on the Internet is not uniform; it presents in a
    variety of ways, depending on its relationship to the function in
-   question and underlying causes.  The subsections below suggest a
-   classification system for Internet centralization.
+   question and underlying causes.  The subsections below describe
+   different aspects of Internet centralization.
 
 4.1.  Proprietary Centralization
 
@@ -389,11 +389,11 @@ Table of Contents
    maintaining that fork).
 
    Inherited centralization risk is often present when users cannot find
-   an alternative means of accessing the desired service, due to market
-   forces.  This kind of centralization can also be created by legal
+   a substitute because network effects reduce the choices available to
+   them.  This kind of centralization can also be created by legal
    mandates and incentives that restrict the options for Internet
-   access, the provision of a given kind of Internet service, or the
-   range of implementations available.
+   access, the provision of a given function, or the range of
+   implementations available.
 
    Some kinds of inherited centralization can be prevented by enforcing
    layer boundaries through use of techniques like encryption.  When the
