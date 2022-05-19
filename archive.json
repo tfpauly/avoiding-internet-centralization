@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2022-05-17T00:03:43.586868+00:00",
+  "timestamp": "2022-05-19T00:03:47.136995+00:00",
   "repo": "mnot/avoiding-internet-centralization",
   "labels": [
     {
@@ -602,10 +602,12 @@
       "author": "elear",
       "authorAssociation": "NONE",
       "assignees": [],
-      "labels": [],
+      "labels": [
+        "work item"
+      ],
       "body": "You discuss direct, indirect, inherited, and platform centralization.  Is this model the appropriate delineation?  Is there more direct language you can use to describe these forms?",
       "createdAt": "2022-04-08T06:01:09Z",
-      "updatedAt": "2022-05-16T06:58:56Z",
+      "updatedAt": "2022-05-18T01:27:12Z",
       "closedAt": null,
       "comments": [
         {
@@ -675,10 +677,12 @@
       "author": "elear",
       "authorAssociation": "NONE",
       "assignees": [],
-      "labels": [],
+      "labels": [
+        "work item"
+      ],
       "body": "I think federation is an area worth a **lot** more exploration.  We began discussing this a bit on list, and I really want to get into with you just a bit more.\r\n\r\nWhen we look at the history of wifi, it is one of federation, and it is a HUGE success.  Thanks to my dear friend and former colleague Klaas Wierenga, students, researchers, and professors can travel to just about any university and connect. It's lovely.  But it's not the only federation.  We can consider iPass a commerical federation, and now there is Open Roaming.  We're about to see the same sorts of mechanisms spread to private 5g.\r\n\r\nBut federation, as you say, does have its limitations.  In the case of **public** 5g and anything of that scale, capital costs are so prohibitive as to limit the number of entrants.  Is this Internet centralization?  Maybe not, but a key factor seems to me to be that universities and most enterprises aren't in the business of offering wifi, so they don't mind its use so long as its not **ab**use.  More on that in another issue ;-)",
       "createdAt": "2022-04-08T06:13:05Z",
-      "updatedAt": "2022-05-15T07:31:10Z",
+      "updatedAt": "2022-05-18T01:26:38Z",
       "closedAt": null,
       "comments": [
         {
@@ -694,6 +698,13 @@
           "body": "Perhaps the lesson is that protocol developers should consider incentive alignment in a way that permits deployments to benefit from one another (e.g., the network effect).  We think about that effect in the context of connectivity, but someone might be able to make that work for safety and security, higher layers of communication like instant messaging, such that someone trying to be king of the mountain gets left behind...\r\n\r\nThere is a layer 8/9 aspect here that I hesitate to qualify, because it could occur at either layer: if the federation offers inherent value, so long as it is not exclusive, sites could join.\r\n\r\nLet's take that IM example from Issue #33 : if the federation rules are established, then perhaps new social networking sites who abide by those rules can spring up.  The protocol elements discussed would support those rules.\r\n\r\nI'll also add that the game may be different when there are already dominant players.",
           "createdAt": "2022-05-15T07:31:10Z",
           "updatedAt": "2022-05-15T07:31:10Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "OWNER",
+          "body": "I question how much influence protocol design has, as opposed to market forces and regulation. I think (and I hope the draft supports) that the best we can do is make open, decentralized, functional protocols available; what's done with them is out of our hands. As they say, hope is not a strategy.\r\n\r\nThis also calls to mind the law of conservation of attractive profits from Clayton Christensen, described in the HBR (Feb 2004):\r\n\r\n> Products are most profitable when they're still not \"good enough\" to satisfy consumers. This is because to make them performance competitive, engineers must use interdependent, proprietary architectures. Use of such architectures makes product differentiation straightforward, because each company pieces its parts together in a unique way.\r\n> \r\n> Once a product's performance _is_ good enough, companies must change the way they compete. The innovations for which customers will pay premium prices become speed to market and the ability responsively and conveniently to give customers exactly what they need, when they need it. To compete in this way, companies are forced to employ modular architectures for products. Modularity causes the products to become undifferentiable and commoditized. Attractive profits don't evaporate, however...\r\n> \r\n> They move elsewhere in the value chain, often to subsystems from which the modular product is assembled. This is because it is improvements in the subsystems, rather than the modular product's architecture, that drive the assembler's ability to move upmarket toward more attractive profit margins. Hence, the subsystems become decommoditized and attractively profitable. \r\n>\r\n> My sense is that these shifts are more than coincidental; I suspect that when most products start to become commoditized or modularized, this tum of events kick-starts a decommoditization process somewhere else in the value chain. As a general rule, one side of an interface in the value chain must be modular to allow the side that's not yet good enough to be optimized.\r\n>\r\n> My friend Chris Rowen, CEO of Tensilica, suggested that we call this phenomenon the law of conservation of attractive profits. (He was playing off the law of conservation of energy, which states that energy cannot be created or destroyed, though it may be changed from one form to another.) Translated into managerial terms, the law goes something like this: When attractive profits disappear at one stage in the value chain because a product becomes modular and commoditized, the opportunity to earn attractive profits with proprietary products will usually emerge at an adjacent stage.\r\n\r\nAgain and again, we see proprietary efforts at establishing those modular architectures, so that the proponent can control the market. They're \"platforms\" but they're still centralized. The IETF has seen this story before: TCP was not the first or only network protocol, but the proprietary vendors moved on to other things when they realised the value was in a different place. I don't think we're going to convince the current crop to do likewise -- but we're not the only regulators in town any more.\r\n\r\nReturning to the issue -- I'll take this as a general one to expand upon federation some.",
+          "createdAt": "2022-05-18T01:26:29Z",
+          "updatedAt": "2022-05-18T01:26:29Z"
         }
       ]
     },
@@ -1031,14 +1042,20 @@
       "author": "elear",
       "authorAssociation": "NONE",
       "assignees": [],
-      "labels": [
-        "work item"
-      ],
+      "labels": [],
       "body": "I think this document screams for a call-to-action and a summary.  As you put such a thing together, it will help to observe an adage one of my friends lives by:\r\n\r\n1. Say what you're going to say (abstract)\r\n2. Say it (most of the body)\r\n3. Say what you said (summary) and what you want to have happen next (call to action)\r\n\r\n",
       "createdAt": "2022-04-08T07:25:55Z",
-      "updatedAt": "2022-05-15T04:34:14Z",
+      "updatedAt": "2022-05-18T00:58:44Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "mnot",
+          "authorAssociation": "OWNER",
+          "body": "I don't know the this *is* a 'call to action' kind of document -- it's more explaining the landscape and particular consequence s of it. Beyond the 'what can standards do' section, I'm not sure there _is_ a \"next\".",
+          "createdAt": "2022-05-18T00:58:44Z",
+          "updatedAt": "2022-05-18T00:58:44Z"
+        }
+      ]
     },
     {
       "number": 45,
