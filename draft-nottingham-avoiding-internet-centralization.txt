@@ -3,9 +3,9 @@
 
 
 Network Working Group                                      M. Nottingham
-Internet-Draft                                               18 May 2022
+Internet-Draft                                               21 May 2022
 Intended status: Informational                                          
-Expires: 19 November 2022
+Expires: 22 November 2022
 
 
                  Centralization and Internet Standards
@@ -48,7 +48,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 19 November 2022.
+   This Internet-Draft will expire on 22 November 2022.
 
 Copyright Notice
 
@@ -72,7 +72,7 @@ Table of Contents
    4.  Kinds of Centralization
      4.1.  Proprietary Centralization
      4.2.  Beneficial Centralization
-     4.3.  Indirect Centralization
+     4.3.  Concentrated Centralization
      4.4.  Inherited Centralization
      4.5.  Platform Centralization
    5.  The Limits of Decentralization
@@ -194,19 +194,19 @@ Table of Contents
    Centralization is not always problematic, and is sometimes even
    desirable.  If a function is specific to a given entity -- for
    example, a person's web site, or a government service -- it is
-   expected that it be controlled by them alone.  Emerging applications
-   and other functions can often gain significant benefits from being
-   centralized, especially considering the potential costs of
+   expected that it be controlled by them alone.  Furthermore, emerging
+   applications and other functions can often gain significant benefits
+   from being centralized, especially considering the potential costs of
    decentralization (see Section 4.2 for more discussion of the benefits
    of centralization).
 
-   However, when a function becomes widespread enough in use or when it
-   becomes a platform for other functions to be built upon, it deserves
-   more scrutiny for centralization risk.  Centralization of such
-   functions is undesirable because it is counter to the Internet's
-   nature, because it violates the end users' expectations, and because
-   of the many negative effects it can have on the network's operation
-   and evolution.
+   However, when a function becomes widespread enough in use and
+   especially when it becomes a platform for other functions to be built
+   upon, it deserves more scrutiny for centralization risk.
+   Centralization of such functions is undesirable because it is counter
+   to the Internet's nature, because it violates the end users'
+   expectations, and because of the many negative effects it can have on
+   the network's operation and evolution.
 
    First, the Internet's very nature is incompatible with centralization
    of its functions.  As a "large, heterogeneous collection of
@@ -335,22 +335,23 @@ Table of Contents
    a coordinated, global naming function, reusing the Domain Name System
    is usually preferable to establishing a new system.
 
-4.3.  Indirect Centralization
+4.3.  Concentrated Centralization
 
    Even when a protocol avoids proprietary centralization and does not
    require any beneficial centralization, it might become centralized in
-   practice when external factors influence its deployment.  Factors
-   that encourage use of a central function, despite the absence of such
-   a requirement in the protocol itself, can cause indirect
-   centralization.  Such factors might be economic, social, or legal.
+   practice when external factors influence its deployment, so that
+   relatively few or even just one entity provides the function.  This
+   is often referred to as "concentration."  Economic, legal, and social
+   factors that encourage use of a central function despite the absence
+   of such a requirement in the protocol itself can cause concentration.
 
-   Often, the factors driving indirect centralization are related to the
-   network effects that are so often seen on the Internet.  While in
-   theory every node on the Internet is equal, in practice some nodes
-   are much more connected than others: for example, just a few sites
-   drive much of the traffic on the Web. While expected and observed in
-   many kinds of networks,[SCALE-FREE] network effects award asymmetric
-   power to nodes that act as intermediaries to communication.
+   Often, the factors driving concentration are related to the network
+   effects that are so often seen on the Internet.  While in theory
+   every node on the Internet is equal, in practice some nodes are much
+   more connected than others: for example, just a few sites drive much
+   of the traffic on the Web. While expected and observed in many kinds
+   of networks,[SCALE-FREE] network effects award asymmetric power to
+   nodes that act as intermediaries to communication.
 
    Left unchecked, these factors can cause a potentially decentralized
    application to become effectively controlled by one party, because
@@ -360,9 +361,9 @@ Table of Contents
    [W3C.CR-activitystreams-core-20161215]), because of the powerful
    network effects associated.
 
-   By its nature, indirect centralization is difficult to avoid in
-   protocol design, and federated protocols are particularly vulnerable
-   to it (see Section 5.1).
+   By its nature, concentration is difficult to avoid in protocol
+   design, and federated protocols are particularly vulnerable to it
+   (see Section 5.1).
 
 4.4.  Inherited Centralization
 
@@ -424,11 +425,11 @@ Table of Contents
    itself is not centralized, it facilitates the creation of centralized
    services and applications.
 
-   Like indirect centralization, platform centralization is difficult to
-   prevent with protocol design.  Because of the layered nature of the
-   Internet, most protocols allow considerable flexibility in how they
-   are used, often in a way that it becomes attractive to form a
-   dependency on one party's operation.
+   Like concentration, platform centralization is difficult to prevent
+   with protocol design.  Because of the layered nature of the Internet,
+   most protocols allow considerable flexibility in how they are used,
+   often in a way that it becomes attractive to form a dependency on one
+   party's operation.
 
 5.  The Limits of Decentralization
 
@@ -466,7 +467,7 @@ Table of Contents
    has become difficult, because of the likelihood of a small MTA being
    classified as a spam source.  Because large MTA operators are widely
    known and have greater impact if their operation is affected, they
-   are less likely to be classified as such, indirectly centralizing the
+   are less likely to be classified as such, concentrating the
    protocol's operation (see Section 4.3).
 
    Another example of a federated Internet protocol is XMPP [RFC6120],
@@ -482,13 +483,13 @@ Table of Contents
 
    The examples above illustrate that federation can be a useful
    technique to avoid proprietary centralization and manage beneficial
-   centralization, but on its own does not avoid indirect and platform
-   centralization.  If a single entity can capture the value provided by
-   a protocol, they may use the protocol as a platform to get a "winner
-   take all" outcome -- a significant risk with many Internet protocols,
-   since network effects often promote such outcomes.  Likewise,
-   external factors (such as spam control) might naturally "tilt the
-   table" towards a few operators.
+   centralization, but on its own does not avoid concentration and
+   platform centralization.  If a single entity can capture the value
+   provided by a protocol, they may use the protocol as a platform to
+   get a "winner take all" outcome -- a significant risk with many
+   Internet protocols, since network effects often promote such
+   outcomes.  Likewise, external factors (such as spam control) might
+   naturally "tilt the table" towards a few operators.
 
 5.2.  Multi-Stakeholder Administration is Hard
 
@@ -561,7 +562,8 @@ Table of Contents
 
    Use of these techniques can create barriers to proprietary and
    inherited centralization.  However, depending upon the application in
-   question, indirect and platform centralization can still be possible.
+   question, concentration and platform centralization can still be
+   possible.
 
    Furthermore, distributed consensus technologies have several
    potential shortcomings that may make them inappropriate -- or at
@@ -652,8 +654,8 @@ Table of Contents
    norm in standard protocols.  These responses are appropriate ways for
    Internet standards to manage centralization risk.
 
-   However, preventing indirect and platform centralization is much more
-   difficult in standards efforts.  Because we have no "protocol
+   However, preventing concentration and platform centralization is much
+   more difficult in standards efforts.  Because we have no "protocol
    police", it's not possible to demand that someone stop building a
    proprietary service using a purportedly federated protocol.  We also
    cannot stop someone from building centralized services "on top" of
@@ -661,13 +663,13 @@ Table of Contents
    permissionless innovation.
 
    Therefore, committing significant resources to scrutinizing protocols
-   for latent centralization risk -- especially for indirect and
+   for latent centralization risk -- especially for concentration and
    platform risks -- is unlikely to be effective in preventing Internet
    centralization.  Almost all existing Internet protocols -- including
-   IP, TCP, HTTP, and DNS -- suffer some form of indirect or platform
-   centralization.  Refusing to standardize a newer protocol because it
-   faces similar risks would not be equitable, proportionate, or
-   effective.
+   IP, TCP, HTTP, and DNS -- suffer some form of concentration or
+   platform centralization.  Refusing to standardize a newer protocol
+   because it faces similar risks would not be equitable, proportionate,
+   or effective.
 
    When we do find centralization risk, we should consider its
    relationship with other goals, such as privacy.  While there is
@@ -775,8 +777,8 @@ Table of Contents
       [I-D.pauly-dprive-oblivious-doh]) that allow end users to hide
       their identity from services, while still accessing them.
 
-   However, introducing an intermediary role adds indirect and platform
-   centralization risk to Internet protocols, because it brings
+   However, introducing an intermediary role adds concentration and
+   platform centralization risk to Internet protocols, because it brings
    opportunities for control and observation.  While (as discussed
    above) standards efforts have a very limited capability to prevent or
    control these types of centralization, constraints on intermediary
