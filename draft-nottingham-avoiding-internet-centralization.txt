@@ -325,15 +325,22 @@ Table of Contents
    them (so long as the protocol facilitates that), the endpoints'
    mutual discovery typically requires a third party.
 
-   Internet protocols often attempt to mitigate beneficial
-   centralization risk using measures such as federation (see
-   Section 5.1) and multi-stakeholder administration (see Section 5.2).
+   By nature, what is or is not "beneficial" is a judgment call.  Some
+   protocols cannot function without a centralized function; others
+   might be significantly enhanced for certain use cases if a function
+   is centralized, or might merely be more efficient.  Such judgments
+   should be made in light of established architectural principles and
+   how benefits accrue to end users.
 
-   Protocols that successfully mitigate beneficial centralization are
-   often reused, to avoid the considerable cost and risk of re-
-   implementing those mitigations.  For example, if a protocol requires
-   a coordinated, global naming function, reusing the Domain Name System
-   is usually preferable to establishing a new system.
+   When beneficial centralization is present, internet protocols often
+   attempt to mitigate the associated risks using measures such as
+   federation (see Section 5.1) and multi-stakeholder administration
+   (see Section 5.2).  Protocols that successfully mitigate beneficial
+   centralization are often reused, to avoid the considerable cost and
+   risk of re-implementing those mitigations.  For example, if a
+   protocol requires a coordinated, global naming function, reusing the
+   Domain Name System is usually preferable to establishing a new
+   system.
 
 4.3.  Concentrated Centralization
 
