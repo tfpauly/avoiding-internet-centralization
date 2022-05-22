@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2022-05-19T00:03:47.136995+00:00",
+  "timestamp": "2022-05-22T00:05:39.161080+00:00",
   "repo": "mnot/avoiding-internet-centralization",
   "labels": [
     {
@@ -504,15 +504,17 @@
       "id": "I_kwDOGCfj785GTRpn",
       "title": "Centralisation and concentration",
       "url": "https://github.com/mnot/avoiding-internet-centralization/issues/26",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "mnot",
       "authorAssociation": "OWNER",
       "assignees": [],
-      "labels": [],
+      "labels": [
+        "work item"
+      ],
       "body": "Distinguish them. E.g., many people use gmail, but aren't required to by the architecture or network effects, etc. It's concentrated, but not centralized.",
       "createdAt": "2022-03-24T12:37:07Z",
-      "updatedAt": "2022-03-24T12:37:07Z",
-      "closedAt": null,
+      "updatedAt": "2022-05-21T02:44:30Z",
+      "closedAt": "2022-05-21T02:44:30Z",
       "comments": []
     },
     {
@@ -529,9 +531,17 @@
       ],
       "body": "Jari says:\r\n\r\n> Section 6.1 talks about relationship between centralization and privacy, and points out that there's sometimes a tradeoff. I would argue that this is heavily dependent on what we're talking about. We're far along on the mission to encrypt all communications. Many of the remaining privacy issues are made worse, not better, by centralization. E.g., one entity has access to all your mail or browser history or other things. Perhaps the 6.1 language could be improved, as it currently reads a bit like focusing on privacy in standardisation and leaving centralisation to other entities. I\u2019m not sure that\u2019s always desirable, particularly if we want to address privacy.",
       "createdAt": "2022-03-24T22:56:24Z",
-      "updatedAt": "2022-05-15T06:14:04Z",
+      "updatedAt": "2022-05-20T13:45:52Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "jariarkko",
+          "authorAssociation": "NONE",
+          "body": "I'm not happy with the below text, but to get us started, here's a proposal:\r\n\r\nReplace last paragraph in Section 6.1 with:\r\n\r\n   When we find centralization risk, we should consider its relationship\r\n   with other goals, such as privacy.  While abstract goals such as these\r\n   are rarely entirely separate from each other, \r\n   attention should be paid to how effective architectural regulation\r\n   (such as a standards effort) is in achieving each goal.  For instance,\r\n   a technical mechanism might be much more effective at\r\n   improving some privacy concerns, whereas some aspects of centralization could be \r\n   better controlled by other regulators. This might lead us to conclude that the standards\r\n   effort should focus on technical matters such as privacy. However, because topics such as\r\n   privacy are not entirely separate from other issues, this is perhaps a too quick conclusion.\r\n   For instance, centralization and consolidation often helps increase some aspects of \r\n   privacy concerns, such as collecting more data in one set of hands. While such data can be\r\n   well guarded by both technical and non-technical means, it also clearly increases the risk of\r\n   attacks on such data stores, or commercial or government pressures to use the data in some way.\r\n\r\n",
+          "createdAt": "2022-05-20T13:45:52Z",
+          "updatedAt": "2022-05-20T13:45:52Z"
+        }
+      ]
     },
     {
       "number": 28,
@@ -547,9 +557,17 @@
       ],
       "body": "Jari says:\r\n\r\n> [O]ne thing that is not discussed but perhaps should be is the role of discovery. We seem to have an increasing number of solutions that are built for relatively fixed linkages between OS - device - browser - application - network services. For instance, a default service lead to a situation where a vast majority of users will use the default service. From a standards perspective it would be better to build on discovery such that for instance local services can be used. This is of course not always easy, but I think it needs to be looked at, at least on a per-case basis.\r\n\r\nThis is most closely related to the 'Decentralise Proprietary Functions' section, but it's not obvious / related enough; more examples and perhaps reframing might help.",
       "createdAt": "2022-03-24T22:59:54Z",
-      "updatedAt": "2022-05-15T04:52:45Z",
+      "updatedAt": "2022-05-20T14:28:50Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "jariarkko",
+          "authorAssociation": "NONE",
+          "body": "Here I don\u2019t have a text proposal yet, but maybe one could cover at least the following:\r\n\r\n- examples: OS, device, browser, and application systems get built to use very specific services. E.g., the use of DNS resolvers.\r\n- effects: Difficult for other or local services to be used.\r\n- rationale for X to be built with very specific binding to a service: Whoever builds X understands exactly what they need and what is provided by the service. There may also be contracts associated with the use of that specific service.\r\n- issue: While settings can be changed, that is not a practical alternative for vast majority of users\r\n- issue: Sets up a model where only the services that can have a default bundling and a contract e.g. with major browser or OS vendor will actually get used\r\n- issue: Internet and applications become more and more \u2019packaged\u2019, designed & curated black box services where changing components or parts is difficult\r\n- possible alleviating techniques: Modularity, discovery, indirection\r\n- difficulties: For many functions, it is not ok to use a random thing that someone nearby offers, for obvious security reasons. Indirection and user/os-specificed trusted roots for specific functions may be helpful though.\r\n- other: there\u2019s probably some more considerations that at least I have not figured out yet",
+          "createdAt": "2022-05-20T14:28:50Z",
+          "updatedAt": "2022-05-20T14:28:50Z"
+        }
+      ]
     },
     {
       "number": 29,
@@ -565,9 +583,17 @@
       ],
       "body": "Jari points out:\r\n\r\n> Section 4.4 inherited centralization \u2014 I\u2019m not sure how much network-imposed limitations we have today, or in few years, given that in the western world at least much of the traffic is today encrypted. However, there are situations where government mandates or government - large internet content provider collaboration can create a setup where the user's choices for communication are severely restricted, and consequently, often centralized to few remaining ones. Perhaps you could talk a bit about this.",
       "createdAt": "2022-03-24T23:02:17Z",
-      "updatedAt": "2022-05-15T06:33:56Z",
+      "updatedAt": "2022-05-20T14:30:25Z",
       "closedAt": "2022-05-15T06:33:56Z",
-      "comments": []
+      "comments": [
+        {
+          "author": "jariarkko",
+          "authorAssociation": "NONE",
+          "body": "OK",
+          "createdAt": "2022-05-20T14:30:25Z",
+          "updatedAt": "2022-05-20T14:30:25Z"
+        }
+      ]
     },
     {
       "number": 30,
