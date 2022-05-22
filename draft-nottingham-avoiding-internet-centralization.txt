@@ -223,7 +223,10 @@ Table of Contents
    "panopticon effect") and shape or even deny behaviour (the
    "chokepoint effect") -- which can be used by those parties (or the
    states that have authority over them) for coercive ends
-   [WEAPONIZED-INTERDEPENDENCE] or to disrupt society itself.
+   [WEAPONIZED-INTERDEPENDENCE] or to disrupt society itself.  Just as
+   good governance of states requires separation of powers
+   [FEDERALIST-51], so too does good governance of the Internet require
+   that power not be concentrated in one place.
 
    Finally, centralization has deleterious effects on the Internet
    itself, including:
@@ -875,6 +878,12 @@ Table of Contents
               BCP 95, RFC 3935, October 2004.
 
               <https://www.rfc-editor.org/info/bcp95>
+
+   [FEDERALIST-51]
+              Madison, J., "The Structure of the Government Must Furnish
+              the Proper Checks and Balances Between the Different
+              Departments", The Federalist Papers, No. 51, February
+              1788.
 
    [HTTP]     Fielding, R. T., Nottingham, M., and J. Reschke, "HTTP
               Semantics", Work in Progress, Internet-Draft, draft-ietf-
