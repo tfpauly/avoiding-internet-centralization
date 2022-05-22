@@ -1165,7 +1165,7 @@ svg [stroke="fill"], svg [fill^="#fff"] {
                 <p id="section-toc.1-1.6.2.3.1"><a href="#section-6.3" class="xref">6.3</a>.  <a href="#name-build-robust-ecosystems" class="xref">Build Robust Ecosystems</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6.2.4">
-                <p id="section-toc.1-1.6.2.4.1"><a href="#section-6.4" class="xref">6.4</a>.  <a href="#name-limit-intermediary-power" class="xref">Limit Intermediary Power</a></p>
+                <p id="section-toc.1-1.6.2.4.1"><a href="#section-6.4" class="xref">6.4</a>.  <a href="#name-limit-delegation-of-power" class="xref">Limit Delegation of Power</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6.2.5">
                 <p id="section-toc.1-1.6.2.5.1"><a href="#section-6.5" class="xref">6.5</a>.  <a href="#name-avoid-over-extensibility" class="xref">Avoid Over-Extensibility</a></p>
@@ -1426,26 +1426,26 @@ svg [stroke="fill"], svg [fill^="#fff"] {
 </div>
 <div id="intermediation">
 <section id="section-6.4">
-        <h3 id="name-limit-intermediary-power">
-<a href="#section-6.4" class="section-number selfRef">6.4. </a><a href="#name-limit-intermediary-power" class="section-name selfRef">Limit Intermediary Power</a>
+        <h3 id="name-limit-delegation-of-power">
+<a href="#section-6.4" class="section-number selfRef">6.4. </a><a href="#name-limit-delegation-of-power" class="section-name selfRef">Limit Delegation of Power</a>
         </h3>
-<p id="section-6.4-1">Some functions might see substantial benefits if intermediation -- i.e., adding a new party to communication to perform a function -- is introduced. When used well, intermediation can help improve:<a href="#section-6.4-1" class="pilcrow">¶</a></p>
+<p id="section-6.4-1">Some functions might see substantial benefits if they are performed by a third party in communication. When used well, adding a new party to communication can improve:<a href="#section-6.4-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-6.4-2.1">
             <em>Efficiency</em>: Many functions on the Internet are significantly more efficient when performed at a higher scale. For example, a Content Delivery Network can offer services at a fraction of the financial and environmental cost that would otherwise be paid by someone serving content themselves, because of the scale they operate at.<a href="#section-6.4-2.1" class="pilcrow">¶</a>
 </li>
           <li class="normal" id="section-6.4-2.2">
-            <em>Complexity</em>: Completely disintermediating communication can shift the burden of functions onto endpoints. This can cause increased cognitive load for users; for example, compare commercial social networking platforms with self-hosted efforts.<a href="#section-6.4-2.2" class="pilcrow">¶</a>
+            <em>Simplicity</em>: Completely disintermediating communication can shift the burden of functions onto endpoints. This can cause increased cognitive load for users; for example, compare commercial social networking platforms with self-hosted efforts.<a href="#section-6.4-2.2" class="pilcrow">¶</a>
 </li>
           <li class="normal" id="section-6.4-2.3">
             <em>Specialization</em>: Having a function concentrated into relatively few hands can improve outcomes because of the resulting specialization. For example, services overseen by professional administrators are often seen to have a better security posture and improved availability.<a href="#section-6.4-2.3" class="pilcrow">¶</a>
 </li>
           <li class="normal" id="section-6.4-2.4">
-            <em>Privacy</em>: For some functions, user privacy can be improved by concentrating their activity to prevent individual behaviors from being discriminated from each other.<span>[<a href="#MIX" class="xref">MIX</a>]</span> Intermediation can also enforce functional boundaries -- for example, to reduce the need for users to trust potentially malicious endpoints, as seen in the so-called "oblivious" protocols (e.g., <span>[<a href="#I-D.pauly-dprive-oblivious-doh" class="xref">I-D.pauly-dprive-oblivious-doh</a>]</span>) that allow end users to hide their identity from services, while still accessing them.<a href="#section-6.4-2.4" class="pilcrow">¶</a>
+            <em>Privacy</em>: For some functions, user privacy can be improved by concentrating their activity to prevent individual behaviors from being discriminated from each other.<span>[<a href="#MIX" class="xref">MIX</a>]</span> Introduction of a third party can also enforce functional boundaries -- for example, to reduce the need for users to trust potentially malicious endpoints, as seen in the so-called "oblivious" protocols (e.g., <span>[<a href="#I-D.pauly-dprive-oblivious-doh" class="xref">I-D.pauly-dprive-oblivious-doh</a>]</span>) that allow end users to hide their identity from services, while still accessing them.<a href="#section-6.4-2.4" class="pilcrow">¶</a>
 </li>
         </ul>
-<p id="section-6.4-3">However, introducing an intermediary role adds concentration and platform centralization risk to Internet protocols, because it brings opportunities for control and observation. While (as discussed above) standards efforts have a very limited capability to prevent or control these types of centralization, constraints on intermediary functions can prevent at least the most egregious outcomes.<a href="#section-6.4-3" class="pilcrow">¶</a></p>
-<p id="section-6.4-4">As a result, intermediaries should only be interposed as a result of the positive action of at least one endpoint, and should have their ability to observe or control communication limited to what is necessary to perform their intended function.<a href="#section-6.4-4" class="pilcrow">¶</a></p>
+<p id="section-6.4-3">However, introducing an new party to communication adds concentration and platform centralization risk to Internet protocols, because it brings opportunities for control and observation. While (as discussed above) standards efforts have a very limited capability to prevent or control these types of centralization, designing protocols with constraints on third party functions can prevent at least the most egregious outcomes.<a href="#section-6.4-3" class="pilcrow">¶</a></p>
+<p id="section-6.4-4">Most often, third parties are added to protocols as "intermediaries" or in designated "agent" roles. In general, they should only be interposed as a result of the positive action of at least one endpoint, and should have their ability to observe or control communication limited to what is necessary to perform their intended function.<a href="#section-6.4-4" class="pilcrow">¶</a></p>
 <p id="section-6.4-5">For example, early deployments of HTTP allowed intermediaries to be interposed by the network without knowledge of the endpoints, and those intermediaries could see and change the full content of traffic by default -- even when they are only intended to perform basic functions such as caching. Because of the introduction of HTTPS and the CONNECT method (see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-19#section-9.3.6" class="relref">Section 9.3.6</a> of [<a href="#HTTP" class="xref">HTTP</a>]</span>), combined with efforts to encourage its adoption, those intermediaries are now required to be explicitly interposed by one endpoint.<a href="#section-6.4-5" class="pilcrow">¶</a></p>
 <p id="section-6.4-6">See <span>[<a href="#I-D.thomson-tmi" class="xref">I-D.thomson-tmi</a>]</span> for more guidance on protocol intermediation.<a href="#section-6.4-6" class="pilcrow">¶</a></p>
 <p id="section-6.4-7">The term "intermediary" is also used (often in legal and regulatory contexts) more broadly than it has been in protocol design; for example, an auction Web site intermediates between buyers and sellers is considered an intermediary, even though it is not formally an intermediary in HTTP (see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-19#section-3.7" class="relref">Section 3.7</a> of [<a href="#HTTP" class="xref">HTTP</a>]</span>). Protocol designers can address the centralization risk associated with this kind of intermediation by standardising the function, rather than restricting the capabilities of the underlying protocols; see <a href="#up" class="xref">Section 6.2</a>.<a href="#section-6.4-7" class="pilcrow">¶</a></p>
