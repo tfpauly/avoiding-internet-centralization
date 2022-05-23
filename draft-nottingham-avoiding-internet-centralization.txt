@@ -371,8 +371,8 @@ Table of Contents
    the central function has leverage to "lock in" users.  For example,
    social networking is an application that is currently supplied by a
    few proprietary platforms despite standardization efforts (see, e.g.,
-   [W3C.CR-activitystreams-core-20161215]), because of the powerful
-   network effects associated.
+   [ACTIVITYSTREAMS]), because of the powerful network effects
+   associated.
 
    By its nature, concentration is difficult to avoid in protocol
    design, and federated protocols are particularly vulnerable to it
@@ -705,14 +705,14 @@ Table of Contents
 
    It is worthwhile to create specifications for functions that are
    currently only satisfied by proprietary providers.  By building open
-   specifications on top of already established standards,
-   centralization of emerging Internet functions can be avoided.
+   specifications on top of already established standards, an
+   alternative to a centralized function can be created.
 
    A common objection to such efforts is that adoption is voluntary, not
    mandatory; there are no "standards police" to mandate their use or
    enforce correct implementation.  For example, specifications like
-   [W3C.CR-activitystreams-core-20161215]) have been available for some
-   time without broad adoption by social networking providers.
+   [ACTIVITYSTREAMS]) have been available for some time without broad
+   adoption by social networking providers.
 
    However, while standards aren't mandatory, legal regulation is, and
    regulators around the globe are now focusing their efforts on the
@@ -725,11 +725,14 @@ Table of Contents
    mandate in combination with changing norms and the resulting market
    forces [NEW-CHICAGO].
 
-   If the Internet community does not produce specifications for these
-   mandates to reference, it is likely that the need will be filled by
-   other means -- most likely, with less transparency, more narrow
-   input, limited experience, and without reference to the Internet's
-   architectural goals.
+   Successfully creating standards that work in concert with legal
+   regulation is new ground for the IETF, presents many potential
+   pitfalls, and will require new capabilities (especially liaison,
+   likely originating in the IAB) and considerable effort.  If the
+   Internet community does not make that effort, it is likely that
+   regulators' needs will be filled by other means -- most likely, with
+   less transparency, more narrow input, limited experience, and without
+   reference to the Internet's architectural goals.
 
 6.3.  Build Robust Ecosystems
 
@@ -890,6 +893,12 @@ Table of Contents
               commission/commissioners/2014-2019/vestager/announcements/
               defending-competition-digitised-world_en>.
 
+   [ACTIVITYSTREAMS]
+              Snell, J. and E. Prodromou, "Activity Streams 2.0", World
+              Wide Web Consortium CR CR-activitystreams-core-20161215,
+              15 December 2016, <https://www.w3.org/TR/2016/CR-
+              activitystreams-core-20161215>.
+
    [ATTRACTIVE-PROFITS]
               Christensen, C., "The Law of Conservation of Attractive
               Profits", Harvard Business Review, "Breakthrough Ideas for
@@ -1018,12 +1027,6 @@ Table of Contents
               December 2021, <https://blog.apnic.net/wp-
               content/uploads/2021/12/MKGRA669-Report-for-APNIC-LACNIC-
               V3.pdf>.
-
-   [W3C.CR-activitystreams-core-20161215]
-              Snell, J. and E. Prodromou, "Activity Streams 2.0", World
-              Wide Web Consortium CR CR-activitystreams-core-20161215,
-              15 December 2016, <https://www.w3.org/TR/2016/CR-
-              activitystreams-core-20161215>.
 
    [WEAPONIZED-INTERDEPENDENCE]
               Farrell, H. and A. L. Newman, "Weaponized Interdependence:
