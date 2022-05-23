@@ -755,10 +755,13 @@ Table of Contents
    the resulting proprietary extensions may make switching difficult
    (see Section 6.5).
 
-   Furthermore, if a new protocol is perceived as completely
-   commoditized (so that no implementation can differentiate itself, and
-   there is no barrier to switching), it may have difficulty achieving
-   broad implementation -- at least by commercial entities.
+   Also worthy of attention are the underlying incentives for
+   implementation.  While a completely commoditized protocol might not
+   allow implementations to differentiate themselves, they do provide
+   opportunties for specialization and improvement elsewhere in the
+   value chain [ATTRACTIVE-PROFITS].  Well-timed standards efforts
+   leverage these forces to focus proprietary interests on top of open
+   technology, rather than as a replacement for it.
 
    Balancing these factors to build robust ecosystems is difficult, but
    is often helped by community building and good design -- in
@@ -886,6 +889,11 @@ Table of Contents
               it.org/12090/20191129202059/https://ec.europa.eu/
               commission/commissioners/2014-2019/vestager/announcements/
               defending-competition-digitised-world_en>.
+
+   [ATTRACTIVE-PROFITS]
+              Christensen, C., "The Law of Conservation of Attractive
+              Profits", Harvard Business Review, "Breakthrough Ideas for
+              2004", February 2004.
 
    [BCP95]    Alvestrand, H., "A Mission Statement for the IETF",
               BCP 95, RFC 3935, October 2004.
