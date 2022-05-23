@@ -96,7 +96,7 @@ Table of Contents
    avoidance of any single controlling entity.  While this approach may
    reflect a desire to prevent a single technical failure from having
    wide impact [RAND], it has also enabled the Internet's rapid adoption
-   and broad spread.  Because internetworking does not require networks
+   and broad spread.  Because internetworking does not require a network
    to get permission from or cede control to another entity, it
    accommodates a spectrum of requirements and is positioned as a public
    good.
@@ -137,15 +137,18 @@ Table of Contents
 2.  What is Centralization?
 
    This document defines "centralization" as the ability of a single
-   entity (e.g., a person, company, or government) -- or a small group
-   of them -- to exclusively observe, capture, control, or extract rent
-   from the operation or use of a Internet function.
+   entity or a small group of them to exclusively observe, capture,
+   control, or extract rent from the operation or use of a Internet
+   function.
 
-   Here, "Internet function" is defined broadly.  It might be an
-   enabling protocol already defined by standards, such as IP [RFC791],
-   BGP [RFC4271], TCP [RFC793], or HTTP [HTTP].  It might also be a
-   proposal for a new enabling protocol, or an extension to an existing
-   one.
+   Here, "entity" could be a single person, a corporation, or a
+   government.  It does not include an organisation that operates in a
+   manner that effectively mitigates centralisation (see Section 5.2).
+
+   "Internet function" is defined broadly.  It might be an enabling
+   protocol already defined by standards, such as IP [RFC791], BGP
+   [RFC4271], TCP [RFC793], or HTTP [HTTP].  It might also be a proposal
+   for a new enabling protocol, or an extension to an existing one.
 
    However, the Internet's functions are not limited to standards-
    defined protocols.  User-visible applications built on top of
@@ -194,19 +197,19 @@ Table of Contents
    Centralization is not always problematic, and is sometimes even
    desirable.  If a function is specific to a given entity -- for
    example, a person's web site, or a government service -- it is
-   expected that it be controlled by them alone.  Furthermore, emerging
-   applications and other functions can often gain significant benefits
-   from being centralized, especially considering the potential costs of
-   decentralization (see Section 4.2 for more discussion of the benefits
-   of centralization).
+   expected that it be controlled by them alone.  Emerging applications
+   are often significantly less complex and more efficient to deploy as
+   proprietary rather than decentralized functions.  Some functions
+   (such as the Internet standards process itself) require central
+   control to assure interoperability and application of shared goals
+   and architectural principles.
 
-   However, when a function becomes widespread enough in use and
+   However, when any function becomes widespread enough in use and
    especially when it becomes a platform for other functions to be built
    upon, it deserves more scrutiny for centralization risk.
-   Centralization of such functions is undesirable because it is counter
-   to the Internet's nature, because it violates the end users'
-   expectations, and because of the many negative effects it can have on
-   the network's operation and evolution.
+   Centralization of these functions is problematic when there are not
+   effective mitigations in place (see Section 5), for a variety of
+   reasons.
 
    First, the Internet's very nature is incompatible with centralization
    of its functions.  As a "large, heterogeneous collection of
@@ -228,7 +231,7 @@ Table of Contents
    [FEDERALIST-51], so too does good governance of the Internet require
    that power not be concentrated in one place.
 
-   Finally, centralization has deleterious effects on the Internet
+   Finally, centralization can have deleterious effects on the Internet
    itself, including:
 
    *  _Limiting Innovation_: Centralization can preclude the possibility
