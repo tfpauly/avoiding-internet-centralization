@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2022-05-22T00:05:39.161080+00:00",
+  "timestamp": "2022-05-24T00:03:55.028700+00:00",
   "repo": "mnot/avoiding-internet-centralization",
   "labels": [
     {
@@ -374,15 +374,15 @@
       "id": "I_kwDOGCfj785CKfFy",
       "title": "Moar Habermas",
       "url": "https://github.com/mnot/avoiding-internet-centralization/issues/19",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "mnot",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "> Habermas's own discussion of a concrete political agenda includes recommendations for increased decentralization in order to allow pluralistic decisionmaking. Decentralization also serves to counteract the \"generation of mass loyalty\" sought (and increasingly, he believes, achieved) by mass institutions such as political parties and states.\r\n\r\nRef to KENNETH BAYNES, THE NORMATIVE GROUNDS OF SOCIAL CRITICISM 109 (1992) 179-80.\r\n\r\nx-devonthink-item://4EFBE3F1-1988-414A-870E-44F21A17B8EA?page=17",
       "createdAt": "2022-01-21T04:30:34Z",
-      "updatedAt": "2022-05-15T05:26:19Z",
-      "closedAt": null,
+      "updatedAt": "2022-05-23T02:06:04Z",
+      "closedAt": "2022-05-23T02:06:04Z",
       "comments": [
         {
           "author": "mnot",
@@ -390,6 +390,13 @@
           "body": "Most relevant portion of Baynes:\r\n\r\n> Habermas does not argue that the formal political system, together with is mass political parties, should simply be replaced by a more highly decentralized form of democratic rule based solely on such secondary institutions. What he insists upon, rather, is that the former relinquish one of their functions--the generation of mass loyalty.63 In complex modern societies, proposals for more highly decentralized and pluralistic decision making processes encounter two specific sorts of difficulties: On the one hand, they threaten to undermine concern for the common good on a broad territorial scale or the preservation of basic rights and liberties. These are the \"mischiefs of faction\" described by Madison in the Federalist Papers. On the other hand, they would also most likely weaken the possibility for accountable decision making with respect to any large-scale problems that arise within modern societies.64 Thus, rather than calling for the dismantling of the formal political system, Habermas has instead spoken of the need for secondary associations of the public sphere to surround and \"besiege\" it, without however conquering it.65 Although this metaphor is not particularly instructive for identifying the specific modes of exchange that should exist between institutions of the public sphere and the state, the basic intuition is relatively clear: The informal associations within civil society responsible for the production of solidarity should exercise an indirect influence upon the formal political system through the production of loyalties and legitimations; at the same time, however, the political system, including its territorially based form of representation, should provide appropriate mechanisms for accountable decision making and guarantee adequate concern for the common good of the republic as a whole.\r\n\r\nThis can also be seen as an argument against excessive decentralisation.",
           "createdAt": "2022-05-15T05:26:19Z",
           "updatedAt": "2022-05-15T05:26:19Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "OWNER",
+          "body": "Closing in favour of #49.",
+          "createdAt": "2022-05-23T02:06:02Z",
+          "updatedAt": "2022-05-23T02:06:02Z"
         }
       ]
     },
@@ -486,7 +493,7 @@
       "id": "I_kwDOGCfj785Fw3Ct",
       "title": "highlight differences in regulation mechanisms",
       "url": "https://github.com/mnot/avoiding-internet-centralization/issues/25",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "mnot",
       "authorAssociation": "OWNER",
       "assignees": [],
@@ -495,9 +502,17 @@
       ],
       "body": "e.g., architectural tends to be 'hard' -- not possible to overcome by someone changing their mind or being coerced, whereas legal/normative are more 'soft' -- e.g., icann et at deciding to drop .ru (though they didn't). ",
       "createdAt": "2022-03-16T01:36:47Z",
-      "updatedAt": "2022-05-15T06:08:35Z",
-      "closedAt": null,
-      "comments": []
+      "updatedAt": "2022-05-22T03:49:33Z",
+      "closedAt": "2022-05-22T03:49:33Z",
+      "comments": [
+        {
+          "author": "mnot",
+          "authorAssociation": "OWNER",
+          "body": "This has probably worked itself into enough parts of the document to close now.",
+          "createdAt": "2022-05-22T03:49:33Z",
+          "updatedAt": "2022-05-22T03:49:33Z"
+        }
+      ]
     },
     {
       "number": 26,
@@ -522,17 +537,15 @@
       "id": "I_kwDOGCfj785GV3VR",
       "title": "Privacy",
       "url": "https://github.com/mnot/avoiding-internet-centralization/issues/27",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "mnot",
       "authorAssociation": "OWNER",
       "assignees": [],
-      "labels": [
-        "work item"
-      ],
+      "labels": [],
       "body": "Jari says:\r\n\r\n> Section 6.1 talks about relationship between centralization and privacy, and points out that there's sometimes a tradeoff. I would argue that this is heavily dependent on what we're talking about. We're far along on the mission to encrypt all communications. Many of the remaining privacy issues are made worse, not better, by centralization. E.g., one entity has access to all your mail or browser history or other things. Perhaps the 6.1 language could be improved, as it currently reads a bit like focusing on privacy in standardisation and leaving centralisation to other entities. I\u2019m not sure that\u2019s always desirable, particularly if we want to address privacy.",
       "createdAt": "2022-03-24T22:56:24Z",
-      "updatedAt": "2022-05-20T13:45:52Z",
-      "closedAt": null,
+      "updatedAt": "2022-05-23T03:01:29Z",
+      "closedAt": "2022-05-23T03:01:29Z",
       "comments": [
         {
           "author": "jariarkko",
@@ -540,24 +553,36 @@
           "body": "I'm not happy with the below text, but to get us started, here's a proposal:\r\n\r\nReplace last paragraph in Section 6.1 with:\r\n\r\n   When we find centralization risk, we should consider its relationship\r\n   with other goals, such as privacy.  While abstract goals such as these\r\n   are rarely entirely separate from each other, \r\n   attention should be paid to how effective architectural regulation\r\n   (such as a standards effort) is in achieving each goal.  For instance,\r\n   a technical mechanism might be much more effective at\r\n   improving some privacy concerns, whereas some aspects of centralization could be \r\n   better controlled by other regulators. This might lead us to conclude that the standards\r\n   effort should focus on technical matters such as privacy. However, because topics such as\r\n   privacy are not entirely separate from other issues, this is perhaps a too quick conclusion.\r\n   For instance, centralization and consolidation often helps increase some aspects of \r\n   privacy concerns, such as collecting more data in one set of hands. While such data can be\r\n   well guarded by both technical and non-technical means, it also clearly increases the risk of\r\n   attacks on such data stores, or commercial or government pressures to use the data in some way.\r\n\r\n",
           "createdAt": "2022-05-20T13:45:52Z",
           "updatedAt": "2022-05-20T13:45:52Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "OWNER",
+          "body": "@jariarkko PTAL",
+          "createdAt": "2022-05-22T03:16:36Z",
+          "updatedAt": "2022-05-22T03:16:36Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "OWNER",
+          "body": "Closing to keep the issues list clean :) but please say so if you're not happy with that.",
+          "createdAt": "2022-05-23T03:01:29Z",
+          "updatedAt": "2022-05-23T03:01:29Z"
         }
       ]
     },
     {
       "number": 28,
       "id": "I_kwDOGCfj785GV3x2",
-      "title": "Expand / reframe 'Decentralize Proprietary Functions'",
+      "title": "Discovery / defaults / etc.",
       "url": "https://github.com/mnot/avoiding-internet-centralization/issues/28",
       "state": "OPEN",
       "author": "mnot",
       "authorAssociation": "OWNER",
       "assignees": [],
-      "labels": [
-        "work item"
-      ],
+      "labels": [],
       "body": "Jari says:\r\n\r\n> [O]ne thing that is not discussed but perhaps should be is the role of discovery. We seem to have an increasing number of solutions that are built for relatively fixed linkages between OS - device - browser - application - network services. For instance, a default service lead to a situation where a vast majority of users will use the default service. From a standards perspective it would be better to build on discovery such that for instance local services can be used. This is of course not always easy, but I think it needs to be looked at, at least on a per-case basis.\r\n\r\nThis is most closely related to the 'Decentralise Proprietary Functions' section, but it's not obvious / related enough; more examples and perhaps reframing might help.",
       "createdAt": "2022-03-24T22:59:54Z",
-      "updatedAt": "2022-05-20T14:28:50Z",
+      "updatedAt": "2022-05-22T06:09:16Z",
       "closedAt": null,
       "comments": [
         {
@@ -566,6 +591,20 @@
           "body": "Here I don\u2019t have a text proposal yet, but maybe one could cover at least the following:\r\n\r\n- examples: OS, device, browser, and application systems get built to use very specific services. E.g., the use of DNS resolvers.\r\n- effects: Difficult for other or local services to be used.\r\n- rationale for X to be built with very specific binding to a service: Whoever builds X understands exactly what they need and what is provided by the service. There may also be contracts associated with the use of that specific service.\r\n- issue: While settings can be changed, that is not a practical alternative for vast majority of users\r\n- issue: Sets up a model where only the services that can have a default bundling and a contract e.g. with major browser or OS vendor will actually get used\r\n- issue: Internet and applications become more and more \u2019packaged\u2019, designed & curated black box services where changing components or parts is difficult\r\n- possible alleviating techniques: Modularity, discovery, indirection\r\n- difficulties: For many functions, it is not ok to use a random thing that someone nearby offers, for obvious security reasons. Indirection and user/os-specificed trusted roots for specific functions may be helpful though.\r\n- other: there\u2019s probably some more considerations that at least I have not figured out yet",
           "createdAt": "2022-05-20T14:28:50Z",
           "updatedAt": "2022-05-20T14:28:50Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "OWNER",
+          "body": "I feel like this might be part of a larger issue / discussion regarding consideration of the user -- providing choices, how defaults work, cognitive load considerations (eg how security dialogues in browsers are presented).",
+          "createdAt": "2022-05-22T03:38:55Z",
+          "updatedAt": "2022-05-22T03:38:55Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "OWNER",
+          "body": "I'm trying to rough in something along those lines, but what I'm running into is that while it's easy to point out problems in the ecosystem (as you highlight), it's much more difficult to recommend actions that _standards bodies_ can take to improve the situation, beyond those we already have.\r\n\r\nWhat do you see as in-scope for _this_ document? I.e., what recommendations can we make? Or is it adequate to just point at these things and say \"carefully consider these\"?",
+          "createdAt": "2022-05-22T06:09:06Z",
+          "updatedAt": "2022-05-22T06:09:06Z"
         }
       ]
     },
@@ -600,15 +639,15 @@
       "id": "I_kwDOGCfj785GfnqA",
       "title": "Reading list",
       "url": "https://github.com/mnot/avoiding-internet-centralization/issues/30",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "mnot",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "Papers / sources to check:\r\n\r\n* https://doi.org/10.1145/3503158\r\n\r\n* https://arxiv.org/abs/2111.03785 \r\n\r\n* https://changelog.complete.org/archives/10216-the-hidden-drawbacks-of-p2p-and-a-defense-of-signal",
       "createdAt": "2022-03-27T23:06:03Z",
-      "updatedAt": "2022-05-15T03:48:37Z",
-      "closedAt": null,
+      "updatedAt": "2022-05-22T05:00:05Z",
+      "closedAt": "2022-05-22T05:00:05Z",
       "comments": [
         {
           "author": "mnot",
@@ -624,7 +663,7 @@
       "id": "I_kwDOGCfj785HVrUy",
       "title": "Is your organization and of the types of centralization correct?",
       "url": "https://github.com/mnot/avoiding-internet-centralization/issues/31",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "elear",
       "authorAssociation": "NONE",
       "assignees": [],
@@ -633,8 +672,8 @@
       ],
       "body": "You discuss direct, indirect, inherited, and platform centralization.  Is this model the appropriate delineation?  Is there more direct language you can use to describe these forms?",
       "createdAt": "2022-04-08T06:01:09Z",
-      "updatedAt": "2022-05-18T01:27:12Z",
-      "closedAt": null,
+      "updatedAt": "2022-05-22T03:21:41Z",
+      "closedAt": "2022-05-22T03:21:41Z",
       "comments": [
         {
           "author": "elear",
@@ -691,6 +730,20 @@
           "body": "This probably rambles a bit.  Take it as you will...\r\n\r\nProprietary Protocols is a good way of putting this, and it jibes very well with what Europe is saying right now.  What is the benefit to the protocol \"owner\"/developer?\r\n\r\n - Only those who the \"owner\" authorizes can even see the specification, much less implement it.\r\n - If the owner controls both ends, they can retire old protocol features or correct bugs without having to go through a laborious standards process.\r\n - New features can be rapidly introduced.\r\n\r\nIn fact, MOST protocols these days are proprietary.  Any app on a phone or tablet has such a thing, and it is often No Big Deal.  What makes it A Big Deal?  There's some other aspect that triggers centralization.\r\n",
           "createdAt": "2022-05-16T06:58:56Z",
           "updatedAt": "2022-05-16T06:58:56Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "OWNER",
+          "body": "changed 'indirect' to 'concentration'. A tiny bit awkward from a 'does this fit with the others', but really really nice from a high level, I think.",
+          "createdAt": "2022-05-22T03:18:26Z",
+          "updatedAt": "2022-05-22T03:18:26Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "OWNER",
+          "body": "I think the edits above address everything here (although some of it could be expanded upon). Am closing, feel free to continue to discuss or request reopening if I didn't.",
+          "createdAt": "2022-05-22T03:21:41Z",
+          "updatedAt": "2022-05-22T03:21:41Z"
         }
       ]
     },
@@ -699,17 +752,15 @@
       "id": "I_kwDOGCfj785HVtcy",
       "title": "Federation",
       "url": "https://github.com/mnot/avoiding-internet-centralization/issues/32",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "elear",
       "authorAssociation": "NONE",
       "assignees": [],
-      "labels": [
-        "work item"
-      ],
+      "labels": [],
       "body": "I think federation is an area worth a **lot** more exploration.  We began discussing this a bit on list, and I really want to get into with you just a bit more.\r\n\r\nWhen we look at the history of wifi, it is one of federation, and it is a HUGE success.  Thanks to my dear friend and former colleague Klaas Wierenga, students, researchers, and professors can travel to just about any university and connect. It's lovely.  But it's not the only federation.  We can consider iPass a commerical federation, and now there is Open Roaming.  We're about to see the same sorts of mechanisms spread to private 5g.\r\n\r\nBut federation, as you say, does have its limitations.  In the case of **public** 5g and anything of that scale, capital costs are so prohibitive as to limit the number of entrants.  Is this Internet centralization?  Maybe not, but a key factor seems to me to be that universities and most enterprises aren't in the business of offering wifi, so they don't mind its use so long as its not **ab**use.  More on that in another issue ;-)",
       "createdAt": "2022-04-08T06:13:05Z",
-      "updatedAt": "2022-05-18T01:26:38Z",
-      "closedAt": null,
+      "updatedAt": "2022-05-23T10:05:26Z",
+      "closedAt": "2022-05-23T10:05:26Z",
       "comments": [
         {
           "author": "mnot",
@@ -731,6 +782,27 @@
           "body": "I question how much influence protocol design has, as opposed to market forces and regulation. I think (and I hope the draft supports) that the best we can do is make open, decentralized, functional protocols available; what's done with them is out of our hands. As they say, hope is not a strategy.\r\n\r\nThis also calls to mind the law of conservation of attractive profits from Clayton Christensen, described in the HBR (Feb 2004):\r\n\r\n> Products are most profitable when they're still not \"good enough\" to satisfy consumers. This is because to make them performance competitive, engineers must use interdependent, proprietary architectures. Use of such architectures makes product differentiation straightforward, because each company pieces its parts together in a unique way.\r\n> \r\n> Once a product's performance _is_ good enough, companies must change the way they compete. The innovations for which customers will pay premium prices become speed to market and the ability responsively and conveniently to give customers exactly what they need, when they need it. To compete in this way, companies are forced to employ modular architectures for products. Modularity causes the products to become undifferentiable and commoditized. Attractive profits don't evaporate, however...\r\n> \r\n> They move elsewhere in the value chain, often to subsystems from which the modular product is assembled. This is because it is improvements in the subsystems, rather than the modular product's architecture, that drive the assembler's ability to move upmarket toward more attractive profit margins. Hence, the subsystems become decommoditized and attractively profitable. \r\n>\r\n> My sense is that these shifts are more than coincidental; I suspect that when most products start to become commoditized or modularized, this tum of events kick-starts a decommoditization process somewhere else in the value chain. As a general rule, one side of an interface in the value chain must be modular to allow the side that's not yet good enough to be optimized.\r\n>\r\n> My friend Chris Rowen, CEO of Tensilica, suggested that we call this phenomenon the law of conservation of attractive profits. (He was playing off the law of conservation of energy, which states that energy cannot be created or destroyed, though it may be changed from one form to another.) Translated into managerial terms, the law goes something like this: When attractive profits disappear at one stage in the value chain because a product becomes modular and commoditized, the opportunity to earn attractive profits with proprietary products will usually emerge at an adjacent stage.\r\n\r\nAgain and again, we see proprietary efforts at establishing those modular architectures, so that the proponent can control the market. They're \"platforms\" but they're still centralized. The IETF has seen this story before: TCP was not the first or only network protocol, but the proprietary vendors moved on to other things when they realised the value was in a different place. I don't think we're going to convince the current crop to do likewise -- but we're not the only regulators in town any more.\r\n\r\nReturning to the issue -- I'll take this as a general one to expand upon federation some.",
           "createdAt": "2022-05-18T01:26:29Z",
           "updatedAt": "2022-05-18T01:26:29Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "OWNER",
+          "body": "Returning to federation - while uni wifi is successful, I'm not sure what that says about centralization. My uni can still revoke access, and a lot more wifi is deployed as a complement -- e.g., free in a coffee shop. ",
+          "createdAt": "2022-05-23T06:58:59Z",
+          "updatedAt": "2022-05-23T06:58:59Z"
+        },
+        {
+          "author": "elear",
+          "authorAssociation": "NONE",
+          "body": "I think it says that federation doesn't have to have a centralizing impact so long as it is non-exclusive, and so long as associated COGS don't make new entry prohibitive.  The IETF enables federation through a number of technologies, including authentication of certificates, and OAUTH.  Add to that SAML from OASIS.\r\n\r\nHere's another real life case the industry is facing today:\r\n\r\nGovernments are about to require software bills of material (SBOMs) to be delivered to customers in certain markets, and the industry is moving toward delivering that information.  But some producers want to authenticate recipients.  Now put yourself in a recipient's position, where you are monitoring perhaps 2,000 device types.  How to scale that such that the admin isn't constantly typing in credentials for different producers?  There are a few choices:\r\n\r\n - introduce a trusted aggregator service (there are a few of these)\r\n - use a federation to authenticate (there are a few of these)\r\n\r\nEach has pluses and minuses.  The capital costs to enter are fairly low.  Both of these mechanisms could be viewed as intermediary services.  Will they concentrate/centralize and what might the impact be if people are using them to determine whether devices are safe to connect to?\r\n\r\nOne potential next step, by the way, would be to track the evolution of this use case over the next two-three years.\r\n",
+          "createdAt": "2022-05-23T08:20:08Z",
+          "updatedAt": "2022-05-23T08:20:08Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "OWNER",
+          "body": "My takeaway is that federation, for some styles of protocol, is necessary to help mitigate centralisation, but not sufficient. Whether centralization depends on how deployments use it -- especially, who they allow federation with. If it's universal (e.g., e-mail) that's great -- if it's selective or internal-only (as many eg XMPP deployments are), it's a problem.\r\n\r\nWhether or not it's universal is a very case-by-case thing; in the case of e-mail, there's clearly enough value in the ecosystem where a competitor that does't federate is going to lose; other incompatible systems purposefully gateway to email because of this.\r\n\r\nIn other cases, there isn't enough shared value to motivate deployments like this -- or there's enough value in not federating that they take that path. \r\n\r\nHowever, that choice isn't in the hands of standards bodies -- so I don't think it's in scope for this document.\r\n",
+          "createdAt": "2022-05-23T10:05:26Z",
+          "updatedAt": "2022-05-23T10:05:26Z"
         }
       ]
     },
@@ -743,12 +815,10 @@
       "author": "elear",
       "authorAssociation": "NONE",
       "assignees": [],
-      "labels": [
-        "work item"
-      ],
+      "labels": [],
       "body": "As you may have noticed, I've been going at it with EKR just a bit on **interoperability** versus **interconnectivity** over his discussion about Europe's Digital Markets Act.  First, I **highly** recommend that you check out his and Steve Bellovin's views, as you may find them enlightening.  This goes to my earlier issues in several ways:\r\n\r\n1. Is the organizational model the one you want or might you take advantage of the timeliness of the DMA debate to think in different terms?\r\n\r\n2. Your point about reputation and email is **very** good and important; and goes to this interconnectivity versus interoperability aspect.  What is perhaps important is understanding the relationship between the protocol design and the governance model.  \r\n\r\nLet's take WhatsApp for example (this is what I mentioned to Eric).  They have a way cool approach to abuse reporting: and endpoint sends a message in the clear to a central authority who evaluates it and puts people on the naughty step if it is warranted.  It might be possible for WA to share those reports with other services.  That happens with email with DMARC and ARF, fur instance.  But the governance model is important as well.  Would you automatically send an abuse report to Eliot's Bar and Grill IM service without first reviewing it?  Would you accept an abuse report and take action from Eliot's Bar and Grill IM service without first reviewing it?\r\n\r\nObviously there are non-protocol aspects here, but the protocol developers need to recognize those as they are building out capabilities.",
       "createdAt": "2022-04-08T06:22:36Z",
-      "updatedAt": "2022-05-15T08:13:33Z",
+      "updatedAt": "2022-05-23T03:00:34Z",
       "closedAt": null,
       "comments": [
         {
@@ -771,6 +841,27 @@
           "body": "Yeah, I blathered there a bit.  What I was aiming at was something closer to this...\r\n\r\nCentralization scales governance.  The example I am trying to lay out is the converse: it is difficult to scale governance without some form of centralization.  Two examples:\r\n\r\n- Google can't just randomly credit ARF reports from anyone, because their data warehouse would be polluted (adversarial ML attack).\r\n- Were WhatsApp to take abuse reports about its users, it would need countermeasures to validate the authenticity of the message.  If such reports could come from anywhere, it would also offer a source of DDOS on the abuse system.\r\n\r\nBut there may be protocol operations that facilitate governance.  In the WA example, messages are/could be signed and thus validated.  If you bind that to an enforced code of practice, you can even apply violation codes to scale.\r\n\r\n",
           "createdAt": "2022-05-15T07:10:58Z",
           "updatedAt": "2022-05-15T07:10:58Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "OWNER",
+          "body": "This seems to be veering into making recommendations for specific design patterns / architectural decisions, which I've tried to avoid. Does it _really_ fit into this document?",
+          "createdAt": "2022-05-22T03:34:43Z",
+          "updatedAt": "2022-05-22T03:34:43Z"
+        },
+        {
+          "author": "elear",
+          "authorAssociation": "NONE",
+          "body": "I'm not aiming for those recommendations here (tho I did just suggest a handful in the CtA).  In this case, what I am trying to call out is the level of complexity we are facing.",
+          "createdAt": "2022-05-22T11:18:45Z",
+          "updatedAt": "2022-05-22T11:25:14Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "OWNER",
+          "body": "> what I am trying to call out is the level of complexity we are facing.\r\n\r\nThat seems like a point worth making. There are many well-intentioned effort to combat centralisation, with limited results (and indeed the draft already calls some out). ",
+          "createdAt": "2022-05-23T03:00:33Z",
+          "updatedAt": "2022-05-23T03:00:33Z"
         }
       ]
     },
@@ -1071,7 +1162,7 @@
       "labels": [],
       "body": "I think this document screams for a call-to-action and a summary.  As you put such a thing together, it will help to observe an adage one of my friends lives by:\r\n\r\n1. Say what you're going to say (abstract)\r\n2. Say it (most of the body)\r\n3. Say what you said (summary) and what you want to have happen next (call to action)\r\n\r\n",
       "createdAt": "2022-04-08T07:25:55Z",
-      "updatedAt": "2022-05-18T00:58:44Z",
+      "updatedAt": "2022-05-23T05:02:51Z",
       "closedAt": null,
       "comments": [
         {
@@ -1080,6 +1171,48 @@
           "body": "I don't know the this *is* a 'call to action' kind of document -- it's more explaining the landscape and particular consequence s of it. Beyond the 'what can standards do' section, I'm not sure there _is_ a \"next\".",
           "createdAt": "2022-05-18T00:58:44Z",
           "updatedAt": "2022-05-18T00:58:44Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "OWNER",
+          "body": "More specifically -- what do _you_ think the CtA should be?",
+          "createdAt": "2022-05-22T03:22:55Z",
+          "updatedAt": "2022-05-22T03:22:55Z"
+        },
+        {
+          "author": "elear",
+          "authorAssociation": "NONE",
+          "body": "Here are a few possibilities from which to choose:\r\n\r\n- When developing a protocol, ask these questions (and then some questions {think checklist}) \r\n- The community, the including {IAB, IRTF, others}, is invited to consider this matter in more depth, especially in regards to (specific technologies that might help avoid concentration)\r\n- Further measurements of the risk of centralization a'la [cite Aqsa's wonderful ANRP paper] are invited..\r\n\r\nBut don't forget to summarize well what you said first ;-)\r\n",
+          "createdAt": "2022-05-22T11:16:52Z",
+          "updatedAt": "2022-05-22T11:16:52Z"
+        },
+        {
+          "author": "elear",
+          "authorAssociation": "NONE",
+          "body": "By the way, those are only suggestions.  You should be comfortable with whatever approach you would like to take.",
+          "createdAt": "2022-05-22T11:17:29Z",
+          "updatedAt": "2022-05-22T11:17:29Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "OWNER",
+          "body": "I'm not really on board with those --\r\n\r\n* a checklist is going to be incredibly difficult to create for every internet protocol - by nature, much of this is specific to the market/environment the protocol operates within\r\n* I don't know that a call for specific tech to avoid concentration is really realistic; if it emerges that's great but hope is not...\r\n* I'm less than enthusiastic about measurement activities, because it's not really clear how they're actionable, or often even if the metric is appropriate\r\n",
+          "createdAt": "2022-05-23T02:58:46Z",
+          "updatedAt": "2022-05-23T02:58:46Z"
+        },
+        {
+          "author": "elear",
+          "authorAssociation": "NONE",
+          "body": "That's ok!  But there must be something you want the community to do, even if it's just considering the document as they're developing specifications.  Anyway, my suggestion is that you consider this as you're developing the rest of doc.",
+          "createdAt": "2022-05-23T04:51:38Z",
+          "updatedAt": "2022-05-23T04:51:38Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "OWNER",
+          "body": "I think what I want the community to do is captured (imperfectly) in 'what can standard efforts do?'\r\n\r\nIs there something I can do to make it clearer?",
+          "createdAt": "2022-05-23T05:02:51Z",
+          "updatedAt": "2022-05-23T05:02:51Z"
         }
       ]
     },
@@ -1088,7 +1221,7 @@
       "id": "I_kwDOGCfj785HbmQP",
       "title": "Benefits of Centralization",
       "url": "https://github.com/mnot/avoiding-internet-centralization/issues/45",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "elear",
       "authorAssociation": "NONE",
       "assignees": [],
@@ -1097,8 +1230,8 @@
       ],
       "body": "In Sections 2 and 6.4 you do discuss \"necessary centralization\", but that discussion is couched almost as an aside, and it is not clear to me that \"necessary\" is the word you should use.  I might call out \"benefits\" more directly, because it will help bring into focus the difficulty of the challenge.  Using an example here might help.  Here are two such:\r\n\r\n> The most significant environmental impact of computing is always at the edge.  Each watt expended by consumer gear such as laptops, smart phones, tablets, and routers is multiplied by millions if not billions.  The cost of environmental cost of production and disposal of each consumer device is similarly multiplied.  Each watt saved by use of some amount of centralization is conversely of huge societal benefit.  Everyone running their own SMTP local server would have a massive cost.\r\n\r\n> Similarly, the more distributed control, particularly to the users, requires more work by those same consumers to maintain and protect their components from vulnerabilities and exploits.  Some centralization absolves end users of those responsibilities. \r\n\r\n> The question then turns to how to balance this benefit against the risks.\r\n\r\nAnd this brings into question whether \"intermediaries\" in Section 6.4 is really the right term to use.  I don't have a better one offhand, tho.  Something on which to noodle?\r\n\r\nBy taking this approach, you express to the readers the seriousness and depth and respect that you treat the topic, and that it should demand of them.\r\n",
       "createdAt": "2022-04-09T08:02:41Z",
-      "updatedAt": "2022-05-15T08:21:15Z",
-      "closedAt": null,
+      "updatedAt": "2022-05-22T03:49:05Z",
+      "closedAt": "2022-05-22T03:49:05Z",
       "comments": [
         {
           "author": "elear",
@@ -1127,6 +1260,13 @@
           "body": "Renamed. I think the remaining things to address here are:\r\n\r\n* More discussion of different kinds of beneficial centralisation w/ examples\r\n* A discussion of the inherent tradeoffs; it's always a judgement call about what's 'beneficial'",
           "createdAt": "2022-05-15T08:21:15Z",
           "updatedAt": "2022-05-15T08:21:15Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "OWNER",
+          "body": "I think we have enough examples now, but feel free to suggest more.",
+          "createdAt": "2022-05-22T03:49:05Z",
+          "updatedAt": "2022-05-22T03:49:05Z"
         }
       ]
     },
@@ -1135,7 +1275,7 @@
       "id": "I_kwDOGCfj785Jrxz7",
       "title": "Intermediaries or agents?",
       "url": "https://github.com/mnot/avoiding-internet-centralization/issues/46",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "elear",
       "authorAssociation": "NONE",
       "assignees": [],
@@ -1144,9 +1284,97 @@
       ],
       "body": "As discussed elsewhere, I wonder if whether the discussion should be about agents rather than intermediaries.  Sometimes these agents **are** intermediaries, but sometimes they are authentication servers or perhaps other things.",
       "createdAt": "2022-05-15T07:39:55Z",
-      "updatedAt": "2022-05-15T07:41:36Z",
-      "closedAt": null,
+      "updatedAt": "2022-05-22T04:05:22Z",
+      "closedAt": "2022-05-22T04:05:22Z",
       "comments": []
+    },
+    {
+      "number": 47,
+      "id": "I_kwDOGCfj785KKg3L",
+      "title": "Sybil attack description does not follow classical definition",
+      "url": "https://github.com/mnot/avoiding-internet-centralization/issues/47",
+      "state": "CLOSED",
+      "author": "huitema",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "I am reading this draft and my general impression is \"great work\" and \"this should be published and promoted.\" But then, I find this sentence in the section about the blockchain-based designs:\r\n\r\n_Sybil attacks (where enough participants coordinate their activity to affect the protocol's operation) are a major concern for these protocols._\r\n\r\nSybil attacks don't do that. Sybil attacks typically affect systems in which the system state reflects the consensus of a majority of the \"participants\". The [wikipedia entry](https://en.wikipedia.org/wiki/Sybil_attack) correctly states \"A Sybil attack is a type of attack on a computer [network service](https://en.wikipedia.org/wiki/Network_service) in which an attacker subverts the service's reputation system by creating a large number of [pseudonymous](https://en.wikipedia.org/wiki/Pseudonymity) identities and uses them to gain a disproportionately large influence.\"\r\n\r\nThe various kinds of \"proofs\" found in blockchain-based systems attempt to Sybil attack by only considering consensus among those pseudonymous entries that meet some condition. For example, systems based on \"proof of work\" require participants to consume a large quantity of energy before obtaining a \"vote\", and systems based on \"proof of stake\" only considers those participants that can \"stake\" a large quantity of some resource.",
+      "createdAt": "2022-05-22T14:20:44Z",
+      "updatedAt": "2022-05-23T16:31:24Z",
+      "closedAt": "2022-05-23T05:49:53Z",
+      "comments": [
+        {
+          "author": "mnot",
+          "authorAssociation": "OWNER",
+          "body": "How about changing the parenthetical to\r\n\r\n> (where a party or coordinated parties create enough protocol participants to affect how consensus is judged)\r\n\r\n?",
+          "createdAt": "2022-05-23T02:29:09Z",
+          "updatedAt": "2022-05-23T02:29:09Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "OWNER",
+          "body": "Closing but please say so if that isn't sufficient or you can do better.",
+          "createdAt": "2022-05-23T05:49:53Z",
+          "updatedAt": "2022-05-23T05:49:53Z"
+        },
+        {
+          "author": "huitema",
+          "authorAssociation": "NONE",
+          "body": "I commented on the commit, but maybe better says here. The point is indeed to create enough participants to sway the consensus. This is typically facilitated by the use of pseudonyms, which itself is motivated by desires of privacy, and by the low level of resource required to create a pseudonym. We could have qualifiers such as \"pseudonymous participants\" or \"cheaply create\". Your choice.",
+          "createdAt": "2022-05-23T16:31:24Z",
+          "updatedAt": "2022-05-23T16:31:24Z"
+        }
+      ]
+    },
+    {
+      "number": 48,
+      "id": "I_kwDOGCfj785KKh0P",
+      "title": "Extensibility and maintenance",
+      "url": "https://github.com/mnot/avoiding-internet-centralization/issues/48",
+      "state": "CLOSED",
+      "author": "huitema",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "The \"Over-Extensibility\" section points out the risks of designs that only specify a narrow core of functions and rely on extensibility to meet actual demand. That's a great point, but the text only addresses the initial design of the protocol. I wonder whether the text should be extended to something like \"protocol gardening\". Gardeners will shape trees as they grow by pruning them. Should standard bodies similarly bring extensions inside the core of a new revision, or prune (and prohibit) extensions that demonstrate too much centralization risks?",
+      "createdAt": "2022-05-22T14:35:55Z",
+      "updatedAt": "2022-05-23T02:56:10Z",
+      "closedAt": "2022-05-23T02:56:10Z",
+      "comments": [
+        {
+          "author": "mnot",
+          "authorAssociation": "OWNER",
+          "body": "@huitema PTAL.\r\n\r\nI think this is part of a larger point that I'm trying to make -- standards efforts should continue to push the 'waterline' of what's open and interoperable up, rather than allowing it to be claimed as proprietary. There's a dynamic in [this comment](https://github.com/mnot/avoiding-internet-centralization/issues/32#issuecomment-1129472920) that I'm still trying to capture in the document.\r\n\r\nRegarding - 'prune extensions' -- how would we do that?\r\n\r\nAm closing, but please request reopening if you feel I haven't adequately addressed.",
+          "createdAt": "2022-05-23T02:56:10Z",
+          "updatedAt": "2022-05-23T02:56:10Z"
+        }
+      ]
+    },
+    {
+      "number": 49,
+      "id": "I_kwDOGCfj785KLS2c",
+      "title": "Inappropriate decentralisation?",
+      "url": "https://github.com/mnot/avoiding-internet-centralization/issues/49",
+      "state": "OPEN",
+      "author": "mnot",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [
+        "work item"
+      ],
+      "body": "Habermas can be read as arguing against over-decentralization; see [comment](https://github.com/mnot/avoiding-internet-centralization/issues/19#issuecomment-1126863582).\r\n\r\nThis is briefly touched upon in 'avoid over-extensibility'. While extensibility allows distributed evolution, that can surface other power relationships -- e.g., a larger vendor is able to abuse their power.\r\n\r\n\r\n\r\n",
+      "createdAt": "2022-05-23T02:05:40Z",
+      "updatedAt": "2022-05-23T04:32:01Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "mnot",
+          "authorAssociation": "OWNER",
+          "body": "there's a theme of accountability that probably needs to be surfaced. ",
+          "createdAt": "2022-05-23T04:32:00Z",
+          "updatedAt": "2022-05-23T04:32:00Z"
+        }
+      ]
     }
   ],
   "pulls": [
