@@ -112,9 +112,9 @@ Table of Contents
    on top of supposedly decentralized technology.
 
    These difficulties call into question what role architectural
-   regulation -- in particular, open standards bodies such as the IETF
-   -- should play in preventing, mitigating, and controlling Internet
-   centralization.
+   regulation -- in particular, that in open standards bodies such as
+   the IETF -- should play in preventing, mitigating, and controlling
+   Internet centralization.
 
    This document discusses aspects of centralization that relate to
    Internet standards efforts.  Section 2 provides a definition of
@@ -166,6 +166,19 @@ Table of Contents
    jurisdiction, that function is effectively centralized for those
    users.
 
+   Likewise, if there is a single entity providing a function, it is
+   obviously centralized.  However, centralization risk can also be
+   present when there is friction against switching to a substitute,
+   because external factors can more easily promote concentration (see
+   Section 4.3).  For example, if switching requires a significant
+   amount of time, resources, expertise, coordination, loss of
+   functionality, or effort, centralization risk is indicated.
+
+   Note that availability is related to but distinct from
+   centralization.  For example, if my e-mail provider uses only one
+   server, that server might go down and thus block my access to that
+   function.  However, this alone is not a cause of centralization risk.
+
    "Decentralization" is the process of identifying centralization risk
    related to a function, followed by the application of techniques used
    to prevent or mitigate that risk.
@@ -200,7 +213,7 @@ Table of Contents
    expected that it be controlled by them alone.  Emerging applications
    are often significantly less complex and more efficient to deploy as
    proprietary rather than decentralized functions.  Some functions
-   (such as the Internet standards process itself) require central
+   (such as the Internet standards process itself) even require central
    control to assure interoperability and application of shared goals
    and architectural principles.
 
@@ -447,7 +460,7 @@ Table of Contents
 5.  The Limits of Decentralization
 
    Centralization's relationship to Internet standardization is
-   undeniably about power -- a protocol is am agreed-to set of rules and
+   undeniably about power -- a protocol is an agreed-to set of rules and
    conventions, and those rules can impact how power accrues.  Over
    time, various techniques have been developed that attempt to avoid
    concentration of power as a result of protocol design, or to bring
