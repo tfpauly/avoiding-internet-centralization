@@ -3,9 +3,9 @@
 
 
 Network Working Group                                      M. Nottingham
-Internet-Draft                                               23 May 2022
+Internet-Draft                                               24 May 2022
 Intended status: Informational                                          
-Expires: 24 November 2022
+Expires: 25 November 2022
 
 
                  Centralization and Internet Standards
@@ -48,7 +48,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 24 November 2022.
+   This Internet-Draft will expire on 25 November 2022.
 
 Copyright Notice
 
@@ -231,8 +231,8 @@ Table of Contents
    [FEDERALIST-51], so too does good governance of the Internet require
    that power not be concentrated in one place.
 
-   Finally, centralization can have deleterious effects on the Internet
-   itself, including:
+   Finally, centralization of an important function can have deleterious
+   effects on the Internet itself, including:
 
    *  _Limiting Innovation_: Centralization can preclude the possibility
       of "permissionless innovation" -- the ability to deploy new,
@@ -270,10 +270,10 @@ Table of Contents
    See also [TECH-SUCCESS-FACTORS] for further exploration of how
    centralization can affect the Internet.
 
-   To summarize, centralization would allow the Internet (or some part
-   of it) to be captured, effectively turning it into a "walled garden"
-   that cannot meet both architectural design goals and users'
-   expectations, and endangering its ongoing viability at the same time.
+   To summarize, centralization of a function allows it to be captured,
+   effectively becoming a "walled garden" that cannot be a full part of
+   the Internet because it does not meet the Internet's architectural
+   design goals or users' expectations.
 
 4.  Kinds of Centralization
 
@@ -565,13 +565,13 @@ Table of Contents
    append-only transaction ledger).  A particular task's assignment to a
    node for handling usually cannot be predicted or controlled.
 
-   Sybil attacks (where a party or coordinated parties create enough
-   protocol participants to affect how consensus is judged) are a major
-   concern for these protocols.  Diversity in the pool of participants
-   is encouraged using indirect techniques such as proof-of-work (where
-   each participant has to demonstrate significant consumption of
-   resources) or proof-of-stake (where each participant has some other
-   incentive to execute correctly).
+   Sybil attacks (where a party or coordinated parties cheaply create
+   enough protocol participants to affect how consensus is judged) are a
+   major concern for these protocols.  Diversity in the pool of
+   participants is encouraged using indirect techniques such as proof-
+   of-work (where each participant has to demonstrate significant
+   consumption of resources) or proof-of-stake (where each participant
+   has some other incentive to execute correctly).
 
    Use of these techniques can create barriers to proprietary and
    inherited centralization.  However, depending upon the application in
