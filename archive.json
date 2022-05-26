@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2022-05-24T00:03:55.028700+00:00",
+  "timestamp": "2022-05-26T00:04:07.832486+00:00",
   "repo": "mnot/avoiding-internet-centralization",
   "labels": [
     {
@@ -962,15 +962,15 @@
       "id": "I_kwDOGCfj785HV1Q6",
       "title": "More on trusted introduction: countersigning and resilience",
       "url": "https://github.com/mnot/avoiding-internet-centralization/issues/38",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "elear",
       "authorAssociation": "NONE",
       "assignees": [],
       "labels": [],
       "body": "Bringing two models together, centralization risks hit the PKI model pretty hard.  We just saw an instance in which 2 million certificates were invalidated by LetsEncrypt because of a flaw in their verification code.  But wouldn't it have been \"nice\" if people using LE certs could ALSO have had their CSRs signed by another authority Just In Case.  But the standard doesn't really support that.  THAT's something we could do something about in our standards, no?\r\n\r\nAnd this brings me to a bigger point: I think you should highlight, perhaps with some fun references to papers of record or the like, the harm centralization **has** caused.  What you are addressing **isn't** theoretical.  This will link to my next issue as well.",
       "createdAt": "2022-04-08T06:54:45Z",
-      "updatedAt": "2022-05-15T04:44:10Z",
-      "closedAt": null,
+      "updatedAt": "2022-05-24T06:11:45Z",
+      "closedAt": "2022-05-24T06:11:44Z",
       "comments": [
         {
           "author": "mnot",
@@ -978,6 +978,13 @@
           "body": "I'm a bit reluctant to second-guess protocol design discussions, especially regarding security properties.  Having a second signature on a cert can be seen to add risks of compromise and might add more failure modes -- how that security be balanced against centralisation issues is a discussion that needs to take place in the WG informed by drafts like this, not pre-determined by them.\r\n\r\nUnderlying that is something we might be able to tease out more questions, though -- e.g., \r\n\r\n* Is having a choice between multiple operators / suppliers (such as CAs) an effective technique against centralization?\r\n* Does it depend on other factors (e.g., switching costs)?\r\n* What's the relationship between centralization and short-term dependencies (e.g., your site going down and not having a backup cert take over, but coming back up relatively soon thereafter) vs. long-term lock-in (e.g., you being beholden to an operator/issuer for an extended period of time)?",
           "createdAt": "2022-05-15T04:44:10Z",
           "updatedAt": "2022-05-15T04:44:10Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "OWNER",
+          "body": "I've started to talk about friction and switching costs in \"what is centralization?\" Undoubtedly there could be more, but I want to let this stew for a little while first...",
+          "createdAt": "2022-05-24T06:11:44Z",
+          "updatedAt": "2022-05-24T06:11:44Z"
         }
       ]
     },
@@ -1133,12 +1140,10 @@
       "author": "elear",
       "authorAssociation": "NONE",
       "assignees": [],
-      "labels": [
-        "work item"
-      ],
+      "labels": [],
       "body": "Perhaps my biggest concern with the draft is this:\r\n\r\nWhat can be remedied and what can't be remedied is somewhat lost because of a lack of clear causal linkage, as articulated between the sections.  This is perhaps where I would spend the most time on the draft.  \r\n\r\nTry this: make a copy of the draft; remove Section 6, and then map examples of centralization you use in earlier sections to remediation approaches you think would help.  Then take that text and see if it fits into the earlier sections.  If you do this, you'll have solved the problem entirely.\r\n",
       "createdAt": "2022-04-08T07:15:46Z",
-      "updatedAt": "2022-05-15T07:50:48Z",
+      "updatedAt": "2022-05-24T03:37:49Z",
       "closedAt": null,
       "comments": [
         {
@@ -1147,6 +1152,13 @@
           "body": "Subsection by subsection:\r\n\r\n* 'be realistic' refers to all defined types of centralization\r\n* 'decentralize proprietary functions' is now about direct centralization\r\n* 'build robust ecosystems' is now about inherited centralization\r\n* 'limit intermediary power' is about indirect and platform centralization\r\n* 'avoid over-extensibility' is about platform centralisation\r\n\r\nStill want to look at this systemically, but that's a start.",
           "createdAt": "2022-05-15T07:50:48Z",
           "updatedAt": "2022-05-15T07:50:48Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "OWNER",
+          "body": "I'm pretty comfortable with where the current editors draft is regarding this. Would you mind taking another look?",
+          "createdAt": "2022-05-24T03:37:43Z",
+          "updatedAt": "2022-05-24T03:37:43Z"
         }
       ]
     },
@@ -1300,7 +1312,7 @@
       "labels": [],
       "body": "I am reading this draft and my general impression is \"great work\" and \"this should be published and promoted.\" But then, I find this sentence in the section about the blockchain-based designs:\r\n\r\n_Sybil attacks (where enough participants coordinate their activity to affect the protocol's operation) are a major concern for these protocols._\r\n\r\nSybil attacks don't do that. Sybil attacks typically affect systems in which the system state reflects the consensus of a majority of the \"participants\". The [wikipedia entry](https://en.wikipedia.org/wiki/Sybil_attack) correctly states \"A Sybil attack is a type of attack on a computer [network service](https://en.wikipedia.org/wiki/Network_service) in which an attacker subverts the service's reputation system by creating a large number of [pseudonymous](https://en.wikipedia.org/wiki/Pseudonymity) identities and uses them to gain a disproportionately large influence.\"\r\n\r\nThe various kinds of \"proofs\" found in blockchain-based systems attempt to Sybil attack by only considering consensus among those pseudonymous entries that meet some condition. For example, systems based on \"proof of work\" require participants to consume a large quantity of energy before obtaining a \"vote\", and systems based on \"proof of stake\" only considers those participants that can \"stake\" a large quantity of some resource.",
       "createdAt": "2022-05-22T14:20:44Z",
-      "updatedAt": "2022-05-23T16:31:24Z",
+      "updatedAt": "2022-05-24T02:26:44Z",
       "closedAt": "2022-05-23T05:49:53Z",
       "comments": [
         {
@@ -1323,6 +1335,13 @@
           "body": "I commented on the commit, but maybe better says here. The point is indeed to create enough participants to sway the consensus. This is typically facilitated by the use of pseudonyms, which itself is motivated by desires of privacy, and by the low level of resource required to create a pseudonym. We could have qualifiers such as \"pseudonymous participants\" or \"cheaply create\". Your choice.",
           "createdAt": "2022-05-23T16:31:24Z",
           "updatedAt": "2022-05-23T16:31:24Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "OWNER",
+          "body": "done.",
+          "createdAt": "2022-05-24T02:26:43Z",
+          "updatedAt": "2022-05-24T02:26:43Z"
         }
       ]
     },
@@ -1355,7 +1374,7 @@
       "id": "I_kwDOGCfj785KLS2c",
       "title": "Inappropriate decentralisation?",
       "url": "https://github.com/mnot/avoiding-internet-centralization/issues/49",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "mnot",
       "authorAssociation": "OWNER",
       "assignees": [],
@@ -1364,8 +1383,8 @@
       ],
       "body": "Habermas can be read as arguing against over-decentralization; see [comment](https://github.com/mnot/avoiding-internet-centralization/issues/19#issuecomment-1126863582).\r\n\r\nThis is briefly touched upon in 'avoid over-extensibility'. While extensibility allows distributed evolution, that can surface other power relationships -- e.g., a larger vendor is able to abuse their power.\r\n\r\n\r\n\r\n",
       "createdAt": "2022-05-23T02:05:40Z",
-      "updatedAt": "2022-05-23T04:32:01Z",
-      "closedAt": null,
+      "updatedAt": "2022-05-24T03:56:01Z",
+      "closedAt": "2022-05-24T03:56:01Z",
       "comments": [
         {
           "author": "mnot",
