@@ -82,9 +82,10 @@ Table of Contents
    6.  What Should Internet Standards Do?
      6.1.  Be Realistic
      6.2.  Decentralize Proprietary Functions
-     6.3.  Build Robust Ecosystems
-     6.4.  Limit Delegation of Power
-     6.5.  Avoid Over-Extensibility
+     6.3.  Evaluate New Decentralization Techniques
+     6.4.  Build Robust Ecosystems
+     6.5.  Limit Delegation of Power
+     6.6.  Avoid Over-Extensibility
    7.  Security Considerations
    8.  Informative References
    Appendix A.  Acknowledgements
@@ -756,7 +757,25 @@ Table of Contents
    less transparency, more narrow input, limited experience, and without
    reference to the Internet's architectural goals.
 
-6.3.  Build Robust Ecosystems
+6.3.  Evaluate New Decentralization Techniques
+
+   The decentralization techniques listed in Section 5 are not a closed
+   set; wide interest has spurred development of new approaches, both in
+   general and as solutions to specific problems.
+
+   For example, Secure multi-party computation techniques like
+   [FAIRPLAYMP] can enable "a set of untrusting parties to compute any
+   function of their private inputs while revealing nothing but the
+   result of the function."
+
+   Standards bodies (including the IETF) can serve an important function
+   by evaluating how suitable such proposals are for deployment on the
+   Internet, in reference to privacy, security, operational, and other
+   shared goals.  When appropriate, publication on the standards track
+   or as experimental can be used to send signals to implementers,
+   users, and regulators about their fitness.
+
+6.4.  Build Robust Ecosystems
 
    To minimize inherited centralization risk, standards-defined
    functions should have an explicit goal of broad, diverse
@@ -778,7 +797,7 @@ Table of Contents
    (consider: Web browsers).  On the other hand, if the specification is
    too simple, it may not offer enough functionality to be complete, and
    the resulting proprietary extensions may make switching difficult
-   (see Section 6.5).
+   (see Section 6.6).
 
    Also worthy of attention are the underlying incentives for
    implementation.  While a completely commoditized protocol might not
@@ -794,7 +813,7 @@ Table of Contents
    maintenance and evolution of protocols, to assure that they are still
    relevant and appropriate to their use.
 
-6.4.  Limit Delegation of Power
+6.5.  Limit Delegation of Power
 
    Some functions might see substantial benefits if they are performed
    by a third party in communication.  When used well, adding a new
@@ -861,7 +880,7 @@ Table of Contents
    intermediation by standardising the function, rather than restricting
    the capabilities of the underlying protocols; see Section 6.2.
 
-6.5.  Avoid Over-Extensibility
+6.6.  Avoid Over-Extensibility
 
    An important feature of Internet protocols is their ability to
    evolve, so that they can meet new requirements and adapt to new
@@ -929,6 +948,11 @@ Table of Contents
               BCP 95, RFC 3935, October 2004.
 
               <https://www.rfc-editor.org/info/bcp95>
+
+   [FAIRPLAYMP]
+              Ben-David, A., Nisan, N., and B. Pinkas, "FairplayMP - "A
+              System for Secure Multi-Party Computation"", CCS'08,
+              October 2008.
 
    [FEDERALIST-51]
               Madison, J., "The Structure of the Government Must Furnish
