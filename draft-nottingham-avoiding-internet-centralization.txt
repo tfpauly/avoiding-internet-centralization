@@ -955,12 +955,16 @@ Table of Contents
    [CIRCULAR-CONUNDRUM]
               Spulber, D. F., "Solving The Circular Conundrum:
               Communication And Coordination In Internet Markets",
-              Northwestern University Law Review 104, no. 2, 2010.
+              Northwestern University Law Review, Vol. 104, No. 2, 2010,
+              <https://wwws.law.northwestern.edu/research-
+              faculty/clbe/workingpapers/documents/
+              spulber_circularconundrum.pdf>.
 
    [FAIRPLAYMP]
               Ben-David, A., Nisan, N., and B. Pinkas, "FairplayMP - "A
               System for Secure Multi-Party Computation"", CCS'08,
-              October 2008.
+              October 2008,
+              <https://dl.acm.org/doi/10.1145/1455770.1455804>.
 
    [FEDERALIST-51]
               Madison, J., "The Structure of the Government Must Furnish
@@ -989,17 +993,20 @@ Table of Contents
               03>.
 
    [INTERMEDIARY-INFLUENCE]
-              Judge, K., "Intermediary Influence", 2014,
+              Judge, K., "Intermediary Influence", University of Chicago
+              Law Review, Vol. 82, p. 573, 2014,
               <https://scholarship.law.columbia.edu/
               faculty_scholarship/1856>.
 
    [LEGITIMACY-MULTI]
               Palladino, N. and N. Santaniello, "Legitimacy, Power, and
               Inequalities in the Multistakeholder Internet Governance",
-              2020.
+              2020, <https://link.springer.com/
+              book/10.1007/978-3-030-56131-4>.
 
    [MIX]      Chaum, D. L., "Untraceable Electronic Mail, Return
-              Addresses, and Digital Pseudonyms", February 1981,
+              Addresses, and Digital Pseudonyms", Communications of the
+              ACM, Vol. 24, No. 2, February 1981,
               <https://dl.acm.org/doi/10.1145/358549.358563>.
 
    [MOXIE]    Marlinspike, M., "Reflections: The ecosystem is moving",
@@ -1007,7 +1014,9 @@ Table of Contents
               <https://signal.org/blog/the-ecosystem-is-moving/>.
 
    [NEW-CHICAGO]
-              Lessig, L., "The New Chicago School", June 1998.
+              Lessig, L., "The New Chicago School", Journal of Legal
+              Studies, Vol. 27, June 1998,
+              <https://www.journals.uchicago.edu/doi/10.1086/468039>.
 
    [OECD]     OECD, "Data portability, interoperability and digital
               platform competition", June 2021,
@@ -1017,11 +1026,16 @@ Table of Contents
 
    [PIR]      Olumofin, F. and I. Goldberg, "Revisiting the
               Computational Practicality of Private Information
-              Retrieval", 2010.
+              Retrieval", 2010, <https://link.springer.com/
+              chapter/10.1007/978-3-642-27576-0_13>.
 
    [POLYCENTRIC]
               Aligia, P. D. and V. Tarko, "Polycentricity: From Polanyi
-              to Ostrom, and Beyond", April 2012.
+              to Ostrom, and Beyond", Governance: An International
+              Journal of Policy, Administration, and Institutions, Vol.
+              25, No. 2, p. 237, April 2012,
+              <https://papers.ssrn.com/sol3/
+              papers.cfm?abstract_id=2149165>.
 
    [RAND]     Baran, P., "On Distributed Communications: Introduction to
               Distributed Communications Networks", 1964,
@@ -1067,7 +1081,8 @@ Table of Contents
 
    [SCALE-FREE]
               Albert, R., "Emergence of Scaling in Random Networks",
-              October 1999, <https://barabasi.com/f/67.pdf>.
+              SCIENCE, Vol. 286, No. 15, p. 509, October 1999,
+              <https://barabasi.com/f/67.pdf>.
 
    [SOAP]     Mitra, N. and Y. Lafon, "SOAP Version 1.2 Part 0: Primer
               (Second Edition)", World Wide Web Consortium
@@ -1083,7 +1098,8 @@ Table of Contents
 
    [WEAPONIZED-INTERDEPENDENCE]
               Farrell, H. and A. L. Newman, "Weaponized Interdependence:
-              How Global Economic Networks Shape State Coercion", 2019,
+              How Global Economic Networks Shape State Coercion",
+              International Security, Vol. 44, No. 1, p. 42, 2019,
               <https://doi.org/10.1162/ISEC_a_00351>.
 
 Appendix A.  Acknowledgements
