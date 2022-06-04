@@ -1181,7 +1181,7 @@ svg :is([stroke="fill"], [fill^="#fff"]) {
                 <p id="section-toc.1-1.6.2.4.1"><a href="#section-6.4" class="xref">6.4</a>.  <a href="#name-build-robust-ecosystems" class="xref">Build Robust Ecosystems</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6.2.5">
-                <p id="section-toc.1-1.6.2.5.1"><a href="#section-6.5" class="xref">6.5</a>.  <a href="#name-limit-delegation-of-power" class="xref">Limit Delegation of Power</a></p>
+                <p id="section-toc.1-1.6.2.5.1"><a href="#section-6.5" class="xref">6.5</a>.  <a href="#name-control-delegation-of-power" class="xref">Control Delegation of Power</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6.2.6">
                 <p id="section-toc.1-1.6.2.6.1"><a href="#section-6.6" class="xref">6.6</a>.  <a href="#name-avoid-over-extensibility" class="xref">Avoid Over-Extensibility</a></p>
@@ -1241,7 +1241,7 @@ svg :is([stroke="fill"], [fill^="#fff"]) {
 <a href="#section-3" class="section-number selfRef">3. </a><a href="#name-when-centralization-is-unde" class="section-name selfRef">When Centralization is Undesirable</a>
       </h2>
 <p id="section-3-1">Centralization is not always problematic, and is sometimes even desirable. If a function is specific to a given entity -- for example, a person's web site, or a government service -- it is expected that it be controlled by them alone. Emerging applications are often less complex and more efficient to deploy as proprietary rather than decentralized functions. Some functions (such as the Internet standards process itself) even require central control to assure interoperability and application of shared goals and architectural principles.<a href="#section-3-1" class="pilcrow">¶</a></p>
-<p id="section-3-2">However, when any function becomes widespread enough in use and especially when it becomes a platform for other functions to be built upon, it deserves more scrutiny for undesirable centralization. Centralization of these functions is problematic when there are not effective mitigations in place (see <a href="#decentralization" class="xref">Section 5</a>), for a variety of reasons.<a href="#section-3-2" class="pilcrow">¶</a></p>
+<p id="section-3-2">However, when any function becomes widespread enough in use and especially when it becomes a platform for other functions to be built upon, its potential for centralization deserves more scrutiny. Centralization of these functions is problematic when there are not effective mitigations in place (see <a href="#decentralization" class="xref">Section 5</a>), for a variety of reasons.<a href="#section-3-2" class="pilcrow">¶</a></p>
 <p id="section-3-3">First, the Internet's very nature is incompatible with centralization of its functions. As a "large, heterogeneous collection of interconnected systems" <span>[<a href="#BCP95" class="xref">BCP95</a>]</span> the Internet is often characterised as a "network of networks". These networks relate as peers who agree to facilitate communication, rather than having a relationship of subservience to others' requirements or coercion by them. This focus on independence of action carries through the way the network is architected -- for example, in the concept of an "autonomous system".<a href="#section-3-3" class="pilcrow">¶</a></p>
 <p id="section-3-4">Second, when a third party has unavoidable access to communications, the informational and positional advantages gained can be used to observe behavior (the "panopticon effect") and shape or even deny behaviour (the "chokepoint effect") <span>[<a href="#INTERMEDIARY-INFLUENCE" class="xref">INTERMEDIARY-INFLUENCE</a>]</span> -- which can be used by those parties (or the states that have authority over them) for coercive ends <span>[<a href="#WEAPONIZED-INTERDEPENDENCE" class="xref">WEAPONIZED-INTERDEPENDENCE</a>]</span> or to disrupt society itself. Just as good governance of states requires separation of powers <span>[<a href="#FEDERALIST-51" class="xref">FEDERALIST-51</a>]</span>, so too does good governance of the Internet require that power not be concentrated in one place.<a href="#section-3-4" class="pilcrow">¶</a></p>
 <p id="section-3-5">Finally, centralization of a function can have deleterious effects on the Internet itself, including:<a href="#section-3-5" class="pilcrow">¶</a></p>
@@ -1457,13 +1457,13 @@ svg :is([stroke="fill"], [fill^="#fff"]) {
 </div>
 <div id="intermediation">
 <section id="section-6.5">
-        <h3 id="name-limit-delegation-of-power">
-<a href="#section-6.5" class="section-number selfRef">6.5. </a><a href="#name-limit-delegation-of-power" class="section-name selfRef">Limit Delegation of Power</a>
+        <h3 id="name-control-delegation-of-power">
+<a href="#section-6.5" class="section-number selfRef">6.5. </a><a href="#name-control-delegation-of-power" class="section-name selfRef">Control Delegation of Power</a>
         </h3>
 <p id="section-6.5-1">Some functions might see substantial benefits if they are performed by a third party in communication. When used well, adding a new party to communication can improve:<a href="#section-6.5-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-6.5-2.1">
-            <em>Efficiency</em>: Many functions on the Internet are more efficient when performed at a higher scale. For example, a Content Delivery Network can offer services at a fraction of the financial and environmental cost that would otherwise be paid by someone serving content themselves, because of the scale they operate at.<a href="#section-6.5-2.1" class="pilcrow">¶</a>
+            <em>Efficiency</em>: Many functions on the Internet are more efficient when performed at a higher scale. For example, a Content Delivery Network can offer services at a fraction of the financial and environmental cost that would otherwise be paid by someone serving content themselves, because of the scale they operate at. Likewise, a two-sided market platform can introduce sizeable efficiencies over pairwise buyer/seller trading <span>[<a href="#CIRCULAR-CONUNDRUM" class="xref">CIRCULAR-CONUNDRUM</a>]</span>.<a href="#section-6.5-2.1" class="pilcrow">¶</a>
 </li>
           <li class="normal" id="section-6.5-2.2">
             <em>Simplicity</em>: Completely disintermediating communication can shift the burden of functions onto endpoints. This can cause increased cognitive load for users; for example, compare commercial social networking platforms with self-hosted efforts.<a href="#section-6.5-2.2" class="pilcrow">¶</a>
@@ -1475,7 +1475,7 @@ svg :is([stroke="fill"], [fill^="#fff"]) {
             <em>Privacy</em>: For some functions, user privacy can be improved by concentrating their activity to prevent individual behaviors from being discriminated from each other.<span>[<a href="#MIX" class="xref">MIX</a>]</span> Introduction of a third party can also enforce functional boundaries -- for example, to reduce the need for users to trust potentially malicious endpoints, as seen in the so-called "oblivious" protocols (e.g., <span>[<a href="#I-D.pauly-dprive-oblivious-doh" class="xref">I-D.pauly-dprive-oblivious-doh</a>]</span>) that allow end users to hide their identity from services, while still accessing them.<a href="#section-6.5-2.4" class="pilcrow">¶</a>
 </li>
         </ul>
-<p id="section-6.5-3">However, introducing an new party to communication adds concentration and platform centralization risk to Internet protocols, because it brings opportunities for control and observation. While (as discussed above) standards efforts have a very limited capability to prevent or control these types of centralization, designing protocols with constraints on third party functions can prevent at least the most egregious outcomes.<a href="#section-6.5-3" class="pilcrow">¶</a></p>
+<p id="section-6.5-3">However, introducing an new party to communication adds concentration and platform centralization risk to Internet protocols, because it brings opportunities for control and observation. While (as discussed above) standards efforts have a very limited capability to prevent or control these types of centralization, designing protocols with thoughtful constraints on third party functions can prevent at least the most egregious outcomes.<a href="#section-6.5-3" class="pilcrow">¶</a></p>
 <p id="section-6.5-4">Most often, third parties are added to protocols as "intermediaries" or in designated "agent" roles. In general, they should only be interposed as a result of the positive action of at least one endpoint, and should have their ability to observe or control communication limited to what is necessary to perform their intended function.<a href="#section-6.5-4" class="pilcrow">¶</a></p>
 <p id="section-6.5-5">For example, early deployments of HTTP allowed intermediaries to be interposed by the network without knowledge of the endpoints, and those intermediaries could see and change the full content of traffic by default -- even when they are only intended to perform basic functions such as caching. Because of the introduction of HTTPS and the CONNECT method (see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-19#section-9.3.6" class="relref">Section 9.3.6</a> of [<a href="#HTTP" class="xref">HTTP</a>]</span>), combined with efforts to encourage its adoption, those intermediaries are now required to be explicitly interposed by one endpoint.<a href="#section-6.5-5" class="pilcrow">¶</a></p>
 <p id="section-6.5-6">See <span>[<a href="#I-D.thomson-tmi" class="xref">I-D.thomson-tmi</a>]</span> for more guidance on protocol intermediation.<a href="#section-6.5-6" class="pilcrow">¶</a></p>
@@ -1526,6 +1526,10 @@ svg :is([stroke="fill"], [fill^="#fff"]) {
           <span class="refAuthor">Alvestrand, H.</span>, <span class="refTitle">"A Mission Statement for the IETF"</span>, <span class="seriesInfo">BCP 95</span>, <span class="seriesInfo">RFC 3935</span>, <time datetime="2004-10" class="refDate">October 2004</time>. </div>
 <span>&lt;<a href="https://www.rfc-editor.org/info/bcp95">https://www.rfc-editor.org/info/bcp95</a>&gt;</span>
 </dd>
+<dd class="break"></dd>
+<dt id="CIRCULAR-CONUNDRUM">[CIRCULAR-CONUNDRUM]</dt>
+      <dd>
+<span class="refAuthor">Spulber, D. F.</span>, <span class="refTitle">"Solving The Circular Conundrum: Communication And Coordination In Internet Markets"</span>, <span class="refContent">Northwestern University Law Review 104, no. 2</span>, <time datetime="2010" class="refDate">2010</time>. </dd>
 <dd class="break"></dd>
 <dt id="FAIRPLAYMP">[FAIRPLAYMP]</dt>
       <dd>

@@ -84,7 +84,7 @@ Table of Contents
      6.2.  Decentralize Proprietary Functions
      6.3.  Evaluate New Decentralization Techniques
      6.4.  Build Robust Ecosystems
-     6.5.  Limit Delegation of Power
+     6.5.  Control Delegation of Power
      6.6.  Avoid Over-Extensibility
    7.  Security Considerations
    8.  Informative References
@@ -224,7 +224,7 @@ Table of Contents
 
    However, when any function becomes widespread enough in use and
    especially when it becomes a platform for other functions to be built
-   upon, it deserves more scrutiny for undesirable centralization.
+   upon, its potential for centralization deserves more scrutiny.
    Centralization of these functions is problematic when there are not
    effective mitigations in place (see Section 5), for a variety of
    reasons.
@@ -813,7 +813,7 @@ Table of Contents
    maintenance and evolution of protocols, to assure that they are still
    relevant and appropriate to their use.
 
-6.5.  Limit Delegation of Power
+6.5.  Control Delegation of Power
 
    Some functions might see substantial benefits if they are performed
    by a third party in communication.  When used well, adding a new
@@ -824,6 +824,9 @@ Table of Contents
       Network can offer services at a fraction of the financial and
       environmental cost that would otherwise be paid by someone serving
       content themselves, because of the scale they operate at.
+      Likewise, a two-sided market platform can introduce sizeable
+      efficiencies over pairwise buyer/seller trading
+      [CIRCULAR-CONUNDRUM].
 
    *  _Simplicity_: Completely disintermediating communication can shift
       the burden of functions onto endpoints.  This can cause increased
@@ -850,8 +853,8 @@ Table of Contents
    brings opportunities for control and observation.  While (as
    discussed above) standards efforts have a very limited capability to
    prevent or control these types of centralization, designing protocols
-   with constraints on third party functions can prevent at least the
-   most egregious outcomes.
+   with thoughtful constraints on third party functions can prevent at
+   least the most egregious outcomes.
 
    Most often, third parties are added to protocols as "intermediaries"
    or in designated "agent" roles.  In general, they should only be
@@ -948,6 +951,11 @@ Table of Contents
               BCP 95, RFC 3935, October 2004.
 
               <https://www.rfc-editor.org/info/bcp95>
+
+   [CIRCULAR-CONUNDRUM]
+              Spulber, D. F., "Solving The Circular Conundrum:
+              Communication And Coordination In Internet Markets",
+              Northwestern University Law Review 104, no. 2, 2010.
 
    [FAIRPLAYMP]
               Ben-David, A., Nisan, N., and B. Pinkas, "FairplayMP - "A
