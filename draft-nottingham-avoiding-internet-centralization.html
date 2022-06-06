@@ -1439,8 +1439,8 @@ svg :is([stroke="fill"], [fill^="#fff"]) {
 <a href="#section-6.3" class="section-number selfRef">6.3. </a><a href="#name-evaluate-new-decentralizati" class="section-name selfRef">Evaluate New Decentralization Techniques</a>
         </h3>
 <p id="section-6.3-1">The decentralization techniques listed in <a href="#decentralization" class="xref">Section 5</a> are not a closed set; wide interest has spurred development of new approaches, both in general and as solutions to specific problems.<a href="#section-6.3-1" class="pilcrow">¶</a></p>
-<p id="section-6.3-2">For example, Secure multi-party computation techniques like <span>[<a href="#FAIRPLAYMP" class="xref">FAIRPLAYMP</a>]</span> can enable "a set of untrusting parties to compute any function of their private inputs while revealing nothing but the result of the function."<a href="#section-6.3-2" class="pilcrow">¶</a></p>
-<p id="section-6.3-3">Standards bodies (including the IETF) can serve an important function by evaluating how suitable such proposals are for deployment on the Internet, in reference to privacy, security, operational, and other shared goals. When appropriate, publication on the standards track or as experimental can be used to send signals to implementers, users, and regulators about their fitness.<a href="#section-6.3-3" class="pilcrow">¶</a></p>
+<p id="section-6.3-2">For example, secure multi-party computation techniques (see, e.g., <span>[<a href="#YAO" class="xref">YAO</a>]</span>) can be composed to allow untrusting parties to compute over private inputs without revealing them. Protocols like <span>[<a href="#ENPA" class="xref">ENPA</a>]</span> and <span>[<a href="#PRIO" class="xref">PRIO</a>]</span> use them to limit the information available to participants in protocols to realise privacy goals; as discussed in <a href="#intermediation" class="xref">Section 6.5</a> doing so might also counteract some kinds of centralization.<a href="#section-6.3-2" class="pilcrow">¶</a></p>
+<p id="section-6.3-3">Whether use of these techniques (or others) can meaningfully counteract centralization is still uncertain. Standards bodies (including the IETF) can serve an important function by incubating them, applying (and where necessary, developing) architectural guidelines for privacy, security, operability, and other goals, and assuring interoperability. When appropriate, publication on the standards track or as experimental can be used to send signals to implementers, users, and regulators about their fitness.<a href="#section-6.3-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="balance">
@@ -1532,9 +1532,9 @@ svg :is([stroke="fill"], [fill^="#fff"]) {
       <dd>
 <span class="refAuthor">Spulber, D. F.</span>, <span class="refTitle">"Solving The Circular Conundrum: Communication And Coordination In Internet Markets"</span>, <span class="refContent">Northwestern University Law Review, Vol. 104, No. 2</span>, <time datetime="2010" class="refDate">2010</time>, <span>&lt;<a href="https://wwws.law.northwestern.edu/research-faculty/clbe/workingpapers/documents/spulber_circularconundrum.pdf">https://wwws.law.northwestern.edu/research-faculty/clbe/workingpapers/documents/spulber_circularconundrum.pdf</a>&gt;</span>. </dd>
 <dd class="break"></dd>
-<dt id="FAIRPLAYMP">[FAIRPLAYMP]</dt>
+<dt id="ENPA">[ENPA]</dt>
       <dd>
-<span class="refAuthor">Ben-David, A.</span>, <span class="refAuthor">Nisan, N.</span>, and <span class="refAuthor">B. Pinkas</span>, <span class="refTitle">"FairplayMP - "A System for Secure Multi-Party Computation""</span>, <span class="refContent">CCS'08</span>, <time datetime="2008-10" class="refDate">October 2008</time>, <span>&lt;<a href="https://dl.acm.org/doi/10.1145/1455770.1455804">https://dl.acm.org/doi/10.1145/1455770.1455804</a>&gt;</span>. </dd>
+<span class="refAuthor">Apple</span> and <span class="refAuthor">Google</span>, <span class="refTitle">"Exposure Notification Privacy-preserving Analytics (ENPA) White Paper"</span>, <time datetime="2021-04" class="refDate">April 2021</time>, <span>&lt;<a href="https://covid19-static.cdn-apple.com/applications/covid19/current/static/contact-tracing/pdf/ENPA_White_Paper.pdf">https://covid19-static.cdn-apple.com/applications/covid19/current/static/contact-tracing/pdf/ENPA_White_Paper.pdf</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="FEDERALIST-51">[FEDERALIST-51]</dt>
       <dd>
@@ -1583,6 +1583,10 @@ svg :is([stroke="fill"], [fill^="#fff"]) {
 <dt id="POLYCENTRIC">[POLYCENTRIC]</dt>
       <dd>
 <span class="refAuthor">Aligia, P. D.</span> and <span class="refAuthor">V. Tarko</span>, <span class="refTitle">"Polycentricity: From Polanyi to Ostrom, and Beyond"</span>, <span class="refContent">Governance: An International Journal of Policy, Administration, and Institutions, Vol. 25, No. 2, p. 237</span>, <time datetime="2012-04" class="refDate">April 2012</time>, <span>&lt;<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2149165">https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2149165</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="PRIO">[PRIO]</dt>
+      <dd>
+<span class="refAuthor">Corrigan-Gibbs, H.</span> and <span class="refAuthor">D. Boneh</span>, <span class="refTitle">"Prio: Private, Robust, and Scalable Computation of Aggregate Statistics"</span>, <time datetime="2017-03" class="refDate">March 2017</time>, <span>&lt;<a href="https://crypto.stanford.edu/prio/paper.pdf">https://crypto.stanford.edu/prio/paper.pdf</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RAND">[RAND]</dt>
       <dd>
@@ -1637,8 +1641,12 @@ svg :is([stroke="fill"], [fill^="#fff"]) {
 <span class="refAuthor">Kende, M.</span>, <span class="refAuthor">Kvalbein, A.</span>, <span class="refAuthor">Allford, J.</span>, and <span class="refAuthor">D. Abecassis</span>, <span class="refTitle">"Study on the Internet's Technical Success Factors"</span>, <time datetime="2021-12" class="refDate">December 2021</time>, <span>&lt;<a href="https://blog.apnic.net/wp-content/uploads/2021/12/MKGRA669-Report-for-APNIC-LACNIC-V3.pdf">https://blog.apnic.net/wp-content/uploads/2021/12/MKGRA669-Report-for-APNIC-LACNIC-V3.pdf</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="WEAPONIZED-INTERDEPENDENCE">[WEAPONIZED-INTERDEPENDENCE]</dt>
-    <dd>
+      <dd>
 <span class="refAuthor">Farrell, H.</span> and <span class="refAuthor">A. L. Newman</span>, <span class="refTitle">"Weaponized Interdependence: How Global Economic Networks Shape State Coercion"</span>, <span class="refContent">International Security, Vol. 44, No. 1, p. 42</span>, <time datetime="2019" class="refDate">2019</time>, <span>&lt;<a href="https://doi.org/10.1162/ISEC_a_00351">https://doi.org/10.1162/ISEC_a_00351</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="YAO">[YAO]</dt>
+    <dd>
+<span class="refAuthor">Yao, A. C.</span>, <span class="refTitle">"Protocols for secure computations"</span>, <span class="refContent">SFCS '82</span>, <time datetime="1982-11" class="refDate">November 1982</time>, <span>&lt;<a href="https://dl.acm.org/doi/10.5555/1382436.1382751">https://dl.acm.org/doi/10.5555/1382436.1382751</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 </dl>
 </section>
@@ -1648,7 +1656,7 @@ svg :is([stroke="fill"], [fill^="#fff"]) {
 <a href="#appendix-A" class="section-number selfRef">Appendix A. </a><a href="#name-acknowledgements" class="section-name selfRef">Acknowledgements</a>
       </h2>
 <p id="appendix-A-1">This document benefits from discussions with Brian Trammell during our shared time on the Internet Architecture Board.<a href="#appendix-A-1" class="pilcrow">¶</a></p>
-<p id="appendix-A-2">Thanks to Jari Arkko, Christian Huitema, and Eliot Lear for their comments and suggestions.<a href="#appendix-A-2" class="pilcrow">¶</a></p>
+<p id="appendix-A-2">Thanks to Jari Arkko, Christian Huitema, Eliot Lear, and Martin Thomson for their comments and suggestions.<a href="#appendix-A-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="authors-addresses">

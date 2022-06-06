@@ -768,17 +768,21 @@ Table of Contents
    set; wide interest has spurred development of new approaches, both in
    general and as solutions to specific problems.
 
-   For example, Secure multi-party computation techniques like
-   [FAIRPLAYMP] can enable "a set of untrusting parties to compute any
-   function of their private inputs while revealing nothing but the
-   result of the function."
+   For example, secure multi-party computation techniques (see, e.g.,
+   [YAO]) can be composed to allow untrusting parties to compute over
+   private inputs without revealing them.  Protocols like [ENPA] and
+   [PRIO] use them to limit the information available to participants in
+   protocols to realise privacy goals; as discussed in Section 6.5 doing
+   so might also counteract some kinds of centralization.
 
-   Standards bodies (including the IETF) can serve an important function
-   by evaluating how suitable such proposals are for deployment on the
-   Internet, in reference to privacy, security, operational, and other
-   shared goals.  When appropriate, publication on the standards track
-   or as experimental can be used to send signals to implementers,
-   users, and regulators about their fitness.
+   Whether use of these techniques (or others) can meaningfully
+   counteract centralization is still uncertain.  Standards bodies
+   (including the IETF) can serve an important function by incubating
+   them, applying (and where necessary, developing) architectural
+   guidelines for privacy, security, operability, and other goals, and
+   assuring interoperability.  When appropriate, publication on the
+   standards track or as experimental can be used to send signals to
+   implementers, users, and regulators about their fitness.
 
 6.4.  Build Robust Ecosystems
 
@@ -965,11 +969,11 @@ Table of Contents
               faculty/clbe/workingpapers/documents/
               spulber_circularconundrum.pdf>.
 
-   [FAIRPLAYMP]
-              Ben-David, A., Nisan, N., and B. Pinkas, "FairplayMP - "A
-              System for Secure Multi-Party Computation"", CCS'08,
-              October 2008,
-              <https://dl.acm.org/doi/10.1145/1455770.1455804>.
+   [ENPA]     Apple and Google, "Exposure Notification Privacy-
+              preserving Analytics (ENPA) White Paper", April 2021,
+              <https://covid19-static.cdn-
+              apple.com/applications/covid19/current/static/contact-
+              tracing/pdf/ENPA_White_Paper.pdf>.
 
    [FEDERALIST-51]
               Madison, J., "The Structure of the Government Must Furnish
@@ -1042,6 +1046,10 @@ Table of Contents
               <https://papers.ssrn.com/sol3/
               papers.cfm?abstract_id=2149165>.
 
+   [PRIO]     Corrigan-Gibbs, H. and D. Boneh, "Prio: Private, Robust,
+              and Scalable Computation of Aggregate Statistics", March
+              2017, <https://crypto.stanford.edu/prio/paper.pdf>.
+
    [RAND]     Baran, P., "On Distributed Communications: Introduction to
               Distributed Communications Networks", 1964,
               <https://www.rand.org/pubs/research_memoranda/
@@ -1107,13 +1115,17 @@ Table of Contents
               International Security, Vol. 44, No. 1, p. 42, 2019,
               <https://doi.org/10.1162/ISEC_a_00351>.
 
+   [YAO]      Yao, A. C., "Protocols for secure computations", SFCS '82,
+              November 1982,
+              <https://dl.acm.org/doi/10.5555/1382436.1382751>.
+
 Appendix A.  Acknowledgements
 
    This document benefits from discussions with Brian Trammell during
    our shared time on the Internet Architecture Board.
 
-   Thanks to Jari Arkko, Christian Huitema, and Eliot Lear for their
-   comments and suggestions.
+   Thanks to Jari Arkko, Christian Huitema, Eliot Lear, and Martin
+   Thomson for their comments and suggestions.
 
 Author's Address
 
