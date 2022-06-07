@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2022-06-05T00:03:49.668312+00:00",
+  "timestamp": "2022-06-07T00:03:58.118791+00:00",
   "repo": "mnot/avoiding-internet-centralization",
   "labels": [
     {
@@ -818,7 +818,7 @@
       "labels": [],
       "body": "As you may have noticed, I've been going at it with EKR just a bit on **interoperability** versus **interconnectivity** over his discussion about Europe's Digital Markets Act.  First, I **highly** recommend that you check out his and Steve Bellovin's views, as you may find them enlightening.  This goes to my earlier issues in several ways:\r\n\r\n1. Is the organizational model the one you want or might you take advantage of the timeliness of the DMA debate to think in different terms?\r\n\r\n2. Your point about reputation and email is **very** good and important; and goes to this interconnectivity versus interoperability aspect.  What is perhaps important is understanding the relationship between the protocol design and the governance model.  \r\n\r\nLet's take WhatsApp for example (this is what I mentioned to Eric).  They have a way cool approach to abuse reporting: and endpoint sends a message in the clear to a central authority who evaluates it and puts people on the naughty step if it is warranted.  It might be possible for WA to share those reports with other services.  That happens with email with DMARC and ARF, fur instance.  But the governance model is important as well.  Would you automatically send an abuse report to Eliot's Bar and Grill IM service without first reviewing it?  Would you accept an abuse report and take action from Eliot's Bar and Grill IM service without first reviewing it?\r\n\r\nObviously there are non-protocol aspects here, but the protocol developers need to recognize those as they are building out capabilities.",
       "createdAt": "2022-04-08T06:22:36Z",
-      "updatedAt": "2022-05-23T03:00:34Z",
+      "updatedAt": "2022-06-06T04:20:44Z",
       "closedAt": null,
       "comments": [
         {
@@ -862,6 +862,13 @@
           "body": "> what I am trying to call out is the level of complexity we are facing.\r\n\r\nThat seems like a point worth making. There are many well-intentioned effort to combat centralisation, with limited results (and indeed the draft already calls some out). ",
           "createdAt": "2022-05-23T03:00:33Z",
           "updatedAt": "2022-05-23T03:00:33Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "OWNER",
+          "body": "I think this might link in very well with #19, but I need to read more.",
+          "createdAt": "2022-06-06T04:20:43Z",
+          "updatedAt": "2022-06-06T04:20:43Z"
         }
       ]
     },
