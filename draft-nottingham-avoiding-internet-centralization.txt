@@ -3,9 +3,9 @@
 
 
 Network Working Group                                      M. Nottingham
-Internet-Draft                                               6 June 2022
+Internet-Draft                                              15 June 2022
 Intended status: Informational                                          
-Expires: 8 December 2022
+Expires: 17 December 2022
 
 
                  Centralization and Internet Standards
@@ -48,7 +48,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 8 December 2022.
+   This Internet-Draft will expire on 17 December 2022.
 
 Copyright Notice
 
@@ -67,40 +67,40 @@ Copyright Notice
 Table of Contents
 
    1.  Introduction
-   2.  What is Centralization?
-   3.  When Centralization is Undesirable
-   4.  Kinds of Centralization
-     4.1.  Proprietary Centralization
-     4.2.  Beneficial Centralization
-     4.3.  Concentrated Centralization
-     4.4.  Inherited Centralization
-     4.5.  Platform Centralization
-   5.  The Limits of Decentralization
-     5.1.  Federation isn't Enough
-     5.2.  Multi-Stakeholder Administration is Hard
-     5.3.  Blockchains Are Not Magical
-   6.  What Should Internet Standards Do?
-     6.1.  Be Realistic
-     6.2.  Decentralize Proprietary Functions
-     6.3.  Evaluate New Decentralization Techniques
-     6.4.  Build Robust Ecosystems
-     6.5.  Control Delegation of Power
-     6.6.  Avoid Over-Extensibility
-   7.  Security Considerations
-   8.  Informative References
+   2.  Centralization
+     2.1.  Why Centralization is Undesirable
+     2.2.  Kinds of Centralization
+       2.2.1.  Proprietary Centralization
+       2.2.2.  Beneficial Centralization
+       2.2.3.  Concentrated Centralization
+       2.2.4.  Inherited Centralization
+       2.2.5.  Platform Centralization
+   3.  Decentralization
+     3.1.  Decentralization Techniques
+       3.1.1.  Federation
+       3.1.2.  Multi-Stakeholder Administration
+       3.1.3.  Distributed Consensus
+   4.  What Should Internet Standards Do?
+     4.1.  Be Realistic
+     4.2.  Decentralize Proprietary Functions
+     4.3.  Evaluate New Decentralization Techniques
+     4.4.  Build Robust Ecosystems
+     4.5.  Control Delegation of Power
+     4.6.  Avoid Over-Extensibility
+   5.  Security Considerations
+   6.  Informative References
    Appendix A.  Acknowledgements
    Author's Address
 
 1.  Introduction
 
    The Internet has succeeded in no small part because of its purposeful
-   avoidance of any single controlling entity.  While this approach may
-   reflect an initial desire to prevent a single technical failure from
-   having a wide impact [RAND], it has also enabled the Internet's rapid
-   adoption and broad spread.  Because internetworking does not require
-   a network to get permission from or cede control to another entity,
-   it accommodates a spectrum of requirements and is positioned as a
-   public good.
+   avoidance of any single controlling entity; what began as a desire to
+   prevent a single technical failure from having a wide impact [RAND]
+   has also enabled the Internet's rapid adoption and broad spread.
+   Because internetworking does not require a network to get permission
+   from or cede control to another entity, it accommodates a spectrum of
+   requirements and is positioned as a public good.
 
    While avoiding centralization of control over the Internet remains a
    widely shared goal, achieving it consistently has proven difficult.
@@ -122,12 +122,10 @@ Table of Contents
    able to prevent centralization, there are still meaningful steps we
    can take to counteract it.
 
-   Section 2 defines centralization.  Section 3 explains when and why
-   centralization of the Internet's core functions is undesirable.
-   Section 4 surveys the different kinds of centralization that might
-   surface on the Internet.  Section 5 then catalogues high-level
-   approaches to mitigating centralization and discusses their
-   limitations.  Finally, Section 6 considers the role that Internet
+   Section 2 defines centralization, explains why it is undesirable, and
+   surveys some kinds of centralization that might surface on the
+   Internet.  Section 3 explores ways of addressing centralization on
+   the Internet.  Finally, Section 4 considers the role that Internet
    standards play in avoiding centralization and mitigating its effects.
 
    The primary audience for this document is the engineers who design
@@ -138,17 +136,17 @@ Table of Contents
    use this document to help identify and remedy inappropriately
    centralized protocols and applications.
 
-2.  What is Centralization?
+2.  Centralization
 
    This document defines "centralization" as the ability of a single
    entity or a small group of them to exclusively observe, capture,
-   control, or extract rent from the operation or use of a Internet
+   control, or extract rent from the operation or use of an Internet
    function.
 
    Here, "entity" could be a single person, a corporation, or a
    government.  It does not include an organisation that operates in a
    manner that effectively mitigates centralisation (see, e.g.,
-   Section 5.2).
+   Section 3.1.2).
 
    "Internet function" is defined broadly.  It might be an enabling
    protocol already defined by standards, such as IP [RFC791], BGP
@@ -161,48 +159,15 @@ Table of Contents
    example, social networking, file sharing, financial services, and
    news dissemination.  Likewise, networking equipment, hardware,
    operating systems, and software act as enabling technologies that can
-   exhibit centralization risk.  The supply of Internet connectivity
-   itself can also be subject to the forces of centralization.
-
-   Centralization risk is strongest when it affects the entire Internet.
-   However, it can also be present when a substantial portion of the
-   Internet's users lack options for a function.  For example, if there
-   is only one provider for a function in a region or legal
-   jurisdiction, that function is effectively centralized for those
-   users.
-
-   Likewise, if there is a single entity providing a function, it is
-   obviously centralized.  However, centralization risk can also be
-   present when there is friction against switching to a substitute,
-   because external factors can more easily promote concentration (see
-   Section 4.3).  For example, if switching requires a significant
-   amount of time, resources, expertise, coordination, loss of
-   functionality, or effort, centralization risk is indicated.
+   exhibit centralization.  The supply of Internet connectivity itself
+   can also be subject to the forces of centralization.
 
    Note that availability is related to but distinct from
    centralization.  For example, if my e-mail provider uses only one
    server, that server might go down and thus block my access to that
-   function.  However, this alone is not a cause of centralization risk.
+   function.  However, this alone is not a cause of centralization.
 
-   "Decentralization" is the process of identifying centralization risk
-   related to a function, followed by the application of techniques used
-   to prevent or mitigate that risk.
-
-   Decentralization does not require that provision of a function need
-   be so widely distributed that other important factors are sacrificed.
-   Because centralization can have beneficial effects (see Section 4.1),
-   the techniques used to decentralize a given function might vary, with
-   the optimal balance being determined by many factors.  Notably, a
-   function that is only available through a small number of providers
-   can still be decentralized (see, for example, the Domain Name System
-   [RFC1035]).
-
-   Therefore, discussions of centralization and architectural efforts at
-   decentralization need to be made on a case-by-base basis, depending
-   on the function in question, surrounding circumstances, and the
-   availability and effectiveness of other regulatory mechanisms.
-
-   Note that it is important to distinguish centralization from anti-
+   Also, it is important to distinguish centralization from anti-
    competitive concerns (also known as "anti-trust").  While there are
    many interactions between these concepts and making provision of the
    Internet's functions more competitive may be a motivation for
@@ -210,29 +175,10 @@ Table of Contents
    relevant market and determining whether behaviour is anti-
    competitive.
 
-3.  When Centralization is Undesirable
+2.1.  Why Centralization is Undesirable
 
-   Centralization is not always problematic, and can be beneficial.  For
-   example, when a function involves governance to realize common goals
-   and protect minority interests a "choke point" that can be seen as
-   centralization is often necessary.  The Internet standards process
-   itself is a form of centralization-as-governance; the authority of
-   the IETF is used to enhance interoperability and further shared goals
-   for the Internet.  While not exclusive, it is a concentration of
-   power into one entity.
-
-   Likewise, experimental and emerging applications are often less
-   complex to implement and more efficient to deploy when they are
-   centralized.  If their audience is small and not meaningfully
-   dependent upon the provider, centralization might be a worthwhile
-   tradeoff.
-
-   However, when any function becomes widespread enough in use and
-   especially when it becomes a platform for other functions to be built
-   upon, its potential for centralization deserves more scrutiny.
-   Centralization in these functions is problematic when there are not
-   effective mitigations in place (see Section 5), for a variety of
-   reasons.
+   At a high level, there are three major reasons why centralization of
+   Internet functions is concerning.
 
    First, the Internet's very nature is incompatible with centralization
    of its functions.  As a "large, heterogeneous collection of
@@ -292,19 +238,14 @@ Table of Contents
    See also [TECH-SUCCESS-FACTORS] for further exploration of how
    centralization can affect the Internet.
 
-   To summarize, centralization of a function allows it to be captured,
-   becoming a "walled garden" that cannot be a full part of the Internet
-   because it does not meet the Internet's architectural design goals or
-   users' expectations.
-
-4.  Kinds of Centralization
+2.2.  Kinds of Centralization
 
    Centralization on the Internet is not uniform; it presents in a
    variety of ways, depending on its relationship to the function in
    question and underlying causes.  The subsections below describe
    different aspects of Internet centralization.
 
-4.1.  Proprietary Centralization
+2.2.1.  Proprietary Centralization
 
    Creating of a protocol or application with a fixed role for a
    specific party is the most straightforward kind of centralization.
@@ -324,10 +265,10 @@ Table of Contents
    the constraints that the underlying protocols (e.g., TCP, IP, HTTP)
    impose.
 
-4.2.  Beneficial Centralization
+2.2.2.  Beneficial Centralization
 
-   Some protocols introduce centralization risk that is unavoidable,
-   because the protocol's goals require a centralized function.
+   Some protocols introduce centralization that is unavoidable, because
+   the protocol's goals require a centralized function.
 
    For example, when there is a need for a single, globally coordinated
    "source of truth", that function is by nature centralized -- such as
@@ -336,8 +277,8 @@ Table of Contents
    fashion.
 
    IP addresses allocation is another example of a function having this
-   kind of centralization risk.  Internet routing requires addresses to
-   be allocated uniquely, but if a single government or company captured
+   kind of centralization.  Internet routing requires addresses to be
+   allocated uniquely, but if a single government or company captured
    the addressing function, the entire Internet would be at risk of
    abuse by that entity.
 
@@ -347,11 +288,11 @@ Table of Contents
 
    Protocols that need to solve the "rendezvous problem" to coordinate
    communication between two parties who are not in direct contact also
-   suffer from this kind of centralization risk.  For example, chat
-   protocols need to coordinate communication between two parties that
-   wish to talk; while the actual communication can be direct between
-   them (so long as the protocol facilitates that), the endpoints'
-   mutual discovery typically requires a third party.
+   suffer from this kind of centralization.  For example, chat protocols
+   need to coordinate communication between two parties that wish to
+   talk; while the actual communication can be direct between them (so
+   long as the protocol facilitates that), the endpoints' mutual
+   discovery typically requires a third party.
 
    By nature, what is or is not "beneficial" is a judgment call.  Some
    protocols cannot function without a centralized function; others
@@ -362,18 +303,18 @@ Table of Contents
 
    When beneficial centralization is present, internet protocols often
    attempt to mitigate the associated risks using measures such as
-   federation (see Section 5.1) and multi-stakeholder administration
-   (see Section 5.2).  Protocols that successfully mitigate beneficial
+   federation (see Section 3.1.1) and multi-stakeholder administration
+   (see Section 3.1.2).  Protocols that successfully mitigate beneficial
    centralization are often reused, to avoid the considerable cost and
    risk of re-implementing those mitigations.  For example, if a
    protocol requires a coordinated, global naming function, reusing the
    Domain Name System is usually preferable to establishing a new
    system.
 
-4.3.  Concentrated Centralization
+2.2.3.  Concentrated Centralization
 
    Even when a function avoids proprietary centralization and any
-   beneficial centralization risk has been mitigated, it might become
+   beneficial centralization has been mitigated, it might become
    centralized in practice when external factors influence its
    deployment, so that few or even just one entity provides the
    function.  This is often referred to as "concentration."  Economic,
@@ -399,14 +340,14 @@ Table of Contents
 
    By its nature, concentration is difficult to avoid in protocol
    design, and federated protocols are particularly vulnerable to it
-   (see Section 5.1).
+   (see Section 3.1.1).
 
-4.4.  Inherited Centralization
+2.2.4.  Inherited Centralization
 
    Most Internet protocols and applications depend on other, "lower-
    layer" protocols and their implementations.  The features,
    deployment, and operation of these dependencies can surface
-   centralization risk into functions and applications built "on top" of
+   centralization into functions and applications built "on top" of
    them.
 
    For example, the network between endpoints can introduce
@@ -421,12 +362,12 @@ Table of Contents
    Likewise, having only a single implementation of a protocol is an
    inherited centralization risk, because applications that use it are
    vulnerable to the control it has over their operation.  Even if it is
-   Open Source, there might be inherited centralization risk if there
-   are factors that make forking difficult (for example, the cost of
+   Open Source, there might be inherited centralization if there are
+   factors that make forking difficult (for example, the cost of
    maintaining that fork).
 
-   Inherited centralization risk is often present when users cannot find
-   a substitute because network effects reduce the choices available to
+   Inherited centralization is often present when users cannot find a
+   substitute because network effects reduce the choices available to
    them.  This kind of centralization can also be created by legal
    mandates and incentives that restrict the options for Internet
    access, the provision of a given function, or the range of
@@ -444,7 +385,7 @@ Table of Contents
    centralization is most pronounced when most (if not all) traffic is
    encrypted.  See also [RFC7258].
 
-4.5.  Platform Centralization
+2.2.5.  Platform Centralization
 
    The complement to inherited centralization is platform centralization
    -- where a function does not directly define a central role, but
@@ -467,14 +408,66 @@ Table of Contents
    often in a way that it becomes attractive to form a dependency on one
    party's operation.
 
-5.  The Limits of Decentralization
+3.  Decentralization
 
-   Centralization's relationship to Internet standardization is
-   undeniably about power -- a protocol is an agreed-to set of rules and
-   conventions, and those rules can impact how power accrues.  Over
-   time, various techniques have been developed that attempt to avoid
-   concentration of power as a result of protocol design, or to bring
-   accountability when it is unavoidable.
+   "Decentralization" is the process of identifying the centralization
+   risk associated with a function, followed by the application of
+   techniques to prevent or mitigate centralization, where appropriate.
+
+   Assessing centralization risk is a case-by-base exercise that depends
+   on the specifics of the function, its surrounding circumstances, and
+   the nature of the centralization risk.
+
+   In particular, some forms of centralization can be seen as
+   beneficial, rather than problematic.  For example, when a function
+   involves governance to realize common goals and protect minority
+   interests, a "choke point" is often necessary, even when it
+   introduces centralization risk.  The Internet standards process
+   itself is a form of centralization-as-governance; the authority of
+   the IETF is used to enhance interoperability and further shared goals
+   for the Internet.  While not exclusive, it is a concentration of
+   power into one entity (whose risk is mitigated by a multi-stakeholder
+   administration model; see Section 3.1.2).
+
+   Centralization risk is strongest when it affects the entire Internet.
+   However, it can also be present when a substantial portion of the
+   Internet's users lack options for a function.  For example, if there
+   is only one provider for a function in a region or legal
+   jurisdiction, that function is effectively centralized for those
+   users.
+
+   Likewise, if there is a single entity providing a function, it is
+   obviously centralized.  However, centralization risk can also be
+   present when there is friction against switching to a substitute
+   provider, because external factors can more easily promote
+   concentration (see Section 2.2.3).  For example, if switching
+   requires a significant amount of time, resources, expertise,
+   coordination, loss of functionality, or effort, centralization risk
+   is indicated.  Conversely, a function based on a well-defined, open
+   specification designed to minimize switching costs might be
+   considered to be sufficiently decentralized even when there are only
+   a few, large providers.
+
+   Choosing the appropriate techniques for decentralization requires
+   balancing the goals of the function against centralization risk,
+   because completely precluding all forms of centralization through
+   technical means is rarely achievable.
+
+   Notably, decentralization does not require that provision of a
+   function need be distributed in a particular fashion, or to a
+   particular degree.  For example, the Domain Name System [RFC1035] is
+   widely agreed to have acceptable centralization risk, despite it
+   being provided by a limited set of entities.
+
+   Performed properly, decentralization might produce an outcome that
+   still has centralization risk, but that risk should be understood,
+   acceptable, and where possible and appropriate, mitigated.
+
+3.1.  Decentralization Techniques
+
+   Over time, various techniques have been developed that attempt to
+   avoid concentration of power as a result of protocol design, or to
+   bring accountability when it is unavoidable.
 
    While use of these techniques can result in a function which is less
    centralized or less amenable to some kinds of centralization, they
@@ -482,7 +475,7 @@ Table of Contents
    not indicators of whether a protocol is centralized without further
    analysis.
 
-5.1.  Federation isn't Enough
+3.1.1.  Federation
 
    A widely known technique for managing centralization in Internet
    protocols is federation -- designing them in such a way that new
@@ -509,7 +502,7 @@ Table of Contents
    classified as a spam source.  Because large MTA operators are widely
    known and have greater impact if their operation is affected, they
    are less likely to be classified as such, concentrating the
-   protocol's operation (see Section 4.3).
+   protocol's operation (see Section 2.2.3).
 
    Another example of a federated Internet protocol is XMPP [RFC6120],
    supporting "instant messaging" and similar functionality.  Like
@@ -532,10 +525,10 @@ Table of Contents
    external factors (such as spam control) might naturally "tilt the
    table" towards a few operators.
 
-5.2.  Multi-Stakeholder Administration is Hard
+3.1.2.  Multi-Stakeholder Administration
 
    The risks associated with a beneficial centralized function (see
-   Section 4.2) are sometimes mitigated by delegating that function's
+   Section 2.2.2) are sometimes mitigated by delegating that function's
    administration to a multi-stakeholder body -- an institution that
    includes representatives of the different kinds of parties that are
    affected by the system's operation ("stakeholders") in an attempt to
@@ -579,12 +572,12 @@ Table of Contents
    relevant if the function being coordinated is broad, complex, and/or
    contentious.
 
-5.3.  Blockchains Are Not Magical
+3.1.3.  Distributed Consensus
 
-   Increasingly, distributed consensus technologies (such as blockchain)
-   are touted as a solution to centralization issues.  A complete survey
-   of this rapidly changing area is beyond the scope of this document,
-   but we can generalise about their properties.
+   Increasingly, distributed consensus technologies (such as the
+   blockchain) are touted as a solution to centralization issues.  A
+   complete survey of this rapidly changing area is beyond the scope of
+   this document, but we can generalise about their properties.
 
    These techniques attempt to avoid centralization risk by distributing
    functions to members of a sometimes large pool of protocol
@@ -653,8 +646,8 @@ Table of Contents
    can use distributed consensus for some functions, but still have
    centralization risk elsewhere -- either because those functions
    cannot be decentralized (most commonly, rendezvous and global naming;
-   see Section 4.2) or because the designer has chosen not to because of
-   the associated costs and lost opportunities.
+   see Section 2.2.2) or because the designer has chosen not to because
+   of the associated costs and lost opportunities.
 
    Even when distributed consensus is used for all technical functions
    of a service, some coordination is still necessary -- whether that be
@@ -668,7 +661,7 @@ Table of Contents
    against uncritically relying upon these technologies to avoid
    centralization.
 
-6.  What Should Internet Standards Do?
+4.  What Should Internet Standards Do?
 
    Centralization is driven by powerful forces -- both economic and
    social -- as well as the network effects that come with Internet
@@ -683,7 +676,7 @@ Table of Contents
    contributions that standards efforts can make to other relevant forms
    of regulation.
 
-6.1.  Be Realistic
+4.1.  Be Realistic
 
    Some kinds of centralization risk are easy to manage in standards
    efforts.  For example, if a proprietary protocol were to be proposed
@@ -729,7 +722,7 @@ Table of Contents
    exclusively to them, raising significant privacy and security
    concerns.
 
-6.2.  Decentralize Proprietary Functions
+4.2.  Decentralize Proprietary Functions
 
    It is worthwhile to create specifications for functions that are
    currently only satisfied by proprietary providers.  By building open
@@ -762,18 +755,20 @@ Table of Contents
    less transparency, more narrow input, limited experience, and without
    reference to the Internet's architectural goals.
 
-6.3.  Evaluate New Decentralization Techniques
+4.3.  Evaluate New Decentralization Techniques
 
-   The decentralization techniques listed in Section 5 are not a closed
-   set; wide interest has spurred development of new approaches, both in
-   general and as solutions to specific problems.
+   The decentralization techniques listed in Section 3.1 are not a
+   closed set; wide interest has spurred development of new approaches,
+   both in general and as solutions to specific problems.
 
    For example, secure multi-party computation techniques (see, e.g.,
-   [YAO]) can be composed to allow untrusting parties to compute over
-   private inputs without revealing them.  Protocols like [ENPA] and
-   [PRIO] use them to limit the information available to participants in
-   protocols to realise privacy goals; as discussed in Section 6.5 doing
-   so might also counteract some kinds of centralization.
+   [YAO]) can be composed to allow parties to compute over private
+   inputs without revealing them.  Protocols like [ENPA] and [PRIO] use
+   them to limit the information available to participants in protocols
+   to realise privacy goals; as discussed in Section 4.5 doing so might
+   also counteract some kinds of centralization.  At the same time, such
+   systems often still require some degree of trust, even if limited.
+   That might result in other forms of centralization.
 
    Whether use of these techniques (or others) can meaningfully
    counteract centralization is still uncertain.  Standards bodies
@@ -784,7 +779,7 @@ Table of Contents
    standards track or as experimental can be used to send signals to
    implementers, users, and regulators about their fitness.
 
-6.4.  Build Robust Ecosystems
+4.4.  Build Robust Ecosystems
 
    To minimize inherited centralization risk, standards-defined
    functions should have an explicit goal of broad, diverse
@@ -806,7 +801,7 @@ Table of Contents
    (consider: Web browsers).  On the other hand, if the specification is
    too simple, it may not offer enough functionality to be complete, and
    the resulting proprietary extensions may make switching difficult
-   (see Section 6.6).
+   (see Section 4.6).
 
    Also worthy of attention are the underlying incentives for
    implementation.  While a completely commoditized protocol might not
@@ -822,7 +817,7 @@ Table of Contents
    maintenance and evolution of protocols, to assure that they are still
    relevant and appropriate to their use.
 
-6.5.  Control Delegation of Power
+4.5.  Control Delegation of Power
 
    Some functions might see substantial benefits if they are performed
    by a third party in communication.  When used well, adding a new
@@ -890,9 +885,9 @@ Table of Contents
    intermediary in HTTP (see Section 3.7 of [HTTP]).  Protocol designers
    can address the centralization risk associated with this kind of
    intermediation by standardising the function, rather than restricting
-   the capabilities of the underlying protocols; see Section 6.2.
+   the capabilities of the underlying protocols; see Section 4.2.
 
-6.6.  Avoid Over-Extensibility
+4.6.  Avoid Over-Extensibility
 
    An important feature of Internet protocols is their ability to
    evolve, so that they can meet new requirements and adapt to new
@@ -928,15 +923,15 @@ Table of Contents
    Where extensions are allowed, attention should be paid to those that
    emerge; where appropriate, widely adopted extensions should be put
    through a standards process to assure that the result adheres to
-   architectural principles and shared goals (see also Section 6.2).
+   architectural principles and shared goals (see also Section 4.2).
 
-7.  Security Considerations
+5.  Security Considerations
 
    This document does not have direct security impact on Internet
    protocols.  However, failure to consider centralization risks might
    cause a myriad of security issues.
 
-8.  Informative References
+6.  Informative References
 
    [ACCESS]   Vestager, M., "Defending Competition in a Digitised World,
               Address at the European Consumer and Competition Day",
@@ -989,7 +984,7 @@ Table of Contents
 
    [I-D.pauly-dprive-oblivious-doh]
               Kinnear, E., McManus, P., Pauly, T., Verma, T., and C. A.
-              Wood, "Oblivious DNS Over HTTPS", Work in Progress,
+              Wood, "Oblivious DNS over HTTPS", Work in Progress,
               Internet-Draft, draft-pauly-dprive-oblivious-doh-11, 17
               February 2022, <https://datatracker.ietf.org/doc/html/
               draft-pauly-dprive-oblivious-doh-11>.
