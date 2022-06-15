@@ -181,8 +181,8 @@ Table of Contents
    At a high level, there are three major reasons why centralization of
    Internet functions is concerning.
 
-   First, the Internet's very nature is incompatible with centralization
-   of its functions.  As a "large, heterogeneous collection of
+   First, the Internet's very nature is incompatible with
+   centralization.  As a "large, heterogeneous collection of
    interconnected systems" [BCP95] the Internet is often characterised
    as a "network of networks".  These networks relate as peers who agree
    to facilitate communication, rather than having a relationship of
@@ -268,24 +268,22 @@ Table of Contents
 
 2.2.2.  Beneficial Centralization
 
-   Some protocols introduce centralization that is unavoidable, because
-   the protocol's goals require a centralized function.
+   Some protocols and applications have goals that require the
+   introduction of a centralized function.  In doing so, they are
+   explicitly relying on centralization to deliver a particular benefit.
 
-   For example, when there is a need for a single, globally coordinated
-   "source of truth", that function is by nature centralized -- such as
-   in the Domain Name System (DNS), which allows human-friendly naming
-   to be converted into network addresses in a globally consistent
-   fashion.
+   For example, a function that needs a single, globally coordinated
+   "source of truth" is by nature centralized -- such as in the Domain
+   Name System (DNS), which allows human-friendly naming to be converted
+   into network addresses in a globally consistent fashion.
 
-   IP addresses allocation is another example of a function having this
-   kind of centralization.  Internet routing requires addresses to be
-   allocated uniquely, but if a single government or company captured
-   the addressing function, the entire Internet would be at risk of
-   abuse by that entity.
-
-   Similarly, the need for coordination in the Web's trust model brings
-   centralization risk, because of the Certificate Authority's role in
-   communication between clients and servers.
+   Another function exhibiting beneficial centralization is IP addresses
+   allocation.  Internet routing requires addresses to be allocated
+   uniquely, but if a single government or company captured the
+   addressing function, the entire Internet would be at risk of abuse by
+   that entity.  Similarly, the need for coordination in the Web's trust
+   model brings centralization risk, because of the Certificate
+   Authority's role in communication between clients and servers.
 
    Protocols that need to solve the "rendezvous problem" to coordinate
    communication between two parties who are not in direct contact also
@@ -293,16 +291,21 @@ Table of Contents
    need to coordinate communication between two parties that wish to
    talk; while the actual communication can be direct between them (so
    long as the protocol facilitates that), the endpoints' mutual
-   discovery typically requires a third party.
+   discovery typically requires a third party at some point.
 
-   By nature, what is or is not "beneficial" is a judgment call.  Some
-   protocols cannot function without a centralized function; others
-   might be significantly enhanced for certain use cases if a function
-   is centralized, or might merely be more efficient.  Such judgments
+   Likewise, when a function requires governance to realize common goals
+   and protect minority interests, a "choke point" is naturally formed
+   by the chosen governance mechanism, thereby increasing centralization
+   risk.
+
+   Deciding what is beneficial is a judgment call.  Some protocols
+   cannot function without a centralized function; others might be
+   significantly enhanced for certain use cases if a function is
+   centralized, or might merely be more efficient.  Such judgments
    should be made in light of established architectural principles and
    how benefits accrue to end users.
 
-   When beneficial centralization is present, internet protocols often
+   When beneficial centralization is present, Internet protocols often
    attempt to mitigate the associated risks using measures such as
    federation (see Section 3.1.1) and multi-stakeholder administration
    (see Section 3.1.2).  Protocols that successfully mitigate beneficial
@@ -413,22 +416,11 @@ Table of Contents
 
    "Decentralization" is the process of identifying the centralization
    risk associated with a function, followed by the application of
-   techniques to prevent or mitigate centralization, where appropriate.
+   techniques to prevent or mitigate it, as appropriate.
 
    Assessing centralization risk is a case-by-base exercise that depends
-   on the specifics of the function, its surrounding circumstances, and
-   the nature of the centralization risk.
-
-   In particular, some forms of centralization can be seen as
-   beneficial, rather than problematic.  For example, when a function
-   involves governance to realize common goals and protect minority
-   interests, a "choke point" is often necessary, even when it
-   introduces centralization risk.  The Internet standards process
-   itself is a form of centralization-as-governance; the authority of
-   the IETF is used to enhance interoperability and further shared goals
-   for the Internet.  While not exclusive, it is a concentration of
-   power into one entity (whose risk is mitigated by a multi-stakeholder
-   administration model; see Section 3.1.2).
+   on the specifics of the function, surrounding circumstances, and the
+   nature of the centralization risk.
 
    Centralization risk is strongest when it affects the entire Internet.
    However, it can also be present when a substantial portion of the
@@ -460,9 +452,10 @@ Table of Contents
    widely agreed to have acceptable centralization risk, despite it
    being provided by a limited set of entities.
 
-   Performed properly, decentralization might produce an outcome that
-   still has centralization risk, but that risk should be understood,
-   acceptable, and where possible and appropriate, mitigated.
+   When performed properly, decentralization might produce an outcome
+   that still has centralization risk, but that risk should be
+   understood, acceptable, and where possible and appropriate,
+   mitigated.
 
 3.1.  Decentralization Techniques
 
