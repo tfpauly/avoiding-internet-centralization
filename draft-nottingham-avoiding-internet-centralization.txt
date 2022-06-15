@@ -100,22 +100,23 @@ Table of Contents
    has also enabled the Internet's rapid adoption and broad spread.
    Because internetworking does not require a network to get permission
    from or cede control to another entity, it accommodates a spectrum of
-   requirements and is positioned as a public good.
+   requirements and allows the Internet to be positioned as a public
+   good.
 
-   While avoiding centralization of control over the Internet remains a
-   widely shared goal, achieving it consistently has proven difficult.
-   Many successful protocols and applications on the Internet today
-   operate in a centralized fashion -- to the point where some
-   proprietary, centralized services have become so well-known that they
-   are commonly mistaken for the Internet itself.  Even when protocols
-   incorporate techniques intended to prevent centralization, economic
-   and social factors can drive users to prefer centralized solutions
-   built with or on top of supposedly decentralized technology.
+   While avoiding centralization of the Internet remains a widely shared
+   goal, achieving it consistently has proven difficult.  Today, many
+   successful protocols and applications on the Internet operate in a
+   centralized fashion -- to the point where some proprietary,
+   centralized services have become so well-known that they are commonly
+   mistaken for the Internet itself.  Even when protocols incorporate
+   techniques intended to prevent centralization, economic and social
+   factors can drive users to prefer centralized solutions built with or
+   on top of supposedly decentralized technology.
 
    These difficulties call into question what role architectural
-   regulation -- in particular, that in open standards bodies such as
-   the IETF -- should play in preventing, mitigating, and controlling
-   Internet centralization.
+   regulation -- in particular, that performed by open standards bodies
+   such as the IETF -- should play in preventing, mitigating, and
+   controlling Internet centralization.
 
    This document discusses aspects of centralization that relate to
    Internet standards efforts, and argues that while the IETF may not be
@@ -123,10 +124,11 @@ Table of Contents
    can take to counteract it.
 
    Section 2 defines centralization, explains why it is undesirable, and
-   surveys some kinds of centralization that might surface on the
-   Internet.  Section 3 explores ways of addressing centralization on
-   the Internet.  Finally, Section 4 considers the role that Internet
-   standards play in avoiding centralization and mitigating its effects.
+   surveys some kinds of centralization seen on the Internet.  Section 3
+   explores decentralization and highlights some relevant techniques,
+   along with their limitations.  Finally, Section 4 considers the role
+   that Internet standards play in avoiding centralization and
+   mitigating its effects.
 
    The primary audience for this document is the engineers who design
    and standardize Internet protocols.  However, designers of
