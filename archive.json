@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2022-06-07T00:03:58.118791+00:00",
+  "timestamp": "2022-06-16T00:03:38.524455+00:00",
   "repo": "mnot/avoiding-internet-centralization",
   "labels": [
     {
@@ -582,7 +582,7 @@
       "labels": [],
       "body": "Jari says:\r\n\r\n> [O]ne thing that is not discussed but perhaps should be is the role of discovery. We seem to have an increasing number of solutions that are built for relatively fixed linkages between OS - device - browser - application - network services. For instance, a default service lead to a situation where a vast majority of users will use the default service. From a standards perspective it would be better to build on discovery such that for instance local services can be used. This is of course not always easy, but I think it needs to be looked at, at least on a per-case basis.\r\n\r\nThis is most closely related to the 'Decentralise Proprietary Functions' section, but it's not obvious / related enough; more examples and perhaps reframing might help.",
       "createdAt": "2022-03-24T22:59:54Z",
-      "updatedAt": "2022-05-22T06:09:16Z",
+      "updatedAt": "2022-06-15T13:48:36Z",
       "closedAt": null,
       "comments": [
         {
@@ -605,6 +605,13 @@
           "body": "I'm trying to rough in something along those lines, but what I'm running into is that while it's easy to point out problems in the ecosystem (as you highlight), it's much more difficult to recommend actions that _standards bodies_ can take to improve the situation, beyond those we already have.\r\n\r\nWhat do you see as in-scope for _this_ document? I.e., what recommendations can we make? Or is it adequate to just point at these things and say \"carefully consider these\"?",
           "createdAt": "2022-05-22T06:09:06Z",
           "updatedAt": "2022-05-22T06:09:06Z"
+        },
+        {
+          "author": "jariarkko",
+          "authorAssociation": "NONE",
+          "body": "Your new doc version is great otherwise, but I think we still need to do something on this. Let me come back with a proposal per your question marks above...",
+          "createdAt": "2022-06-15T13:48:36Z",
+          "updatedAt": "2022-06-15T13:48:36Z"
         }
       ]
     },
