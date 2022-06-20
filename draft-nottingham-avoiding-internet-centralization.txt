@@ -3,9 +3,9 @@
 
 
 Network Working Group                                      M. Nottingham
-Internet-Draft                                              15 June 2022
+Internet-Draft                                              20 June 2022
 Intended status: Informational                                          
-Expires: 17 December 2022
+Expires: 22 December 2022
 
 
                  Centralization and Internet Standards
@@ -48,7 +48,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 17 December 2022.
+   This Internet-Draft will expire on 22 December 2022.
 
 Copyright Notice
 
@@ -86,7 +86,7 @@ Table of Contents
      4.3.  Evaluate New Decentralization Techniques
      4.4.  Build Robust Ecosystems
      4.5.  Control Delegation of Power
-     4.6.  Avoid Over-Extensibility
+     4.6.  Target Extensibility
    5.  Security Considerations
    6.  Informative References
    Appendix A.  Acknowledgements
@@ -95,13 +95,13 @@ Table of Contents
 1.  Introduction
 
    The Internet has succeeded in no small part because of its purposeful
-   avoidance of any single controlling entity; what began as a desire to
-   prevent a single technical failure from having a wide impact [RAND]
-   has also enabled the Internet's rapid adoption and broad spread.
-   Because internetworking does not require a network to get permission
-   from or cede control to another entity, it accommodates a spectrum of
-   requirements and allows the Internet to be positioned as a public
-   good.
+   avoidance of any single controlling entity.  Originating in a desire
+   to prevent a single technical failure from having a wide impact
+   [RAND], this stance has also enabled the Internet's rapid adoption
+   and broad spread.  The Internet is able to accommodate a spectrum of
+   requirements and is now positioned as a global public good because
+   joining, deploying an application on, or using the Internet does not
+   require permission from or ceding control to another entity.
 
    While avoiding centralization of the Internet remains a widely shared
    goal, achieving it consistently has proven difficult.  Today, many
@@ -116,12 +116,10 @@ Table of Contents
    These difficulties call into question what role architectural
    regulation -- in particular, that performed by open standards bodies
    such as the IETF -- should play in preventing, mitigating, and
-   controlling Internet centralization.
-
-   This document discusses aspects of centralization that relate to
-   Internet standards efforts, and argues that while the IETF may not be
-   able to prevent centralization, there are still meaningful steps we
-   can take to counteract it.
+   controlling Internet centralization.  This document discusses aspects
+   of centralization that relate to Internet standards efforts, and
+   argues that while the IETF may not be able to prevent centralization,
+   there are still meaningful steps we can take to counteract it.
 
    Section 2 defines centralization, explains why it is undesirable, and
    surveys some kinds of centralization seen on the Internet.  Section 3
@@ -220,14 +218,15 @@ Table of Contents
       applications and services built upon it) improves when there are
       many ways to obtain access.  While centralized services'
       availability can benefit from the focused attention that their
-      elevated role requires, centralization means that failure of a
-      single large provider can have a disproportionate impact on
-      availability.
+      elevated role requires, failure of a large, centralized provider
+      can have a disproportionate impact on availability.
 
    *  _Creating Monoculture_: The scale available to a centralized
-      service or application can magnify minor flaws in features such as
-      recommendation algorithms to a degree that can have broad (even
-      societal) consequences.  Diversity in these functions'
+      service or application can magnify minor flaws in features to a
+      degree that can have broad consequences.  For example, a single
+      codebase for routers elevates the impact of a bug or
+      vulnerability; a single recommendation algorithm for content can
+      have severe social impact.  Diversity in these functions'
       implementation leads to a more robust outcome when viewed
       systemically.  [POLYCENTRIC]
 
@@ -881,7 +880,7 @@ Table of Contents
    intermediation by standardising the function, rather than restricting
    the capabilities of the underlying protocols; see Section 4.2.
 
-4.6.  Avoid Over-Extensibility
+4.6.  Target Extensibility
 
    An important feature of Internet protocols is their ability to
    evolve, so that they can meet new requirements and adapt to new
