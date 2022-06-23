@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2022-06-21T00:03:49.441017+00:00",
+  "timestamp": "2022-06-23T00:03:59.877942+00:00",
   "repo": "mnot/avoiding-internet-centralization",
   "labels": [
     {
@@ -1412,7 +1412,7 @@
     {
       "number": 50,
       "id": "I_kwDOGCfj785MDXOV",
-      "title": "reading",
+      "title": "random reading",
       "url": "https://github.com/mnot/avoiding-internet-centralization/issues/50",
       "state": "OPEN",
       "author": "mnot",
@@ -1421,9 +1421,17 @@
       "labels": [],
       "body": "* [Cooperation among an anonymous group protected Bitcoin during failures of decentralization](https://arxiv.org/abs/2206.02871)\r\n* [The Web3 Decentralization Debate Is Focused on the Wrong Question](https://www.wired.com/story/web3-blockchain-decentralization-governance/)",
       "createdAt": "2022-06-19T04:26:20Z",
-      "updatedAt": "2022-06-19T04:26:20Z",
+      "updatedAt": "2022-06-21T04:23:37Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "mnot",
+          "authorAssociation": "OWNER",
+          "body": "* https://theconversation.com/there-are-systems-guarding-your-data-in-cyberspace-but-who-is-guarding-the-guards-183041\r\n* https://educatedguesswork.org/posts/challenges-web-decentralization/\r\n* ",
+          "createdAt": "2022-06-21T04:23:37Z",
+          "updatedAt": "2022-06-21T04:23:37Z"
+        }
+      ]
     },
     {
       "number": 51,
