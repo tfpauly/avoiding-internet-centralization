@@ -3,9 +3,9 @@
 
 
 Network Working Group                                      M. Nottingham
-Internet-Draft                                              20 June 2022
+Internet-Draft                                              23 June 2022
 Intended status: Informational                                          
-Expires: 22 December 2022
+Expires: 25 December 2022
 
 
                  Centralization and Internet Standards
@@ -48,7 +48,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 22 December 2022.
+   This Internet-Draft will expire on 25 December 2022.
 
 Copyright Notice
 
@@ -163,9 +163,17 @@ Table of Contents
    can also be subject to the forces of centralization.
 
    Note that availability is related to but distinct from
-   centralization.  For example, if my e-mail provider uses only one
-   server, that server might go down and thus block my access to that
-   function.  However, this alone is not a cause of centralization.
+   centralization.  For example, a cloud hosting provider or content
+   delivery network might be depended upon for a (sometimes very) large
+   variety of Internet services; if it were to become unavailable
+   (whether for technical or other reasons), it might impact many
+   people's experience of the Internet.  Likewise, a mobile Internet
+   access provider might have an outage that affects hundreds,
+   thousands, or more of its users.  In both cases, centralization is
+   not engaged by the loss of availability, but it well might be if the
+   parties relying on the function don't have reasonable options to
+   switch to if they are unhappy with the availability of the service
+   provided, or switching is impeded ("lock-in").
 
    Also, it is important to distinguish centralization from anti-
    competitive concerns (also known as "anti-trust").  While there are
