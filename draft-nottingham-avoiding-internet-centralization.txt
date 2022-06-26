@@ -78,7 +78,7 @@ Table of Contents
    3.  Decentralization
      3.1.  Decentralization Techniques
        3.1.1.  Federation
-       3.1.2.  Multi-Stakeholder Administration
+       3.1.2.  Multi-Stakeholder Governance
        3.1.3.  Distributed Consensus
    4.  What Should Internet Standards Do?
      4.1.  Be Realistic
@@ -184,13 +184,13 @@ Table of Contents
    users.
 
    Centralization risk is also present when there is friction against
-   switching to a substitute provider of a function, because external
-   factors can more easily promote concentration (see Section 2.2.3).
-   For example, if switching requires a significant amount of time,
-   resources, expertise, coordination, loss of functionality, or effort,
+   switching to a substitute provider of a function, because it is
+   conducive to concentration (see Section 2.2.3).  For example, if
+   switching requires a significant amount of time, resources,
+   expertise, coordination, loss of functionality, or effort,
    centralization risk is indicated.  Conversely, a function based on a
    well-defined, open specification designed to minimize switching costs
-   might be considered to be sufficiently decentralized even when there
+   might be considered to have less centralization risk even when there
    are only a few large providers.
 
    Note that availability is related to but distinct from
@@ -354,8 +354,8 @@ Table of Contents
 
    When beneficial centralization is present, Internet protocols often
    attempt to mitigate the associated risks using measures such as
-   federation (see Section 3.1.1) and multi-stakeholder administration
-   (see Section 3.1.2).  Protocols that successfully mitigate beneficial
+   federation (see Section 3.1.1) and multi-stakeholder governance (see
+   Section 3.1.2).  Protocols that successfully mitigate beneficial
    centralization are often reused, to avoid the considerable cost and
    risk of re-implementing those mitigations.  For example, if a
    protocol requires a coordinated, global naming function, reusing the
@@ -543,31 +543,30 @@ Table of Contents
    external factors (such as spam control) might naturally "tilt the
    table" towards a few operators.
 
-3.1.2.  Multi-Stakeholder Administration
+3.1.2.  Multi-Stakeholder Governance
 
    Protocol designers sometime mitigate the risks associated with a
    beneficial centralized function (see Section 2.2.2) by delegating
-   that function's administration to a multi-stakeholder body -- an
+   that function's governance to a multi-stakeholder body -- an
    institution that includes representatives of the different kinds of
    parties that are affected by the system's operation ("stakeholders")
    in an attempt to make well-reasoned, legitimate, and authoritative
    decisions.
 
-   The most widely studied example of this technique is the
-   administration of the DNS, which as a "single source of truth"
-   exhibits beneficial centralization in its naming function, as well as
-   the operation of the system overall.  To mitigate operational
-   centralization, multiple root servers that are administered by
-   separate operators (themselves diverse in geography) and a selection
-   of corporate entities, non-profits, and government bodies from many
-   jurisdictions and affiliations carry this task out.The name space
-   itself is administered by the Internet Corporation for Assigned Names
-   and Numbers (ICANN)
-   (https://www.icann.org/resources/pages/governance/governance-en), a
-   global multi-stakeholder body with representation from end users,
-   governments, operators, and others.
+   The most widely studied example of this technique is the governance
+   of the DNS, which as a "single source of truth" exhibits beneficial
+   centralization in its naming function, as well as the operation of
+   the system overall.  To mitigate operational centralization, multiple
+   root servers that are administered by separate operators (themselves
+   diverse in geography) and a selection of corporate entities, non-
+   profits, and government bodies from many jurisdictions and
+   affiliations carry this task out.The name space itself is
+   administered by the Internet Corporation for Assigned Names and
+   Numbers (ICANN) (https://www.icann.org/resources/pages/governance/
+   governance-en), a global multi-stakeholder body with representation
+   from end users, governments, operators, and others.
 
-   Another example is the administration of the Web's trust model,
+   Another example is the governance of the Web's trust model,
    implemented by Web browsers as relying parties and Certificate
    Authorities as trust anchors.  To assure that all parties meet the
    operational and security requirements necessary to provide the
@@ -707,7 +706,7 @@ Table of Contents
    responses are appropriate ways for Internet standards to manage
    centralization risk.
 
-   However, preventing concentration and platform centralization is much
+   However, mitigating concentration and platform centralization is much
    more difficult in standards efforts.  Because we have no "protocol
    police", it's not possible to demand that someone stop building a
    proprietary service using a purportedly federated protocol.  We also
