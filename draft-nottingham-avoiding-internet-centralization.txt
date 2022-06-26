@@ -162,13 +162,19 @@ Table of Contents
    exhibit centralization.  The supply of Internet connectivity itself
    can also be subject to the forces of centralization.
 
-   Centralization is not a binary condition.  Although there are some
-   instances where complete control over a function is held by a single
-   party (see Section 2.2.1), a function's design, its operation, or
-   external forces might lend undue influence (but not completely
-   control) over it to a single entity.  Therefore, it is often useful
-   to consider the _centralization risk_ associated with a function,
-   depending on the scale, scope, and nature of the influences on it.
+   Centralization is not a binary condition; it is a continuum.  At one
+   extreme, a function completely controlled by a single entity (see
+   Section 2.2.1) represents complete centralization; at the other
+   extreme, a hypothetical Internet where any two parties can realize
+   that function's value without the possibility of any external
+   interference or influence represents completely decentralization.
+
+   While both ends of this spectrum might already be occupied by
+   selected functions, most reside somewhere between the extremes.
+   Therefore, it is often useful to consider the _centralization risk_
+   associated with a function, depending on the scale, scope, and nature
+   of the influences on it.  Note that a function might have more than
+   one source of centralization risk.
 
    Centralization risk is strongest when it affects the entire Internet.
    However, it can also be present when a substantial portion of the
@@ -177,10 +183,10 @@ Table of Contents
    jurisdiction, that function is effectively centralized for those
    users.
 
-   Centralization risk can also is present when there is friction
-   against switching to a substitute provider, because external factors
-   can more easily promote concentration (see Section 2.2.3).  For
-   example, if switching requires a significant amount of time,
+   Centralization risk is also present when there is friction against
+   switching to a substitute provider of a function, because external
+   factors can more easily promote concentration (see Section 2.2.3).
+   For example, if switching requires a significant amount of time,
    resources, expertise, coordination, loss of functionality, or effort,
    centralization risk is indicated.  Conversely, a function based on a
    well-defined, open specification designed to minimize switching costs
@@ -453,7 +459,7 @@ Table of Contents
 
    "Decentralization" is the process of identifying the centralization
    risk associated with a function, followed by the application of
-   techniques to prevent or mitigate it.
+   techniques to reduce or mitigate it.
 
    Assessing centralization risk is a case-by-base exercise that depends
    on the specifics of the function, surrounding circumstances, and the
