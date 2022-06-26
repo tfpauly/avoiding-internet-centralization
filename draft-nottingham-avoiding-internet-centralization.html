@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta content="Common,Latin" name="scripts">
 <meta content="initial-scale=1.0" name="viewport">
-<title>Centralization and Internet Standards</title>
+<title>Centralization, Decentralization, and Internet Standards</title>
 <meta content="Mark Nottingham" name="author">
 <meta content="
        Despite being designed and operated as a decentralized network-of-networks, the Internet is continuously subjected to forces that encourage centralization. 
@@ -1026,12 +1026,12 @@ svg :is([stroke="fill"], [fill^="#fff"]) {
 <table class="ears">
 <thead><tr>
 <td class="left">Internet-Draft</td>
-<td class="center">Centralization and Internet Standards</td>
+<td class="center">Centralization, Decentralization, and In</td>
 <td class="right">June 2022</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Nottingham</td>
-<td class="center">Expires 25 December 2022</td>
+<td class="center">Expires 28 December 2022</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1044,12 +1044,12 @@ svg :is([stroke="fill"], [fill^="#fff"]) {
 <dd class="internet-draft">draft-nottingham-avoiding-internet-centralization-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2022-06-23" class="published">23 June 2022</time>
+<time datetime="2022-06-26" class="published">26 June 2022</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2022-12-25">25 December 2022</time></dd>
+<dd class="expires"><time datetime="2022-12-28">28 December 2022</time></dd>
 <dt class="label-authors">Author:</dt>
 <dd class="authors">
 <div class="author">
@@ -1058,7 +1058,7 @@ svg :is([stroke="fill"], [fill^="#fff"]) {
 </dd>
 </dl>
 </div>
-<h1 id="title">Centralization and Internet Standards</h1>
+<h1 id="title">Centralization, Decentralization, and Internet Standards</h1>
 <section id="section-abstract">
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
 <p id="section-abstract-1">Despite being designed and operated as a decentralized network-of-networks, the Internet is continuously subjected to forces that encourage centralization.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
@@ -1093,7 +1093,7 @@ svg :is([stroke="fill"], [fill^="#fff"]) {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 25 December 2022.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 28 December 2022.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1300,7 +1300,7 @@ svg :is([stroke="fill"], [fill^="#fff"]) {
           </h4>
 <p id="section-2.2.3-1">Even when a function avoids proprietary centralization and any beneficial centralization has been mitigated, it might become centralized in practice when external factors influence its deployment, so that few or even just one entity provides the function. This is often referred to as "concentration." Economic, legal, and social factors that encourage use of a central function despite the absence of such a requirement in the protocol itself can cause concentration.<a href="#section-2.2.3-1" class="pilcrow">¶</a></p>
 <p id="section-2.2.3-2">Often, the factors driving concentration are related to the network effects that are so often seen on the Internet. While in theory every node on the Internet is equal, in practice some nodes are much more connected than others: for example, just a few sites drive much of the traffic on the Web. While expected and observed in many kinds of networks,<span>[<a href="#SCALE-FREE" class="xref">SCALE-FREE</a>]</span> network effects award asymmetric power to nodes that act as intermediaries to communication.<a href="#section-2.2.3-2" class="pilcrow">¶</a></p>
-<p id="section-2.2.3-3">Left unchecked, these factors can cause a potentially decentralized application to become effectively controlled by one party, because the central function has leverage to "lock in" users. For example, social networking is an application that is currently supplied by a few proprietary platforms despite standardization efforts (see, e.g., <span>[<a href="#ACTIVITYSTREAMS" class="xref">ACTIVITYSTREAMS</a>]</span>), because of the powerful network effects associated.<a href="#section-2.2.3-3" class="pilcrow">¶</a></p>
+<p id="section-2.2.3-3">For example, social networking is an application that is currently supplied by a few proprietary platforms despite standardization efforts (see, e.g., <span>[<a href="#ACTIVITYSTREAMS" class="xref">ACTIVITYSTREAMS</a>]</span>), because of the powerful network effects associated. While there has been some competition in social networking, a group of people who wish to communicate are often locked in by the choices that their peers make, because of the degree of coordination required to move to a new service.<a href="#section-2.2.3-3" class="pilcrow">¶</a></p>
 <p id="section-2.2.3-4">By its nature, concentration is difficult to avoid in protocol design, and federated protocols are particularly vulnerable to it (see <a href="#federation" class="xref">Section 3.1.1</a>).<a href="#section-2.2.3-4" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -1312,7 +1312,7 @@ svg :is([stroke="fill"], [fill^="#fff"]) {
 <p id="section-2.2.4-1">Most Internet protocols and applications depend on other, "lower-layer" protocols and their implementations. The features, deployment, and operation of these dependencies can surface centralization into functions and applications built "on top" of them.<a href="#section-2.2.4-1" class="pilcrow">¶</a></p>
 <p id="section-2.2.4-2">For example, the network between endpoints can introduce centralization risk to application-layer protocols, because it is necessary for communication and therefore has power over it. A network might block access to, slow down, or change the content of various application protocols or specific services for financial, political, operational, or criminal reasons, thereby creating pressure to use other services, which can result in centralization of them.<a href="#section-2.2.4-2" class="pilcrow">¶</a></p>
 <p id="section-2.2.4-3">Likewise, having only a single implementation of a protocol is an inherited centralization risk, because applications that use it are vulnerable to the control it has over their operation. Even if it is Open Source, there might be inherited centralization if there are factors that make forking difficult (for example, the cost of maintaining that fork).<a href="#section-2.2.4-3" class="pilcrow">¶</a></p>
-<p id="section-2.2.4-4">Inherited centralization is often present when users cannot find a substitute because network effects reduce the choices available to them. This kind of centralization can also be created by legal mandates and incentives that restrict the options for Internet access, the provision of a given function, or the range of implementations available.<a href="#section-2.2.4-4" class="pilcrow">¶</a></p>
+<p id="section-2.2.4-4">Inherited centralization is often present when network effects restrict the available choices, but can also be created by legal mandates and incentives that restrict the options for a given function (such as Internet access), its provision, or the range of implementations available.<a href="#section-2.2.4-4" class="pilcrow">¶</a></p>
 <p id="section-2.2.4-5">Some kinds of inherited centralization can be prevented by enforcing layer boundaries through use of techniques like encryption. When the number of parties who have access to content of communication are limited, parties at lower layers can be prevented from interfering with and observing it. Although those lower-layer parties might still be able to prevent communication, encryption also makes it more difficult to discriminate a target from other traffic.<a href="#section-2.2.4-5" class="pilcrow">¶</a></p>
 <p id="section-2.2.4-6">Note that the prohibitive effect of encryption on inherited centralization is most pronounced when most (if not all) traffic is encrypted. See also <span>[<a href="#RFC7258" class="xref">RFC7258</a>]</span>.<a href="#section-2.2.4-6" class="pilcrow">¶</a></p>
 </section>
@@ -1324,7 +1324,7 @@ svg :is([stroke="fill"], [fill^="#fff"]) {
           </h4>
 <p id="section-2.2.5-1">The complement to inherited centralization is platform centralization -- where a function does not directly define a central role, but could facilitate centralization in the applications it supports.<a href="#section-2.2.5-1" class="pilcrow">¶</a></p>
 <p id="section-2.2.5-2">For example, HTTP <span>[<a href="#HTTP" class="xref">HTTP</a>]</span> is not considered a centralized protocol; interoperable servers are  easy to instantiate, and multiple clients are available. It can be used without central coordination beyond that provided by DNS, as discussed above.<a href="#section-2.2.5-2" class="pilcrow">¶</a></p>
-<p id="section-2.2.5-3">However, applications built on top of HTTP (as well as the rest of the "Web Platform") often exhibit centralization. As such, HTTP is an example of a platform for centralization -- while the protocol itself is not centralized, it facilitates the creation of centralized services and applications.<a href="#section-2.2.5-3" class="pilcrow">¶</a></p>
+<p id="section-2.2.5-3">However, applications built on top of HTTP (as well as the rest of the "Web Platform") often exhibit centralization (for example, social networking). As such, HTTP is an example of a platform for centralization -- while the protocol itself is not centralized, it facilitates the creation of centralized services and applications.<a href="#section-2.2.5-3" class="pilcrow">¶</a></p>
 <p id="section-2.2.5-4">Like concentration, platform centralization is difficult to prevent with protocol design. Because of the layered nature of the Internet, most protocols allow considerable flexibility in how they are used, often in a way that it becomes attractive to form a dependency on one party's operation.<a href="#section-2.2.5-4" class="pilcrow">¶</a></p>
 </section>
 </div>

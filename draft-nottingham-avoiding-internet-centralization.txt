@@ -3,12 +3,12 @@
 
 
 Network Working Group                                      M. Nottingham
-Internet-Draft                                              23 June 2022
+Internet-Draft                                              26 June 2022
 Intended status: Informational                                          
-Expires: 25 December 2022
+Expires: 28 December 2022
 
 
-                 Centralization and Internet Standards
+        Centralization, Decentralization, and Internet Standards
         draft-nottingham-avoiding-internet-centralization-latest
 
 Abstract
@@ -48,7 +48,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 25 December 2022.
+   This Internet-Draft will expire on 28 December 2022.
 
 Copyright Notice
 
@@ -350,13 +350,13 @@ Table of Contents
    of networks,[SCALE-FREE] network effects award asymmetric power to
    nodes that act as intermediaries to communication.
 
-   Left unchecked, these factors can cause a potentially decentralized
-   application to become effectively controlled by one party, because
-   the central function has leverage to "lock in" users.  For example,
-   social networking is an application that is currently supplied by a
-   few proprietary platforms despite standardization efforts (see, e.g.,
-   [ACTIVITYSTREAMS]), because of the powerful network effects
-   associated.
+   For example, social networking is an application that is currently
+   supplied by a few proprietary platforms despite standardization
+   efforts (see, e.g., [ACTIVITYSTREAMS]), because of the powerful
+   network effects associated.  While there has been some competition in
+   social networking, a group of people who wish to communicate are
+   often locked in by the choices that their peers make, because of the
+   degree of coordination required to move to a new service.
 
    By its nature, concentration is difficult to avoid in protocol
    design, and federated protocols are particularly vulnerable to it
@@ -386,11 +386,10 @@ Table of Contents
    factors that make forking difficult (for example, the cost of
    maintaining that fork).
 
-   Inherited centralization is often present when users cannot find a
-   substitute because network effects reduce the choices available to
-   them.  This kind of centralization can also be created by legal
-   mandates and incentives that restrict the options for Internet
-   access, the provision of a given function, or the range of
+   Inherited centralization is often present when network effects
+   restrict the available choices, but can also be created by legal
+   mandates and incentives that restrict the options for a given
+   function (such as Internet access), its provision, or the range of
    implementations available.
 
    Some kinds of inherited centralization can be prevented by enforcing
@@ -417,10 +416,10 @@ Table of Contents
    that provided by DNS, as discussed above.
 
    However, applications built on top of HTTP (as well as the rest of
-   the "Web Platform") often exhibit centralization.  As such, HTTP is
-   an example of a platform for centralization -- while the protocol
-   itself is not centralized, it facilitates the creation of centralized
-   services and applications.
+   the "Web Platform") often exhibit centralization (for example, social
+   networking).  As such, HTTP is an example of a platform for
+   centralization -- while the protocol itself is not centralized, it
+   facilitates the creation of centralized services and applications.
 
    Like concentration, platform centralization is difficult to prevent
    with protocol design.  Because of the layered nature of the Internet,
