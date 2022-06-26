@@ -162,11 +162,36 @@ Table of Contents
    exhibit centralization.  The supply of Internet connectivity itself
    can also be subject to the forces of centralization.
 
+   Centralization is not a binary condition.  Although there are some
+   instances where complete control over a function is held by a single
+   party (see Section 2.2.1), a function's design, its operation, or
+   external forces might lend undue influence (but not completely
+   control) over it to a single entity.  Therefore, it is often useful
+   to consider the _centralization risk_ associated with a function,
+   depending on the scale, scope, and nature of the influences on it.
+
+   Centralization risk is strongest when it affects the entire Internet.
+   However, it can also be present when a substantial portion of the
+   Internet's users lack options for a function.  For example, if there
+   is only one provider for a function in a region or legal
+   jurisdiction, that function is effectively centralized for those
+   users.
+
+   Centralization risk can also is present when there is friction
+   against switching to a substitute provider, because external factors
+   can more easily promote concentration (see Section 2.2.3).  For
+   example, if switching requires a significant amount of time,
+   resources, expertise, coordination, loss of functionality, or effort,
+   centralization risk is indicated.  Conversely, a function based on a
+   well-defined, open specification designed to minimize switching costs
+   might be considered to be sufficiently decentralized even when there
+   are only a few large providers.
+
    Note that availability is related to but distinct from
-   centralization.  For example, a (sometimes very) large variety of Web
-   sites might depend upon a cloud hosting provider or content delivery
-   network; if it were to become unavailable (whether for technical or
-   other reasons), many people's experience of the Internet might be
+   centralization.  For example, a large variety of Web sites might
+   depend upon a cloud hosting provider or content delivery network; if
+   it were to become unavailable (whether for technical or other
+   reasons), many people's experience of the Internet might be
    disrupted.  Likewise, a mobile Internet access provider might have an
    outage that affects hundreds, thousands, or more of its users.  In
    both cases, centralization is not engaged by the loss of availability
@@ -433,25 +458,6 @@ Table of Contents
    Assessing centralization risk is a case-by-base exercise that depends
    on the specifics of the function, surrounding circumstances, and the
    nature of the centralization risk.
-
-   Centralization risk is strongest when it affects the entire Internet.
-   However, it can also be present when a substantial portion of the
-   Internet's users lack options for a function.  For example, if there
-   is only one provider for a function in a region or legal
-   jurisdiction, that function is effectively centralized for those
-   users.
-
-   Likewise, if there is a single entity providing a function, it is
-   obviously centralized.  However, centralization risk can also be
-   present when there is friction against switching to a substitute
-   provider, because external factors can more easily promote
-   concentration (see Section 2.2.3).  For example, if switching
-   requires a significant amount of time, resources, expertise,
-   coordination, loss of functionality, or effort, centralization risk
-   is indicated.  Conversely, a function based on a well-defined, open
-   specification designed to minimize switching costs might be
-   considered to be sufficiently decentralized even when there are only
-   a few large providers.
 
    Choosing the appropriate techniques for decentralization requires
    balancing the goals of the function against centralization risk,
@@ -854,8 +860,8 @@ Table of Contents
       party can also enforce functional boundaries -- for example, to
       reduce the need for users to trust potentially malicious
       endpoints, as seen in the so-called "oblivious" protocols (e.g.,
-      [I-D.pauly-dprive-oblivious-doh]) that allow end users to hide
-      their identity from services, while still accessing them.
+      [RFC9230]) that allow end users to hide their identity from
+      services, while still accessing them.
 
    However, introducing a new party to communication adds concentration
    and platform centralization risk to Internet protocols, because it
@@ -986,13 +992,6 @@ Table of Contents
               <https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-
               semantics-19>.
 
-   [I-D.pauly-dprive-oblivious-doh]
-              Kinnear, E., McManus, P., Pauly, T., Verma, T., and C. A.
-              Wood, "Oblivious DNS over HTTPS", Work in Progress,
-              Internet-Draft, draft-pauly-dprive-oblivious-doh-11, 17
-              February 2022, <https://datatracker.ietf.org/doc/html/
-              draft-pauly-dprive-oblivious-doh-11>.
-
    [I-D.thomson-tmi]
               Thomson, M., "Principles for the Involvement of
               Intermediaries in Internet Protocols", Work in Progress,
@@ -1090,6 +1089,11 @@ Table of Contents
    [RFC8890]  Nottingham, M., "The Internet is for End Users", RFC 8890,
               DOI 10.17487/RFC8890, August 2020,
               <https://www.rfc-editor.org/rfc/rfc8890>.
+
+   [RFC9230]  Kinnear, E., McManus, P., Pauly, T., Verma, T., and C.A.
+              Wood, "Oblivious DNS over HTTPS", RFC 9230,
+              DOI 10.17487/RFC9230, June 2022,
+              <https://www.rfc-editor.org/rfc/rfc9230>.
 
    [SCALE-FREE]
               Albert, R., "Emergence of Scaling in Random Networks",
