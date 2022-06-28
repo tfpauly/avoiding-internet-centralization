@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2022-06-23T00:03:59.877942+00:00",
+  "timestamp": "2022-06-28T00:03:58.674654+00:00",
   "repo": "mnot/avoiding-internet-centralization",
   "labels": [
     {
@@ -578,11 +578,13 @@
       "state": "OPEN",
       "author": "mnot",
       "authorAssociation": "OWNER",
-      "assignees": [],
+      "assignees": [
+        "jariarkko"
+      ],
       "labels": [],
       "body": "Jari says:\r\n\r\n> [O]ne thing that is not discussed but perhaps should be is the role of discovery. We seem to have an increasing number of solutions that are built for relatively fixed linkages between OS - device - browser - application - network services. For instance, a default service lead to a situation where a vast majority of users will use the default service. From a standards perspective it would be better to build on discovery such that for instance local services can be used. This is of course not always easy, but I think it needs to be looked at, at least on a per-case basis.\r\n\r\nThis is most closely related to the 'Decentralise Proprietary Functions' section, but it's not obvious / related enough; more examples and perhaps reframing might help.",
       "createdAt": "2022-03-24T22:59:54Z",
-      "updatedAt": "2022-06-15T13:48:36Z",
+      "updatedAt": "2022-06-26T06:22:42Z",
       "closedAt": null,
       "comments": [
         {
@@ -1150,15 +1152,15 @@
       "id": "I_kwDOGCfj785HV7c7",
       "title": "Linkage between the earlier sections and Section 6 is not explicit and a bit tenuous",
       "url": "https://github.com/mnot/avoiding-internet-centralization/issues/43",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "elear",
       "authorAssociation": "NONE",
       "assignees": [],
       "labels": [],
       "body": "Perhaps my biggest concern with the draft is this:\r\n\r\nWhat can be remedied and what can't be remedied is somewhat lost because of a lack of clear causal linkage, as articulated between the sections.  This is perhaps where I would spend the most time on the draft.  \r\n\r\nTry this: make a copy of the draft; remove Section 6, and then map examples of centralization you use in earlier sections to remediation approaches you think would help.  Then take that text and see if it fits into the earlier sections.  If you do this, you'll have solved the problem entirely.\r\n",
       "createdAt": "2022-04-08T07:15:46Z",
-      "updatedAt": "2022-05-24T03:37:49Z",
-      "closedAt": null,
+      "updatedAt": "2022-06-26T07:45:03Z",
+      "closedAt": "2022-06-26T07:45:03Z",
       "comments": [
         {
           "author": "mnot",
@@ -1173,6 +1175,13 @@
           "body": "I'm pretty comfortable with where the current editors draft is regarding this. Would you mind taking another look?",
           "createdAt": "2022-05-24T03:37:43Z",
           "updatedAt": "2022-05-24T03:37:43Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "OWNER",
+          "body": "Closing as I _think_ this was addressed, and the recent reorg might make it OBE anyway. Please feel free to open another if you think there's still work to do here.",
+          "createdAt": "2022-06-26T07:45:03Z",
+          "updatedAt": "2022-06-26T07:45:03Z"
         }
       ]
     },
@@ -1446,6 +1455,40 @@
       "body": "More directly relate it to polycentricity, development, and governance overall.\r\n\r\ncompare with https://www.worldbank.org/en/topic/communitydrivendevelopment/brief/Decentralization",
       "createdAt": "2022-06-20T06:32:33Z",
       "updatedAt": "2022-06-20T06:32:33Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 52,
+      "id": "I_kwDOGCfj785MlQxP",
+      "title": "Evaluate New Decentralization Techniques",
+      "url": "https://github.com/mnot/avoiding-internet-centralization/issues/52",
+      "state": "OPEN",
+      "author": "mnot",
+      "authorAssociation": "OWNER",
+      "assignees": [
+        "mnot"
+      ],
+      "labels": [],
+      "body": "... is still a bit thin. Depending on how they're used, crypto techniques can promote as well as remove centralization risk. \r\n\r\n",
+      "createdAt": "2022-06-26T07:47:44Z",
+      "updatedAt": "2022-06-26T07:47:44Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 53,
+      "id": "I_kwDOGCfj785MlQyP",
+      "title": "Decentralization",
+      "url": "https://github.com/mnot/avoiding-internet-centralization/issues/53",
+      "state": "OPEN",
+      "author": "mnot",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Needs more meat.",
+      "createdAt": "2022-06-26T07:48:03Z",
+      "updatedAt": "2022-06-26T07:48:03Z",
       "closedAt": null,
       "comments": []
     }
