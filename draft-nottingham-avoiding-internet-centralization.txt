@@ -3,9 +3,9 @@
 
 
 Network Working Group                                      M. Nottingham
-Internet-Draft                                              26 June 2022
+Internet-Draft                                               3 July 2022
 Intended status: Informational                                          
-Expires: 28 December 2022
+Expires: 4 January 2023
 
 
         Centralization, Decentralization, and Internet Standards
@@ -48,7 +48,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 28 December 2022.
+   This Internet-Draft will expire on 4 January 2023.
 
 Copyright Notice
 
@@ -167,14 +167,14 @@ Table of Contents
    Section 2.2.1) represents complete centralization; at the other
    extreme, a hypothetical Internet where any two parties can realize
    that function's value without the possibility of any external
-   interference or influence represents completely decentralization.
+   interference or influence represents complete decentralization.
 
-   While both ends of this spectrum might already be occupied by
-   selected functions, most reside somewhere between the extremes.
-   Therefore, it is often useful to consider the _centralization risk_
-   associated with a function, depending on the scale, scope, and nature
-   of the influences on it.  Note that a function might have more than
-   one source of centralization risk.
+   While both ends of this spectrum might already be occupied by a few
+   functions, most reside somewhere between the extremes.  Therefore, it
+   is often useful to consider the _centralization risk_ associated with
+   a function, depending on the scale, scope, and nature of the
+   influences on it.  Note that a function might have more than one
+   source of centralization risk.
 
    Centralization risk is strongest when it affects the entire Internet.
    However, it can also be present when a substantial portion of the
