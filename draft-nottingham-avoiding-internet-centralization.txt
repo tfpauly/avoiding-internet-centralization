@@ -465,7 +465,7 @@ Table of Contents
    a condition when "complete reliance upon a single point is not always
    required."
 
-   This seemingly straightforward technical definition hides a number of
+   This seemingly straightforward technical definition hides several
    issues.
 
    First, identifying what aspects of a protocol or application to
