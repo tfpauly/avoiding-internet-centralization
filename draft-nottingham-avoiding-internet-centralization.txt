@@ -195,18 +195,25 @@ Table of Contents
    might be considered to have less centralization risk even when there
    are only a few large providers.
 
-   Note that availability is related to but distinct from
-   centralization.  For example, a large variety of Web sites might
-   depend upon a cloud hosting provider or content delivery network; if
-   it were to become unavailable (whether for technical or other
-   reasons), many people's experience of the Internet might be
-   disrupted.  Likewise, a mobile Internet access provider might have an
-   outage that affects hundreds, thousands, or more of its users.  In
-   both cases, centralization is not engaged by the loss of availability
-   or its scale, but it well might be if the parties relying on the
-   function don't have reasonable options to switch to if they are
-   unhappy with the availability of the service provided, or if friction
-   against switching to an alternative is too great.
+   Note that availability is distinct from centralization, and any
+   relationship between them cannot be assumed without careful analysis
+   of where centralization occurs.  Centralized systems might be more
+   available due to factors like the resources available to them, but
+   also have greater impact when they have a fault; decentralized
+   systems might be more resilient in the face of local failures, but
+   less able to react to systemic issues.
+
+   For example, a large variety of Web sites might depend upon a cloud
+   hosting provider or content delivery network; if it were to become
+   unavailable (whether for technical or other reasons), many people's
+   experience of the Internet might be disrupted.  Likewise, a mobile
+   Internet access provider might have an outage that affects hundreds,
+   thousands, or more of its users.  In both cases, centralization is
+   not engaged by the loss of availability or its scale, but it well
+   might be if the parties relying on the function don't have reasonable
+   options to switch to if they are unhappy with the availability of the
+   service provided, or if friction against switching to an alternative
+   is too great.
 
    Also, it is important to distinguish centralization from anti-
    competitive concerns (also known as "anti-trust").  While there are
@@ -502,9 +509,10 @@ Table of Contents
    degree of uncertainty about the outcome.  In particular, if one
    considers decentralization as a larger social goal (in the spirit of
    how the term is used in other, non-computing contexts), merely
-   rearranging technical functions may lead to frustration.  Again from
-   [AMBITION]: "Again and again, decentralized technologies do not
-   guarantee decentralized social outcomes."
+   rearranging technical functions may lead to frustration.  "A
+   distributed network does not automatically yield an egalitarian,
+   equitable or just social, economic, political landscape."
+   [PERSPECTIVE]
 
    In the context of Internet standardization, decentralization is
    implemented as a two-step process: identifying the nature of
@@ -1091,6 +1099,12 @@ Table of Contents
               <https://www.oecd.org/daf/competition/data-portability-
               interoperability-and-digital-platform-competition-
               2021.pdf>.
+
+   [PERSPECTIVE]
+              Bodó, B., Brekke, J. K., and J.-H. Hoepman,
+              "Decentralisation: a multidisciplinary perspective",
+              Internet Policy Review, Vol. 10, No. 2, June 2021,
+              <https://doi.org/10.14763/2021.2.1563>.
 
    [PIR]      Olumofin, F. and I. Goldberg, "Revisiting the
               Computational Practicality of Private Information
