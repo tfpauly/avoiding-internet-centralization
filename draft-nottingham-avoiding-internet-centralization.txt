@@ -497,7 +497,7 @@ Table of Contents
    standards over the operation of the name space), others reject
    ICANN's oversight of the DNS as illegitimate, favouring
    decentralization based upon distributed consensus protocols rather
-   than multistakeholderism.
+   than multistakeholderism.  [PCWORLD]
 
    Third, discussion around decentralization is inherently focused on
    the power relationships between protocol participants, especially
@@ -1122,6 +1122,11 @@ Table of Contents
               Inequalities in the Multistakeholder Internet Governance",
               2020, <https://link.springer.com/
               book/10.1007/978-3-030-56131-4>.
+
+   [PCWORLD]  Ricknäs, M. and PCWorld, "P2P-based Alternative to DNS
+              Hopes to Challenge ICANN", November 2010,
+              <https://www.pcworld.com/article/499060/p2pbased_alternati
+              ve_to_dns_hopes_to_challenge_icann.html>.
 
    [PRIO]     Corrigan-Gibbs, H. and D. Boneh, "Prio: Private, Robust,
               and Scalable Computation of Aggregate Statistics", March
