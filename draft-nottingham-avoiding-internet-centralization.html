@@ -1031,7 +1031,7 @@ svg :is([stroke="fill"], [fill^="#fff"]) {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Nottingham</td>
-<td class="center">Expires 5 January 2023</td>
+<td class="center">Expires 7 January 2023</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1044,12 +1044,12 @@ svg :is([stroke="fill"], [fill^="#fff"]) {
 <dd class="internet-draft">draft-nottingham-avoiding-internet-centralization-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2022-07-04" class="published">4 July 2022</time>
+<time datetime="2022-07-06" class="published">6 July 2022</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2023-01-05">5 January 2023</time></dd>
+<dd class="expires"><time datetime="2023-01-07">7 January 2023</time></dd>
 <dt class="label-authors">Author:</dt>
 <dd class="authors">
 <div class="author">
@@ -1093,7 +1093,7 @@ svg :is([stroke="fill"], [fill^="#fff"]) {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 5 January 2023.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 7 January 2023.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1346,13 +1346,14 @@ svg :is([stroke="fill"], [fill^="#fff"]) {
 <p id="section-3-2">This seemingly straightforward technical definition hides several issues.<a href="#section-3-2" class="pilcrow">¶</a></p>
 <p id="section-3-3">First, identifying what aspects of a protocol or application to decentralize and how to achieve it can be difficult, both because there are often many paths that can lead to a function's centralization, and because centralization sometimes only becomes evident after the function is deployed at scale.<a href="#section-3-3" class="pilcrow">¶</a></p>
 <p id="section-3-4">Second, different parties might have good-faith differences on what "sufficiently decentralized" means based upon their beliefs, perceptions and goals. Just as centralization is a continuum, so is decentralization, and not everyone agrees one what the "right" level or type is, how to weigh different forms of centralization against each other, or how to weigh centralization against other architectural goals (such as security or privacy).<a href="#section-3-4" class="pilcrow">¶</a></p>
-<p id="section-3-5">Third, discussion around decentralization is inherently focused on the power relationships between protocol participants, especially when decentralizing a function opens up the possibility of centralization elsewhere. As Schneider notes in <span>[<a href="#AMBITION" class="xref">SCHNEIDER</a>]</span>, decentralization "appears to operate as a rhetorical strategy that directs attention toward some aspects of a proposed social order and away from others."<a href="#section-3-5" class="pilcrow">¶</a></p>
-<p id="section-3-6">For example, while blockchain-based cryptocurrencies might address the centralization inherent in traditional currencies through technical means, the concentration of power that many exhibit in terms of voting/mining power, distribution of funds, and diversity of codebase causes some to question how decentralized they are. <span>[<a href="#AREWEDECENTRALIZEDYET" class="xref">AREWEDECENTRALIZEDYET</a>]</span><a href="#section-3-6" class="pilcrow">¶</a></p>
-<p id="section-3-7">In practice, this means that decentralizing a function requires considerable work, is inherently political, and involves a large degree of uncertainty about the outcome. In particular, if one considers decentralization as a larger social goal (in the spirit of how the term is used in other, non-computing contexts), merely rearranging technical functions may lead to frustration. "A distributed network does not automatically yield an egalitarian, equitable or just social, economic, political landscape." <span>[<a href="#PERSPECTIVE" class="xref">BODO</a>]</span><a href="#section-3-7" class="pilcrow">¶</a></p>
-<p id="section-3-8">In the context of Internet standardization, decentralization is implemented as a two-step process: identifying the nature of centralization risk, followed by the application of techniques to reduce or mitigate it.<a href="#section-3-8" class="pilcrow">¶</a></p>
-<p id="section-3-9">Assessing centralization risk is a case-by-base exercise that depends on the specifics of the function, surrounding circumstances, and the nature of the centralization risk.<a href="#section-3-9" class="pilcrow">¶</a></p>
-<p id="section-3-10">Choosing the appropriate techniques for decentralization requires balancing the goals of the function against centralization risk, because completely precluding all forms of centralization through technical means is rarely achievable. When performed properly, decentralization might produce an outcome that still has centralization risk, but that risk should be understood, acceptable, and, where possible and appropriate, mitigated.<a href="#section-3-10" class="pilcrow">¶</a></p>
-<p id="section-3-11">Notably, decentralization does not require that provision of a function need be distributed in a particular fashion, or to a particular degree. For example, the Domain Name System <span>[<a href="#RFC1035" class="xref">RFC1035</a>]</span> is widely agreed to have acceptable centralization risk, despite it being provided by a limited set of entities.<a href="#section-3-11" class="pilcrow">¶</a></p>
+<p id="section-3-5">For example, the name space of the DNS is a single, global "source of truth" with inherent (if beneficial) centralization. The associated risk is mitigated through its administration by ICANN, a multistakeholder organization (see <a href="#multi" class="xref">Section 3.1.2</a>). While many believe that this arrangement is sufficient and might even have desirable qualities (such as the ability to impose community standards over the operation of the name space), others reject ICANN's oversight of the DNS as illegitimate, favouring decentralization based upon distributed consensus protocols rather than multistakeholderism.<a href="#section-3-5" class="pilcrow">¶</a></p>
+<p id="section-3-6">Third, discussion around decentralization is inherently focused on the power relationships between protocol participants, especially when decentralizing a function opens up the possibility of centralization elsewhere. As Schneider notes in <span>[<a href="#AMBITION" class="xref">SCHNEIDER</a>]</span>, decentralization "appears to operate as a rhetorical strategy that directs attention toward some aspects of a proposed social order and away from others."<a href="#section-3-6" class="pilcrow">¶</a></p>
+<p id="section-3-7">For example, while blockchain-based cryptocurrencies might address the centralization inherent in traditional currencies through technical means, the concentration of power that many exhibit in terms of voting/mining power, distribution of funds, and diversity of codebase causes some to question how decentralized they are. <span>[<a href="#AREWEDECENTRALIZEDYET" class="xref">AREWEDECENTRALIZEDYET</a>]</span><a href="#section-3-7" class="pilcrow">¶</a></p>
+<p id="section-3-8">In practice, this means that decentralizing a function requires considerable work, is inherently political, and involves a large degree of uncertainty about the outcome. In particular, if one considers decentralization as a larger social goal (in the spirit of how the term is used in other, non-computing contexts), merely rearranging technical functions may lead to frustration. "A distributed network does not automatically yield an egalitarian, equitable or just social, economic, political landscape." <span>[<a href="#PERSPECTIVE" class="xref">BODO</a>]</span><a href="#section-3-8" class="pilcrow">¶</a></p>
+<p id="section-3-9">In the context of Internet standardization, decentralization is implemented as a two-step process: identifying the nature of centralization risk, followed by the application of techniques to reduce or mitigate it.<a href="#section-3-9" class="pilcrow">¶</a></p>
+<p id="section-3-10">Assessing centralization risk is a case-by-base exercise that depends on the specifics of the function, surrounding circumstances, and the nature of the centralization risk.<a href="#section-3-10" class="pilcrow">¶</a></p>
+<p id="section-3-11">Choosing the appropriate techniques for decentralization requires balancing the goals of the function against centralization risk, because completely precluding all forms of centralization through technical means is rarely achievable. When performed properly, decentralization might produce an outcome that still has centralization risk, but that risk should be understood, acceptable, and, where possible and appropriate, mitigated.<a href="#section-3-11" class="pilcrow">¶</a></p>
+<p id="section-3-12">Notably, decentralization does not require that provision of a function need be distributed in a particular fashion, or to a particular degree. For example, the Domain Name System <span>[<a href="#RFC1035" class="xref">RFC1035</a>]</span> is widely agreed to have acceptable centralization risk, despite it being provided by a limited set of entities.<a href="#section-3-12" class="pilcrow">¶</a></p>
 <div id="techniques">
 <section id="section-3.1">
         <h3 id="name-decentralization-techniques">

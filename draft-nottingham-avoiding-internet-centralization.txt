@@ -3,9 +3,9 @@
 
 
 Network Working Group                                      M. Nottingham
-Internet-Draft                                               4 July 2022
+Internet-Draft                                               6 July 2022
 Intended status: Informational                                          
-Expires: 5 January 2023
+Expires: 7 January 2023
 
 
         Centralization, Decentralization, and Internet Standards
@@ -48,7 +48,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 5 January 2023.
+   This Internet-Draft will expire on 7 January 2023.
 
 Copyright Notice
 
@@ -487,6 +487,17 @@ Table of Contents
    or type is, how to weigh different forms of centralization against
    each other, or how to weigh centralization against other
    architectural goals (such as security or privacy).
+
+   For example, the name space of the DNS is a single, global "source of
+   truth" with inherent (if beneficial) centralization.  The associated
+   risk is mitigated through its administration by ICANN, a
+   multistakeholder organization (see Section 3.1.2).  While many
+   believe that this arrangement is sufficient and might even have
+   desirable qualities (such as the ability to impose community
+   standards over the operation of the name space), others reject
+   ICANN's oversight of the DNS as illegitimate, favouring
+   decentralization based upon distributed consensus protocols rather
+   than multistakeholderism.
 
    Third, discussion around decentralization is inherently focused on
    the power relationships between protocol participants, especially
