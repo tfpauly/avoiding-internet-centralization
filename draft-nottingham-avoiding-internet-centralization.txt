@@ -558,7 +558,7 @@ Table of Contents
    codebase causes some to question how decentralized they actually are.
    [AREWEDECENTRALIZEDYET] The lack of formal structures brings an
    opportunity for latent, informal power structures that have their own
-   risks -- including centralization.  [STRUCTURELESS]
+   risks -- including centralization.  [FREEMAN]
 
    In practice, this means that decentralizing a function requires
    considerable work, is inherently political, and involves a large
@@ -1112,6 +1112,10 @@ Table of Contents
               International Security, Vol. 44, No. 1, p. 42, 2019,
               <https://doi.org/10.1162/ISEC_a_00351>.
 
+   [FREEMAN]  Freeman, J., "The Tyranny of Structurelessness", Berkeley
+              Journal of Sociology, Vol. 17, 1972,
+              <https://www.jstor.org/stable/41035187>.
+
    [HTTP]     Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke,
               Ed., "HTTP Semantics", STD 97, RFC 9110,
               DOI 10.17487/RFC9110, June 2022,
@@ -1233,11 +1237,6 @@ Table of Contents
               <https://wwws.law.northwestern.edu/research-
               faculty/clbe/workingpapers/documents/
               spulber_circularconundrum.pdf>.
-
-   [STRUCTURELESS]
-              Freeman, J., "The Tyranny of Structurelessness", Berkeley
-              Journal of Sociology, Vol. 17, 1972,
-              <https://www.jstor.org/stable/41035187>.
 
    [VESTAGER] Vestager, M., "Defending Competition in a Digitised World,
               Address at the European Consumer and Competition Day",
