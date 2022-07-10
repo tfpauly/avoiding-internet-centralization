@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2022-06-28T00:03:58.674654+00:00",
+  "timestamp": "2022-07-10T00:04:54.679921+00:00",
   "repo": "mnot/avoiding-internet-centralization",
   "labels": [
     {
@@ -1423,15 +1423,15 @@
       "id": "I_kwDOGCfj785MDXOV",
       "title": "random reading",
       "url": "https://github.com/mnot/avoiding-internet-centralization/issues/50",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "mnot",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "* [Cooperation among an anonymous group protected Bitcoin during failures of decentralization](https://arxiv.org/abs/2206.02871)\r\n* [The Web3 Decentralization Debate Is Focused on the Wrong Question](https://www.wired.com/story/web3-blockchain-decentralization-governance/)",
       "createdAt": "2022-06-19T04:26:20Z",
-      "updatedAt": "2022-06-21T04:23:37Z",
-      "closedAt": null,
+      "updatedAt": "2022-07-09T07:23:51Z",
+      "closedAt": "2022-07-09T07:23:51Z",
       "comments": [
         {
           "author": "mnot",
@@ -1447,15 +1447,15 @@
       "id": "I_kwDOGCfj785MFNyX",
       "title": "Underpinning for decentralization",
       "url": "https://github.com/mnot/avoiding-internet-centralization/issues/51",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "mnot",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "More directly relate it to polycentricity, development, and governance overall.\r\n\r\ncompare with https://www.worldbank.org/en/topic/communitydrivendevelopment/brief/Decentralization",
       "createdAt": "2022-06-20T06:32:33Z",
-      "updatedAt": "2022-06-20T06:32:33Z",
-      "closedAt": null,
+      "updatedAt": "2022-07-09T07:23:39Z",
+      "closedAt": "2022-07-09T07:23:39Z",
       "comments": []
     },
     {
@@ -1463,7 +1463,7 @@
       "id": "I_kwDOGCfj785MlQxP",
       "title": "Evaluate New Decentralization Techniques",
       "url": "https://github.com/mnot/avoiding-internet-centralization/issues/52",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "mnot",
       "authorAssociation": "OWNER",
       "assignees": [
@@ -1472,8 +1472,8 @@
       "labels": [],
       "body": "... is still a bit thin. Depending on how they're used, crypto techniques can promote as well as remove centralization risk. \r\n\r\n",
       "createdAt": "2022-06-26T07:47:44Z",
-      "updatedAt": "2022-06-26T07:47:44Z",
-      "closedAt": null,
+      "updatedAt": "2022-07-09T07:23:30Z",
+      "closedAt": "2022-07-09T07:23:30Z",
       "comments": []
     },
     {
@@ -1481,16 +1481,24 @@
       "id": "I_kwDOGCfj785MlQyP",
       "title": "Decentralization",
       "url": "https://github.com/mnot/avoiding-internet-centralization/issues/53",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "mnot",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "Needs more meat.",
       "createdAt": "2022-06-26T07:48:03Z",
-      "updatedAt": "2022-06-26T07:48:03Z",
-      "closedAt": null,
-      "comments": []
+      "updatedAt": "2022-07-09T05:02:06Z",
+      "closedAt": "2022-07-09T05:02:05Z",
+      "comments": [
+        {
+          "author": "mnot",
+          "authorAssociation": "OWNER",
+          "body": "IN progress enough to close.",
+          "createdAt": "2022-07-09T05:02:05Z",
+          "updatedAt": "2022-07-09T05:02:05Z"
+        }
+      ]
     }
   ],
   "pulls": [
