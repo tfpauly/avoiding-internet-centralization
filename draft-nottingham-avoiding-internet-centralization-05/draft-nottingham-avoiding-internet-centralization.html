@@ -1,0 +1,1740 @@
+<!DOCTYPE html>
+<html lang="en" class="Internet-Draft">
+<head>
+<meta charset="utf-8">
+<meta content="Common,Latin" name="scripts">
+<meta content="initial-scale=1.0" name="viewport">
+<title>Centralization, Decentralization, and Internet Standards</title>
+<meta content="Mark Nottingham" name="author">
+<meta content="
+       Despite being designed and operated as a decentralized network-of-networks, the Internet is continuously subjected to forces that encourage centralization. 
+       This document offers a definition of centralization, explains why it is undesirable, identifies different types of it, catalogues limitations of common approaches to decentralization, and explores what Internet standards efforts can do to address it. 
+    " name="description">
+<meta content="xml2rfc 3.13.0" name="generator">
+<meta content="governance" name="keyword">
+<meta content="draft-nottingham-avoiding-internet-centralization-latest" name="ietf.draft">
+<!-- Generator version information:
+  xml2rfc 3.13.0
+    Python 3.10.4
+    appdirs 1.4.4
+    ConfigArgParse 1.5.3
+    google-i18n-address 2.5.2
+    html5lib 1.1
+    intervaltree 3.1.0
+    Jinja2 3.1.2
+    kitchen 1.2.6
+    lxml 4.9.1
+    MarkupSafe 2.1.1
+    pycountry 22.3.5
+    pyflakes 2.4.0
+    PyYAML 6.0
+    requests 2.27.1
+    setuptools 59.4.0
+    six 1.16.0
+-->
+<link href="draft-nottingham-avoiding-internet-centralization.xml" rel="alternate" type="application/rfc+xml">
+<link href="#copyright" rel="license">
+<style type="text/css">@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Italic'), local('Lora-Italic'), url('https://martinthomson.github.io/rfc-css/fonts/lora-italic-cyrillic-ext.woff2') format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Italic'), local('Lora-Italic'), url('https://martinthomson.github.io/rfc-css/fonts/lora-italic-cyrillic-ext.woff2') format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Italic'), local('Lora-Italic'), url('https://martinthomson.github.io/rfc-css/fonts/lora-italic-vietnamese.woff2') format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Italic'), local('Lora-Italic'), url('https://martinthomson.github.io/rfc-css/fonts/lora-italic-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Italic'), local('Lora-Italic'), url('https://martinthomson.github.io/rfc-css/fonts/lora-italic-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Regular'), local('Lora-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/lora-regular-cyrillic-ext.woff2') format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Regular'), local('Lora-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/lora-regular-cyrillic.woff2') format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Regular'), local('Lora-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/lora-regular-vietnamese.woff2') format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Regular'), local('Lora-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/lora-regular-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Regular'), local('Lora-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/lora-regular-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Lora Bold'), local('Lora-Bold'), url('https://martinthomson.github.io/rfc-css/fonts/lora-bold-cyrillic-ext.woff2') format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Lora Bold'), local('Lora-Bold'), url('https://martinthomson.github.io/rfc-css/fonts/lora-bold-cyrillic.woff2') format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Lora Bold'), local('Lora-Bold'), url('https://martinthomson.github.io/rfc-css/fonts/lora-bold-vietnamese.woff2') format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Lora Bold'), local('Lora-Bold'), url('https://martinthomson.github.io/rfc-css/fonts/lora-bold-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Lora Bold'), local('Lora-Bold'), url('https://martinthomson.github.io/rfc-css/fonts/lora-bold-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local('Lora SemiBold'), local('Lora-SemiBold'), url('https://martinthomson.github.io/rfc-css/fonts/lora-semibold-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Cabin Condensed';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local('Cabin Condensed SemiBold'), local('CabinCondensed-SemiBold'), url('https://martinthomson.github.io/rfc-css/fonts/cabincondensed-semibold-vietnamese.woff2') format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: 'Cabin Condensed';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local('Cabin Condensed SemiBold'), local('CabinCondensed-SemiBold'), url('https://martinthomson.github.io/rfc-css/fonts/cabincondensed-semibold-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Cabin Condensed';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local('Cabin Condensed SemiBold'), local('CabinCondensed-SemiBold'), url('https://martinthomson.github.io/rfc-css/fonts/cabincondensed-semibold-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Oxygen Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Oxygen Mono'), local('OxygenMono-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/oxygenmono-regular-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Oxygen Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Oxygen Mono'), local('OxygenMono-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/oxygenmono-regular-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  color-scheme: light dark;
+  --background-color: #fff;
+  --text-color: #222;
+  --title-color: #191919;
+  --link-color: #2a6496;
+  --highlight-color: #f9f9f9;
+  --line-color: #eee;
+  --pilcrow-weak: #ddd;
+  --pilcrow-strong: #bbb;
+  --small-font-size: 14.5px;
+  --font-mono: 'Oxygen Mono', monospace;
+  scrollbar-color: #bbb #eee;
+}
+body {
+  max-width: 600px;
+  margin: 75px auto;
+  padding: 0 5px;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  font: 16px/22px "Lora", serif;
+  scroll-behavior: smooth;
+}
+
+.ears {
+  display: none;
+}
+
+/* headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Cabin Condensed", sans-serif;
+  font-weight: 600;
+  margin: 0.8em 0 0.3em;
+  font-size-adjust: 0.5;
+  color: var(--title-color);
+}
+h1#title {
+  font-size: 32px;
+  line-height: 40px;
+  clear: both;
+}
+h1#title, h1#rfcnum {
+  margin: 1.5em 0 0.2em;
+}
+h1#rfcnum + h1#title {
+  margin: 0.2em 0;
+}
+
+h1, h2, h3 {
+  font-size: 22px;
+  line-height: 27px;
+}
+h4, h5, h6 {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+/* general structure */
+.author {
+  padding-bottom: 0.3em;
+}
+#abstract+p {
+  font-size: 18px;
+  line-height: 24px;
+}
+#abstract+p code, #abstract+p samp, #abstract+p tt {
+  font-size: 16px;
+  line-height: 0;
+}
+
+p {
+  padding: 0;
+  margin: 0.5em 0;
+  text-align: left;
+}
+div {
+  margin: 0;
+}
+.alignRight.art-text {
+  background-color: var(--highlight-color);
+  border: 1px solid var(--line-color);
+  border-radius: 3px;
+  padding: 0.5em 1em 0;
+  margin-bottom: 0.5em;
+}
+.alignRight.art-text pre {
+  padding: 0;
+  width: auto;
+}
+.alignRight {
+  margin: 1em 0;
+}
+.alignRight > *:first-child {
+  border: none;
+  margin: 0;
+  float: right;
+  clear: both;
+}
+.alignRight > *:nth-child(2) {
+  clear: both;
+  display: block;
+  border: none;
+}
+svg {
+  display: block;
+}
+/* font-family isn't space-separated, but =~ will have to do */
+svg[font-family~="monospace" i], svg [font-family~="monospace" i] {
+  font-family: var(--font-mono);
+}
+.alignCenter.art-text {
+  background-color: var(--highlight-color);
+  border: 1px solid var(--line-color);
+  border-radius: 3px;
+  padding: 0.5em 1em 0;
+  margin-bottom: 0.5em;
+}
+.alignCenter.art-text pre {
+  padding: 0;
+  width: auto;
+}
+.alignCenter {
+  margin: 1em 0;
+}
+.alignCenter > *:first-child {
+  border: none;
+  /* this isn't optimal, but it's an existence proof.  PrinceXML doesn't
+     support flexbox yet.
+  */
+  display: table;
+  margin: 0 auto;
+}
+
+/* lists */
+ol, ul {
+  padding: 0;
+  margin: 0 0 0.5em 2em;
+}
+:is(ol, ul) :is(ol, ul) {
+  margin-left: 1em;
+}
+li {
+  margin: 0 0 0.25em 0;
+}
+.ulCompact li {
+  margin: 0;
+}
+ul.empty, .ulEmpty {
+  list-style-type: none;
+}
+ul.empty li, .ulEmpty li {
+  margin-top: 0.5em;
+}
+:is(ul, ol).compact, .ulCompact, .olCompact {
+  line-height: 100%;
+  margin: 0 0 0 2em;
+}
+
+/* definition lists */
+dl {
+}
+dl > dt {
+  float: left;
+  margin-right: 1em;
+}
+dl > dd {
+  margin-bottom: .8em;
+  min-height: 1.3em;
+}
+:is(dl.compact, .dlCompact) > dd {
+  margin-bottom: 0em;
+}
+dl > dd > dl {
+  margin-top: 0.5em;
+  margin-bottom: 0em;
+}
+dd.break {
+  display: none;
+}
+
+/* links */
+a, a[href].selfRef:hover {
+  text-decoration: none;
+}
+a[href].selfRef {
+  color: var(--text-color);
+}
+a[href] {
+  color: var(--link-color);
+}
+a[href]:hover {
+  text-decoration: underline;
+}
+a[href].selfRef:hover {
+  background-color: var(--highlight-color);
+}
+a.xref {
+  white-space: nowrap;
+}
+
+/* Figures */
+tt, code, pre {
+  background-color: var(--highlight-color);
+  font: 14px/22px var(--font-mono);
+}
+tt, code {
+  /* changing the font for inline elements leads to different ascender
+     and descender heights; as we want to retain baseline alignment,
+     remove leading to avoid altering the final height of lines */
+  line-height: 0;
+}
+:is(h1, h2, h3, h4, h5, h6) :is(tt, code) {
+  font-size: 84%;
+}
+pre {
+  border: 1px solid var(--line-color);
+  font-size: 13.5px;
+  line-height: 16px;
+  letter-spacing: -0.2px;
+  margin: 5px;
+  padding: 5px;
+}
+img {
+  max-width: 100%;
+}
+figure {
+  margin: 0.5em 0;
+  padding: 0;
+}
+figure blockquote {
+  margin: 0.8em 0.4em 0.4em;
+}
+figcaption, caption {
+  font-style: italic;
+  margin: 0.5em 1.5em;
+  text-align: left;
+}
+@media screen {
+  /* Auto-collapse boilerplate. */
+  :is(#status-of-memo, #copyright) p {
+    margin: -2px 0;
+    max-height: 0;
+    transition: max-height 2s ease, margin 0.5s ease 0.5s;
+    overflow: hidden;
+  }
+  :is(#status-of-memo, #copyright):hover p,
+  :is(#status-of-memo, #copyright) h2:target ~ p {
+    margin: 0.5em 0;
+    max-height: 500px;
+    overflow: auto;
+  }
+  pre, svg {
+    display: inline-block;
+    overflow-x: auto;
+  }
+  pre {
+    max-width: 100%;
+    width: calc(100% - 22px - 1em);
+  }
+  svg {
+    max-width: calc(100% - 22px - 1em);
+  }
+  figure pre {
+    display: block;
+    width: calc(100% - 25px);
+  }
+  :is(pre, svg) + .pilcrow {
+    display: inline-block;
+    vertical-align: text-bottom;
+    padding-bottom: 8px;
+  }
+}
+
+/* aside, blockquote */
+aside, blockquote {
+  margin-left: 0;
+  padding: 0 2em;
+  font-style: italic;
+}
+blockquote {
+  margin: 1em 0;
+}
+cite {
+  display: block;
+  text-align: right;
+  font-style: italic;
+}
+
+/* tables */
+table {
+  max-width: 100%;
+  margin: 0 0 1em;
+  border-collapse: collapse;
+}
+table.right {
+  margin-left: auto;
+}
+table.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+table.left {
+  margin-right: auto;
+}
+thead, tbody {
+  border: 1px solid var(--line-color);
+}
+th, td {
+  text-align: left;
+  vertical-align: top;
+  padding: 5px 10px;
+}
+th {
+  background-color: var(--line-color);
+}
+:is(tr:nth-child(2n), thead+tbody > tr:nth-child(2n+1)) > td {
+  background-color: var(--background-color);
+}
+:is(tr:nth-child(2n+1), thead+tbody > tr:nth-child(2n)) > td {
+  background-color: var(--highlight-color);
+}
+table caption {
+  margin: 0;
+  padding: 3px 0 3px 1em;
+}
+table p {
+  margin: 0;
+}
+
+/* pilcrow */
+a.pilcrow {
+  margin-left: 3px;
+  opacity: 0.2;
+  user-select: none;
+}
+a.pilcrow[href] { color: var(--pilcrow-weak); }
+a.pilcrow[href]:hover { text-decoration: none; }
+@media not print {
+  :hover > a.pilcrow {
+    opacity: 1;
+  }
+  a.pilcrow[href]:hover {
+    color: var(--pilcrow-strong);
+    background-color: transparent;
+  }
+}
+@media print {
+  a.pilcrow {
+    display: none;
+  }
+}
+
+/* misc */
+hr {
+  border: 0;
+  border-top: 1px solid var(--line-color);
+}
+.bcp14 {
+  font-variant: small-caps;
+  font-weight: 600;
+  font-size: 14.5px;
+}
+.role {
+  font-variant: all-small-caps;
+}
+
+/* info block */
+#identifiers {
+  margin: 0;
+  font-size: var(--small-font-size);
+  line-height: 18px;
+  --identifier-width: 8em;
+}
+#identifiers dt {
+  width: var(--identifier-width);
+  margin: 0;
+  clear: left;
+  float: left;
+  text-align: right;
+}
+#identifiers dd {
+  margin: 0 0 0 calc(1em + var(--identifier-width));
+  min-width: 5em;
+}
+#identifiers .authors .author {
+  display: inline-block;
+  margin-right: 1.5em;
+}
+#identifiers .authors .org {
+  font-style: italic;
+}
+
+/* The prepared/rendered info at the very bottom of the page */
+.docInfo {
+  color: #999;
+  font-size: 0.9em;
+  font-style: italic;
+  margin-top: 2em;
+}
+.docInfo .prepared {
+  float: left;
+}
+.docInfo .prepared {
+  float: right;
+}
+
+/* table of contents */
+#toc {
+  padding: 0.75em 0 2em 0;
+  margin-bottom: 1em;
+}
+#toc nav ul {
+  margin: 0 0.5em 0 0;
+  padding: 0;
+  list-style: none;
+}
+#toc nav li {
+  line-height: 1.3em;
+  margin: 0.75em 0;
+  padding-left: 1.2em;
+  text-indent: -1.2em;
+}
+#toc a.xref {
+  white-space: normal;
+}
+/* references */
+.references dt {
+  text-align: right;
+  font-weight: bold;
+  min-width: 7em;
+}
+.references dd {
+  margin-left: 8em;
+  overflow: auto;
+}
+
+.refInstance {
+  margin-bottom: 1.25em;
+}
+
+.references .ascii {
+  margin-bottom: 0.25em;
+}
+
+/* index */
+#rfc\.index\.index + ul {
+  margin-left: 0;
+}
+
+/* authors */
+address.vcard {
+  font-style: normal;
+  margin: 1em 0;
+}
+address.vcard .nameRole {
+  font-weight: 700;
+  margin-left: 0;
+}
+address.vcard .label {
+  margin: 0.5em 0;
+}
+address.vcard .type {
+  display: none;
+}
+.alternative-contact {
+  margin: 1.5em 0 1em;
+}
+hr.addr {
+  border-top: 1px dashed;
+  margin: 0;
+  color: #ddd;
+  max-width: calc(100% - 16px);
+}
+@media (min-width: 500px) {
+  #authors-addresses > section {
+    column-count: 2;
+    column-gap: 20px;
+  }
+  #authors-addresses > section > h2 {
+    column-span: all;
+  }
+  /* hack for break-inside: avoid-column */
+  #authors-addresses address {
+    display: inline-block;
+    break-inside: avoid-column;
+  }
+}
+
+.rfcEditorRemove p:first-of-type {
+  font-style: italic;
+}
+.cref {
+  background-color: rgba(249, 232, 105, 0.3);
+  padding: 2px 4px;
+}
+.crefSource {
+  font-style: italic;
+}
+/* alternative layout for smaller screens */
+@media screen and (max-width: 929px) {
+  #toc {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid #ccc;
+    opacity: 0.6;
+  }
+  #toc.active {
+      opacity: 1;
+  }
+  #toc h2 {
+    margin: 0;
+    padding: 2px 0 2px 6px;
+    padding-right: 1em;
+    font-size: 18px;
+    line-height: 24px;
+    min-width: 190px;
+    text-align: right;
+    background-color: #444;
+    color: white;
+    cursor: pointer;
+  }
+  #toc h2::before { /* css hamburger */
+    float: right;
+    position: relative;
+    width: 1em;
+    height: 1px;
+    left: -164px;
+    margin: 8px 0 0 0;
+    background: white none repeat scroll 0 0;
+    box-shadow: 0 4px 0 0 white, 0 8px 0 0 white;
+    content: "";
+  }
+  #toc nav {
+    display: none;
+    background-color: var(--background-color);
+    padding: 0.5em 1em 1em;
+    overflow: auto;
+    overscroll-behavior: contain;
+    height: calc(100vh - 48px);
+    border-left: 1px solid #ddd;
+  }
+  #toc.active nav {
+    display: block;
+  }
+  /* Make the collapsed ToC header render white on gray also when it's a link */
+  #toc h2 a,
+  #toc h2 a:link,
+  #toc h2 a:focus,
+  #toc h2 a:hover,
+  #toc a.toplink,
+  #toc a.toplink:hover {
+    color: white;
+    background-color: #444;
+    text-decoration: none;
+  }
+  #toc a.toplink {
+    margin-top: 2px;
+  }
+}
+
+/* alternative layout for wide screens */
+@media screen and (min-width: 930px) {
+  body {
+    padding-right: 360px;
+    padding-right: calc(min(180px + 20%, 500px));
+  }
+  #toc {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    right: calc(50vw - 480px);
+    width: 312px;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+  }
+  #toc h2 {
+    margin: 0;
+    padding: 0.25em 1em 1em 0;
+  }
+  #toc nav {
+    display: block;
+    height: calc(90vh - 84px);
+    bottom: 0;
+    padding: 0.5em 0 2em;
+    overflow: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+  }
+  #toc nav > ul  {
+    margin-bottom: 2em;
+  }
+  #toc ul {
+    margin: 0 0 0 4px;
+    font-size: var(--small-font-size);
+  }
+  #toc ul :is(p, li) {
+    margin: 2px 0;
+    line-height: 22px;
+  }
+  img { /* future proofing */
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* pagination */
+@media print {
+  body {
+    width: 100%;
+  }
+  p {
+    orphans: 3;
+    widows: 3;
+  }
+  #n-copyright-notice {
+    border-bottom: none;
+  }
+  #toc, #n-introduction {
+    page-break-before: always;
+  }
+  #toc {
+    border-top: none;
+    padding-top: 0;
+  }
+  figure, pre {
+    page-break-inside: avoid;
+  }
+  figure {
+    overflow: scroll;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+  }
+  h2+*, h3+*, h4+*, h5+*, h6+* {
+    page-break-before: avoid;
+  }
+  pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 10pt;
+  }
+  table {
+    border: 1px solid #ddd;
+  }
+  td {
+    border-top: 1px solid #ddd;
+  }
+}
+
+@page :first {
+  padding-top: 0;
+  @top-left {
+    content: normal;
+    border: none;
+  }
+  @top-center {
+    content: normal;
+    border: none;
+  }
+  @top-right {
+    content: normal;
+    border: none;
+  }
+}
+
+@page {
+  size: A4;
+  margin-bottom: 45mm;
+  padding-top: 20px;
+}
+
+/* Changes introduced to fix issues found during implementation */
+
+/* Separate body from document info even without intervening H1 */
+section {
+  clear: both;
+}
+
+/* Top align author divs, to avoid names without organization dropping level with org names */
+.author {
+  vertical-align: top;
+}
+
+/* Style section numbers with more space between number and title */
+.section-number {
+  padding-right: 0.5em;
+}
+
+/* Add styling for a link in the ToC that points to the top of the document */
+a.toplink {
+  float: right;
+  margin: 8px 0.5em 0;
+}
+
+/* Fix the dl styling to match the RFC 7992 attributes */
+dl > dt,
+dl.dlParallel > dt {
+  float: left;
+  margin-right: 1em;
+}
+dl.dlNewline > dt {
+  float: none;
+}
+
+/* Provide styling for table cell text alignment */
+table .text-left {
+  text-align: left;
+}
+table .text-center {
+  text-align: center;
+}
+table .text-right {
+  text-align: right;
+}
+
+/* Make the alternative author contact information look less like just another
+   author, and group it closer with the primary author contact information */
+.alternative-contact {
+  margin: 0.5em 0 0.25em 0;
+}
+address .non-ascii {
+  margin: 0 0 0 2em;
+}
+
+/* With it being possible to set tables with alignment
+  left, center, and right, { width: 100%; } does not make sense */
+table {
+  width: auto;
+}
+
+/* Avoid reference text that sits in a block with very wide left margin,
+   because of a long floating dt label.*/
+.references dd {
+  overflow: visible;
+}
+
+/* Control caption placement */
+caption {
+  caption-side: bottom;
+}
+
+/* Limit the width of the author address vcard, so names in right-to-left
+   script don't end up on the other side of the page. */
+
+address.vcard {
+  max-width: 20em;
+  margin-right: auto;
+}
+
+/* For address alignment dependent on LTR or RTL scripts */
+address div.left {
+  text-align: left;
+}
+address div.right {
+  text-align: right;
+}
+
+/* Give the table caption label the same styling as the figcaption */
+
+@media print {
+  .toplink {
+    display: none;
+  }
+
+  /* avoid overwriting the top border line with the ToC header */
+  #toc {
+    padding-top: 1px;
+  }
+
+  /* Avoid page breaks inside dl and author address entries */
+  dd {
+    page-break-before: avoid;
+  }
+  .vcard {
+    page-break-inside: avoid;
+  }
+
+}
+
+/* Dark mode. */
+@media (prefers-color-scheme: dark) {
+:root {
+  --background-color: #121212;
+  --text-color: #f0f0f0;
+  --title-color: #fff;
+  --link-color: #4da4f0;
+  --highlight-color: #282828;
+  --line-color: #444;
+  --pilcrow-weak: #444;
+  --pilcrow-strong: #666;
+  scrollbar-color: #777 #333;
+}
+}
+
+/* SVG Trick: a prefix match works because only black and white are allowed */
+svg :is([stroke="black"], [stroke^="#000"]) {
+  stroke: var(--text-color);
+}
+svg :is([stroke="white"], [stroke^="#fff"]) {
+  stroke: var(--background-color);
+}
+svg :is([fill="black"], [fill^="#000"], :not([fill])) {
+  fill: var(--text-color);
+}
+svg :is([stroke="fill"], [fill^="#fff"]) {
+  fill: var(--background-color);
+}
+</style>
+
+</head>
+<body>
+<table class="ears">
+<thead><tr>
+<td class="left">Internet-Draft</td>
+<td class="center">Centralization</td>
+<td class="right">July 2022</td>
+</tr></thead>
+<tfoot><tr>
+<td class="left">Nottingham</td>
+<td class="center">Expires 11 January 2023</td>
+<td class="right">[Page]</td>
+</tr></tfoot>
+</table>
+<div id="external-metadata" class="document-information"></div>
+<div id="internal-metadata" class="document-information">
+<dl id="identifiers">
+<dt class="label-workgroup">Workgroup:</dt>
+<dd class="workgroup">Network Working Group</dd>
+<dt class="label-internet-draft">Internet-Draft:</dt>
+<dd class="internet-draft">draft-nottingham-avoiding-internet-centralization-latest</dd>
+<dt class="label-published">Published:</dt>
+<dd class="published">
+<time datetime="2022-07-10" class="published">10 July 2022</time>
+    </dd>
+<dt class="label-intended-status">Intended Status:</dt>
+<dd class="intended-status">Informational</dd>
+<dt class="label-expires">Expires:</dt>
+<dd class="expires"><time datetime="2023-01-11">11 January 2023</time></dd>
+<dt class="label-authors">Author:</dt>
+<dd class="authors">
+<div class="author">
+      <div class="author-name">M. Nottingham</div>
+</div>
+</dd>
+</dl>
+</div>
+<h1 id="title">Centralization, Decentralization, and Internet Standards</h1>
+<section id="section-abstract">
+      <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
+<p id="section-abstract-1">Despite being designed and operated as a decentralized network-of-networks, the Internet is continuously subjected to forces that encourage centralization.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
+<p id="section-abstract-2">This document offers a definition of centralization, explains why it is undesirable, identifies different types of it, catalogues limitations of common approaches to decentralization, and explores what Internet standards efforts can do to address it.<a href="#section-abstract-2" class="pilcrow">¶</a></p>
+</section>
+<section class="note rfcEditorRemove" id="section-note.1">
+      <h2 id="name-about-this-document">
+<a href="#name-about-this-document" class="section-name selfRef">About This Document</a>
+      </h2>
+<p id="section-note.1-1">This note is to be removed before publishing as an RFC.<a href="#section-note.1-1" class="pilcrow">¶</a></p>
+<p id="section-note.1-2">
+        Status information for this document may be found at <span><a href="https://datatracker.ietf.org/doc/draft-nottingham-avoiding-internet-centralization/">https://datatracker.ietf.org/doc/draft-nottingham-avoiding-internet-centralization/</a></span>.<a href="#section-note.1-2" class="pilcrow">¶</a></p>
+<p id="section-note.1-3">Source for this draft and an issue tracker can be found at
+        <span><a href="https://github.com/mnot/avoiding-internet-centralization">https://github.com/mnot/avoiding-internet-centralization</a></span>.<a href="#section-note.1-3" class="pilcrow">¶</a></p>
+</section>
+<div id="status-of-memo">
+<section id="section-boilerplate.1">
+        <h2 id="name-status-of-this-memo">
+<a href="#name-status-of-this-memo" class="section-name selfRef">Status of This Memo</a>
+        </h2>
+<p id="section-boilerplate.1-1">
+        This Internet-Draft is submitted in full conformance with the
+        provisions of BCP 78 and BCP 79.<a href="#section-boilerplate.1-1" class="pilcrow">¶</a></p>
+<p id="section-boilerplate.1-2">
+        Internet-Drafts are working documents of the Internet Engineering Task
+        Force (IETF). Note that other groups may also distribute working
+        documents as Internet-Drafts. The list of current Internet-Drafts is
+        at <span><a href="https://datatracker.ietf.org/drafts/current/">https://datatracker.ietf.org/drafts/current/</a></span>.<a href="#section-boilerplate.1-2" class="pilcrow">¶</a></p>
+<p id="section-boilerplate.1-3">
+        Internet-Drafts are draft documents valid for a maximum of six months
+        and may be updated, replaced, or obsoleted by other documents at any
+        time. It is inappropriate to use Internet-Drafts as reference
+        material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
+<p id="section-boilerplate.1-4">
+        This Internet-Draft will expire on 11 January 2023.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="copyright">
+<section id="section-boilerplate.2">
+        <h2 id="name-copyright-notice">
+<a href="#name-copyright-notice" class="section-name selfRef">Copyright Notice</a>
+        </h2>
+<p id="section-boilerplate.2-1">
+            Copyright (c) 2022 IETF Trust and the persons identified as the
+            document authors. All rights reserved.<a href="#section-boilerplate.2-1" class="pilcrow">¶</a></p>
+<p id="section-boilerplate.2-2">
+            This document is subject to BCP 78 and the IETF Trust's Legal
+            Provisions Relating to IETF Documents
+            (<span><a href="https://trustee.ietf.org/license-info">https://trustee.ietf.org/license-info</a></span>) in effect on the date of
+            publication of this document. Please review these documents
+            carefully, as they describe your rights and restrictions with
+            respect to this document. Code Components extracted from this
+            document must include Revised BSD License text as described in
+            Section 4.e of the Trust Legal Provisions and are provided without
+            warranty as described in the Revised BSD License.<a href="#section-boilerplate.2-2" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="toc">
+<section id="section-toc.1">
+        <a href="#" onclick="scroll(0,0)" class="toplink">▲</a><h2 id="name-table-of-contents">
+<a href="#name-table-of-contents" class="section-name selfRef">Table of Contents</a>
+        </h2>
+<nav class="toc"><ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.1">
+            <p id="section-toc.1-1.1.1" class="keepWithNext"><a href="#section-1" class="xref">1</a>.  <a href="#name-introduction" class="xref">Introduction</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.2">
+            <p id="section-toc.1-1.2.1"><a href="#section-2" class="xref">2</a>.  <a href="#name-centralization" class="xref">Centralization</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.2.2.1">
+                <p id="section-toc.1-1.2.2.1.1" class="keepWithNext"><a href="#section-2.1" class="xref">2.1</a>.  <a href="#name-when-centralization-is-unde" class="xref">When Centralization is Undesirable</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.2.2.2">
+                <p id="section-toc.1-1.2.2.2.1"><a href="#section-2.2" class="xref">2.2</a>.  <a href="#name-kinds-of-centralization" class="xref">Kinds of Centralization</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.2.2.2.2.1">
+                    <p id="section-toc.1-1.2.2.2.2.1.1" class="keepWithNext"><a href="#section-2.2.1" class="xref">2.2.1</a>.  <a href="#name-proprietary-centralization" class="xref">Proprietary Centralization</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.2.2.2.2.2">
+                    <p id="section-toc.1-1.2.2.2.2.2.1"><a href="#section-2.2.2" class="xref">2.2.2</a>.  <a href="#name-beneficial-centralization" class="xref">Beneficial Centralization</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.2.2.2.2.3">
+                    <p id="section-toc.1-1.2.2.2.2.3.1"><a href="#section-2.2.3" class="xref">2.2.3</a>.  <a href="#name-concentrated-centralization" class="xref">Concentrated Centralization</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.2.2.2.2.4">
+                    <p id="section-toc.1-1.2.2.2.2.4.1"><a href="#section-2.2.4" class="xref">2.2.4</a>.  <a href="#name-inherited-centralization" class="xref">Inherited Centralization</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.2.2.2.2.5">
+                    <p id="section-toc.1-1.2.2.2.2.5.1"><a href="#section-2.2.5" class="xref">2.2.5</a>.  <a href="#name-platform-centralization" class="xref">Platform Centralization</a></p>
+</li>
+                </ul>
+</li>
+            </ul>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3">
+            <p id="section-toc.1-1.3.1"><a href="#section-3" class="xref">3</a>.  <a href="#name-decentralization" class="xref">Decentralization</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.1">
+                <p id="section-toc.1-1.3.2.1.1"><a href="#section-3.1" class="xref">3.1</a>.  <a href="#name-decentralization-techniques" class="xref">Decentralization Techniques</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.1.2.1">
+                    <p id="section-toc.1-1.3.2.1.2.1.1"><a href="#section-3.1.1" class="xref">3.1.1</a>.  <a href="#name-federation" class="xref">Federation</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.1.2.2">
+                    <p id="section-toc.1-1.3.2.1.2.2.1"><a href="#section-3.1.2" class="xref">3.1.2</a>.  <a href="#name-multi-stakeholder-governanc" class="xref">Multi-Stakeholder Governance</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.1.2.3">
+                    <p id="section-toc.1-1.3.2.1.2.3.1"><a href="#section-3.1.3" class="xref">3.1.3</a>.  <a href="#name-distributed-consensus" class="xref">Distributed Consensus</a></p>
+</li>
+                </ul>
+</li>
+            </ul>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4">
+            <p id="section-toc.1-1.4.1"><a href="#section-4" class="xref">4</a>.  <a href="#name-what-should-internet-standa" class="xref">What Should Internet Standards Do?</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.1">
+                <p id="section-toc.1-1.4.2.1.1"><a href="#section-4.1" class="xref">4.1</a>.  <a href="#name-be-realistic" class="xref">Be Realistic</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.2">
+                <p id="section-toc.1-1.4.2.2.1"><a href="#section-4.2" class="xref">4.2</a>.  <a href="#name-decentralize-proprietary-fu" class="xref">Decentralize Proprietary Functions</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.3">
+                <p id="section-toc.1-1.4.2.3.1"><a href="#section-4.3" class="xref">4.3</a>.  <a href="#name-evaluate-new-decentralizati" class="xref">Evaluate New Decentralization Techniques</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.4">
+                <p id="section-toc.1-1.4.2.4.1"><a href="#section-4.4" class="xref">4.4</a>.  <a href="#name-build-robust-ecosystems" class="xref">Build Robust Ecosystems</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.5">
+                <p id="section-toc.1-1.4.2.5.1"><a href="#section-4.5" class="xref">4.5</a>.  <a href="#name-control-delegation-of-power" class="xref">Control Delegation of Power</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.6">
+                <p id="section-toc.1-1.4.2.6.1"><a href="#section-4.6" class="xref">4.6</a>.  <a href="#name-target-extensibility" class="xref">Target Extensibility</a></p>
+</li>
+            </ul>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5">
+            <p id="section-toc.1-1.5.1"><a href="#section-5" class="xref">5</a>.  <a href="#name-security-considerations" class="xref">Security Considerations</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6">
+            <p id="section-toc.1-1.6.1"><a href="#section-6" class="xref">6</a>.  <a href="#name-informative-references" class="xref">Informative References</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7">
+            <p id="section-toc.1-1.7.1"><a href="#appendix-A" class="xref">Appendix A</a>.  <a href="#name-acknowledgements" class="xref">Acknowledgements</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8">
+            <p id="section-toc.1-1.8.1"><a href="#appendix-B" class="xref"></a><a href="#name-authors-address" class="xref">Author's Address</a></p>
+</li>
+        </ul>
+</nav>
+</section>
+</div>
+<div id="introduction">
+<section id="section-1">
+      <h2 id="name-introduction">
+<a href="#section-1" class="section-number selfRef">1. </a><a href="#name-introduction" class="section-name selfRef">Introduction</a>
+      </h2>
+<p id="section-1-1">The Internet has succeeded in no small part because of its purposeful avoidance of any single controlling entity. Originating in a desire to prevent a single technical failure from having a wide impact <span>[<a href="#RAND" class="xref">BARAN</a>]</span>, this stance has also enabled the Internet's rapid adoption and broad spread. The Internet can accommodate a spectrum of requirements and is now positioned as a global public good because joining, deploying an application on, or using the Internet does not require permission from or ceding control to another entity.<a href="#section-1-1" class="pilcrow">¶</a></p>
+<p id="section-1-2">While avoiding centralization of the Internet remains a widely shared goal, achieving it consistently has proven difficult. Today, many successful protocols and applications on the Internet operate in a centralized fashion -- to the point where some proprietary, centralized services have become so well-known that they are commonly mistaken for the Internet itself. Even when protocols incorporate techniques intended to prevent centralization, economic and social factors can drive users to prefer centralized solutions built with or on top of supposedly decentralized technology.<a href="#section-1-2" class="pilcrow">¶</a></p>
+<p id="section-1-3">These difficulties call into question what role architectural regulation -- in particular, that performed by open standards bodies such as the IETF -- should play in preventing, mitigating, and controlling Internet centralization. This document discusses aspects of centralization that relate to Internet standards efforts, and argues that while the IETF may not be able to prevent centralization, there are still meaningful steps we can take to counteract it.<a href="#section-1-3" class="pilcrow">¶</a></p>
+<p id="section-1-4"><a href="#centralization" class="xref">Section 2</a> defines centralization, explains why it is undesirable, and surveys some kinds of centralization seen on the Internet. <a href="#decentralization" class="xref">Section 3</a> explores decentralization and highlights some relevant techniques, along with their limitations. Finally, <a href="#considerations" class="xref">Section 4</a> considers the role that Internet standards play in avoiding centralization and mitigating its effects.<a href="#section-1-4" class="pilcrow">¶</a></p>
+<p id="section-1-5">The primary audience for this document is the engineers who design and standardize Internet protocols. However, designers of proprietary protocols can benefit from considering aspects of centralization, especially if they intend their protocol to be considered for eventual standardisation. Likewise, policymakers can use this document to help identify and remedy inappropriately centralized protocols and applications.<a href="#section-1-5" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="centralization">
+<section id="section-2">
+      <h2 id="name-centralization">
+<a href="#section-2" class="section-number selfRef">2. </a><a href="#name-centralization" class="section-name selfRef">Centralization</a>
+      </h2>
+<p id="section-2-1">This document defines "centralization" as the ability of a single entity or a small group of them to exclusively observe, capture, control, or extract rent from the operation or use of an Internet function.<a href="#section-2-1" class="pilcrow">¶</a></p>
+<p id="section-2-2">Here, "entity" could be a single person, a corporation, or a government. It does not include an organisation that operates in a manner that effectively mitigates centralization (see, e.g., <a href="#multi" class="xref">Section 3.1.2</a>).<a href="#section-2-2" class="pilcrow">¶</a></p>
+<p id="section-2-3">"Internet function" is defined broadly. It might be an enabling protocol already defined by standards, such as IP <span>[<a href="#RFC791" class="xref">RFC791</a>]</span>, BGP <span>[<a href="#RFC4271" class="xref">RFC4271</a>]</span>, TCP <span>[<a href="#RFC793" class="xref">RFC793</a>]</span>, or HTTP <span>[<a href="#HTTP" class="xref">HTTP</a>]</span>. It might also be a proposal for a new enabling protocol, or an extension to an existing one.<a href="#section-2-3" class="pilcrow">¶</a></p>
+<p id="section-2-4">However, the Internet's functions are not limited to standards-defined protocols. User-visible applications built on top of standard protocols are also vulnerable to centralization -- for example, social networking, file sharing, financial services, and news dissemination. Likewise,  networking equipment, hardware, operating systems, and software act as enabling technologies that can exhibit centralization. The supply of Internet connectivity to end users in a particular area or situation can also be subject to the forces of centralization, as can supply of transit between networks (so called "Tier 1" networks).<a href="#section-2-4" class="pilcrow">¶</a></p>
+<p id="section-2-5">Centralization is not a binary condition; it is a continuum. At one extreme, a function absolutely controlled by a single entity (see <a href="#direct" class="xref">Section 2.2.1</a>) represents complete centralization; at the other extreme, a function whose value can be realised by any two parties without the possibility of any external interference or influence represents complete decentralization (sometimes referred to as "distributed" or "peer-to-peer").<a href="#section-2-5" class="pilcrow">¶</a></p>
+<p id="section-2-6">While a few functions might occupy the ends of this spectrum, most reside somewhere between the extremes. Therefore, it is often useful to consider the amount of <em>centralization risk</em> associated with a function, depending on the scale, scope, and nature of the influences on it. Note that a function might have more than one source of centralization risk, each with its own characteristics.<a href="#section-2-6" class="pilcrow">¶</a></p>
+<p id="section-2-7">Centralization risk is strongest when it affects the entire Internet. However, it can also be present when a substantial portion of the Internet's users lack options for a function. For example, if there is only one provider for a function in a region or legal jurisdiction, that function is effectively centralized for those users.<a href="#section-2-7" class="pilcrow">¶</a></p>
+<p id="section-2-8">Centralization risk is most obviously created by the direct assignment of a role to a single entity, but it is also created when a single entity takes on that role for other reasons. For example, friction against switching to a substitute provider of a function often leads to concentration (see <a href="#indirect" class="xref">Section 2.2.3</a>). If switching requires a significant amount of time, resources, expertise, coordination, loss of functionality, or effort, centralization risk is indicated. Conversely, a function based on a well-defined, open specification designed to minimize switching costs might be considered to have less centralization risk even when there are only a few large providers.<a href="#section-2-8" class="pilcrow">¶</a></p>
+<p id="section-2-9">This definition of centralization focuses largely upon the relationships between parties to communication, rather than systems design. For example, a cloud service might use decentralized techniques to improve its resilience but still be operated by a single entity, thereby exhibiting the kind of centralization that this document is concerned with. A failure due to a cut cable, power outage, or failed server is qualitatively different from the issues encountered when a core Internet function has a gatekeeper.<a href="#section-2-9" class="pilcrow">¶</a></p>
+<p id="section-2-10">As a result, the concept of availability is distinct from centralization, and any relationship between them cannot be assumed without careful analysis of where and how centralization occurs. Centralized systems might be more available due to factors like the resources available to them, but also have greater impact when they have a fault; decentralized systems might be more resilient in the face of local failures, but less able to react to systemic issues.<a href="#section-2-10" class="pilcrow">¶</a></p>
+<p id="section-2-11">For example, a large variety of Web sites might depend upon a cloud hosting provider or content delivery network; if it were to become unavailable (whether for technical or other reasons), many people's experience of the Internet might be disrupted. Likewise, a mobile Internet access provider might have an outage that affects hundreds, thousands, or more of its users. In both cases, centralization is not engaged by the loss of availability or its scale, but it well might be if the parties relying on the function don't have reasonable options to switch to if they are unhappy with the availability of the service provided, or if friction against switching to an alternative is too great.<a href="#section-2-11" class="pilcrow">¶</a></p>
+<p id="section-2-12">Also, it is important to distinguish centralization from anti-competitive concerns (also known as "anti-trust"). While there are many interactions between these concepts and making the Internet more competitive may be a motivation for avoiding centralization, only courts have the authority to define a relevant market and determine that behaviour is anti-competitive. Furthermore, what might be considered undesirable consolidation by the technical community might not attract competition regulation, and conversely what might attract competition regulation might not be of great concern to the technical community if other mitigations are felt to be adequate.<a href="#section-2-12" class="pilcrow">¶</a></p>
+<div id="why">
+<section id="section-2.1">
+        <h3 id="name-when-centralization-is-unde">
+<a href="#section-2.1" class="section-number selfRef">2.1. </a><a href="#name-when-centralization-is-unde" class="section-name selfRef">When Centralization is Undesirable</a>
+        </h3>
+<p id="section-2.1-1">There are three overarching reasons why centralization of Internet functions can be concerning.<a href="#section-2.1-1" class="pilcrow">¶</a></p>
+<p id="section-2.1-2">First, the Internet's very nature is incompatible with centralization. As a "large, heterogeneous collection of interconnected systems" <span>[<a href="#BCP95" class="xref">BCP95</a>]</span> the Internet is often characterised as a "network of networks". These networks relate as peers who agree to facilitate communication, rather than having a relationship of subservience to others' requirements or coercion by them. This focus on independence of action carries through the way the network is architected -- for example, in the concept of an "autonomous system".<a href="#section-2.1-2" class="pilcrow">¶</a></p>
+<p id="section-2.1-3">Second, when a third party has unavoidable access to communications, the informational and positional advantages gained allow observation of behaviour (the "panopticon effect") and shaping or even denial of behaviour (the "chokepoint effect") <span>[<a href="#INTERMEDIARY-INFLUENCE" class="xref">JUDGE</a>]</span> -- capabilities that those parties (or the states that have authority over them) can use for coercive ends <span>[<a href="#INTERDEPENDENCE" class="xref">FARRELL</a>]</span> or even to disrupt society itself. Just as good governance of states requires separation of powers <span>[<a href="#FEDERALIST-51" class="xref">MADISON</a>]</span>, so too does good governance of the Internet require that power not be concentrated in one place without appropriate checks and balances.<a href="#section-2.1-3" class="pilcrow">¶</a></p>
+<p id="section-2.1-4">Finally, centralization of a function can have deleterious effects on the Internet itself, including:<a href="#section-2.1-4" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-2.1-5.1">
+            <em>Limiting Innovation</em>: Centralization can preclude the possibility of "permissionless innovation" -- the ability to deploy new, unforeseen applications without requiring coordination with parties other than those you are communicating with.<a href="#section-2.1-5.1" class="pilcrow">¶</a>
+</li>
+          <li class="normal" id="section-2.1-5.2">
+            <em>Constraining Competition</em>: The Internet and its users benefit from robust competition when applications and services are available from many providers -- especially when those users can build their own applications and services based upon interoperable standards. When a centralized service or platform must be used because no substitutes are suitable, it effectively becomes an essential facility, which encourages abuse of power.<a href="#section-2.1-5.2" class="pilcrow">¶</a>
+</li>
+          <li class="normal" id="section-2.1-5.3">
+            <em>Reducing Availability</em>: Availability of the Internet (and applications and services built upon it) improves when there are many ways to obtain access. While centralized services' availability can benefit from the focused attention that their elevated role requires, failure of a large, centralized provider can have a disproportionate impact on availability.<a href="#section-2.1-5.3" class="pilcrow">¶</a>
+</li>
+          <li class="normal" id="section-2.1-5.4">
+            <em>Creating Monoculture</em>: The scale available to a centralized service or application can magnify minor flaws in features to a degree that can have broad consequences. For example, a single codebase for routers elevates the impact of a bug or vulnerability; a single recommendation algorithm for content can have severe social impact. Diversity in these functions' implementation leads to a more robust outcome when viewed systemically. <span>[<a href="#POLYCENTRIC" class="xref">ALIGIA</a>]</span><a href="#section-2.1-5.4" class="pilcrow">¶</a>
+</li>
+          <li class="normal" id="section-2.1-5.5">
+            <em>Self-Reinforcement</em>: As widely noted (see, e.g., <span>[<a href="#ACCESS" class="xref">VESTAGER</a>]</span>), a centralized service's access to data allows it the opportunity to make improvements to its offerings, while denying such access to others.<a href="#section-2.1-5.5" class="pilcrow">¶</a>
+</li>
+        </ul>
+<p id="section-2.1-6">See also <span>[<a href="#SUCCESS" class="xref">KENDE</a>]</span> for further exploration of how centralization can affect the Internet.<a href="#section-2.1-6" class="pilcrow">¶</a></p>
+<p id="section-2.1-7">As discussed below in <a href="#necessary" class="xref">Section 2.2.2</a>, not all centralization is undesirable or avoidable. <span>[<a href="#AMBITION" class="xref">SCHNEIDER</a>]</span> notes that "centralized structures can have virtues, such as enabling publics to focus their limited attention for oversight, or forming a power bloc capable of challenging less-accountable blocs that might emerge. Centralized structures that have earned widespread respect in recent centuries - including governments, corporations, and nonprofit organizations - have done so in no small part because of the intentional design that went into those structures."<a href="#section-2.1-7" class="pilcrow">¶</a></p>
+<p id="section-2.1-8">With that in mind, centralization risk on the Internet is most concerning when it is not broadly held to be necessary, when it has no checks, balances, or other mechanisms of accountability, when it selects "favourites" which are difficult (or impossible) to displace, and when it has the damaging effects outlines above, or the potential for them.<a href="#section-2.1-8" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="kinds">
+<section id="section-2.2">
+        <h3 id="name-kinds-of-centralization">
+<a href="#section-2.2" class="section-number selfRef">2.2. </a><a href="#name-kinds-of-centralization" class="section-name selfRef">Kinds of Centralization</a>
+        </h3>
+<p id="section-2.2-1">Centralization on the Internet is not uniform; it presents in a variety of ways, depending on its relationship to the function in question and underlying causes. The subsections below describe different aspects of Internet centralization.<a href="#section-2.2-1" class="pilcrow">¶</a></p>
+<div id="direct">
+<section id="section-2.2.1">
+          <h4 id="name-proprietary-centralization">
+<a href="#section-2.2.1" class="section-number selfRef">2.2.1. </a><a href="#name-proprietary-centralization" class="section-name selfRef">Proprietary Centralization</a>
+          </h4>
+<p id="section-2.2.1-1">Creating of a protocol or application with a fixed role for a specific party is the most straightforward kind of centralization. Many messaging, videoconferencing, chat, social networking, and similar applications operate in this fashion currently.<a href="#section-2.2.1-1" class="pilcrow">¶</a></p>
+<p id="section-2.2.1-2">Because they allow control by a single entity, proprietary protocols are often considered simpler to design, more amenable to evolution, and more likely to meet user needs <span>[<a href="#MOXIE" class="xref">MOXIE</a>]</span>, compared to decentralized alternatives. However, they have corresponding centralization risk -- if the function has no alternative providers, or switching to those providers is too difficult, its users are "locked in."<a href="#section-2.2.1-2" class="pilcrow">¶</a></p>
+<p id="section-2.2.1-3">Proprietary protocols and applications are not considered as being part of the Internet per se; instead, they are more properly characterized as being built on top of the Internet. The Internet architecture and associated standards do not regulate them, beyond the constraints that the underlying protocols (e.g., TCP, IP, HTTP) impose.<a href="#section-2.2.1-3" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="necessary">
+<section id="section-2.2.2">
+          <h4 id="name-beneficial-centralization">
+<a href="#section-2.2.2" class="section-number selfRef">2.2.2. </a><a href="#name-beneficial-centralization" class="section-name selfRef">Beneficial Centralization</a>
+          </h4>
+<p id="section-2.2.2-1">Some protocols and applications have goals that require the introduction of a centralized function. In doing so, they are explicitly relying on centralization to deliver a particular benefit.<a href="#section-2.2.2-1" class="pilcrow">¶</a></p>
+<p id="section-2.2.2-2">For example, a function that needs a single, globally coordinated "source of truth" is by nature centralized -- such as in the Domain Name System (DNS), which allows human-friendly naming to be converted into network addresses in a globally consistent fashion.<a href="#section-2.2.2-2" class="pilcrow">¶</a></p>
+<p id="section-2.2.2-3">Another function exhibiting beneficial centralization is IP addresses allocation. Internet routing requires addresses to be allocated uniquely, but if a single government or company captured the addressing function, the entire Internet would be at risk of abuse by that entity. Similarly, the need for coordination in the Web's trust model brings centralization risk, because of the Certificate Authority's role in communication between clients and servers.<a href="#section-2.2.2-3" class="pilcrow">¶</a></p>
+<p id="section-2.2.2-4">Protocols that need to solve the "rendezvous problem" to coordinate communication between two parties who are not in direct contact also suffer from this kind of centralization. For example, chat protocols need to coordinate communication between two parties that wish to talk; while the actual communication can be direct between them (so long as the protocol facilitates that), the endpoints' mutual discovery typically requires a third party at some point. From the perspective of those two users, the rendezvous function has centralization risk.<a href="#section-2.2.2-4" class="pilcrow">¶</a></p>
+<p id="section-2.2.2-5">Likewise, when a function requires governance to realize common goals and protect minority interests, a "choke point" is naturally formed by the chosen governance mechanism, increasing centralization risk. For example, defining and applying a content moderation policy both have centralization risk.<a href="#section-2.2.2-5" class="pilcrow">¶</a></p>
+<p id="section-2.2.2-6">Deciding what is beneficial is a judgment call. Some protocols cannot function without a centralized function; others might be significantly enhanced for certain use cases if a function is centralized, or might merely be more efficient. Such judgments should be made in light of established architectural principles and how benefits accrue to end users.<a href="#section-2.2.2-6" class="pilcrow">¶</a></p>
+<p id="section-2.2.2-7">When beneficial centralization is present, Internet protocols often attempt to mitigate the associated risks using measures such as federation (see <a href="#federation" class="xref">Section 3.1.1</a>) and multi-stakeholder governance (see <a href="#multi" class="xref">Section 3.1.2</a>). Protocols that successfully mitigate beneficial centralization are often reused, to avoid the considerable cost and risk of re-implementing those mitigations. For example, if a protocol requires a coordinated, global naming function, reusing the Domain Name System is usually preferable to establishing a new system.<a href="#section-2.2.2-7" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="indirect">
+<section id="section-2.2.3">
+          <h4 id="name-concentrated-centralization">
+<a href="#section-2.2.3" class="section-number selfRef">2.2.3. </a><a href="#name-concentrated-centralization" class="section-name selfRef">Concentrated Centralization</a>
+          </h4>
+<p id="section-2.2.3-1">Even when a function avoids proprietary centralization and mitigates any beneficial centralization present, it might become centralized in practice when external factors influence its deployment, so that few or even just one entity provides the function. This is often referred to as "concentration." Economic, legal, and social factors that encourage use of a central function despite the absence of such a requirement in the protocol itself can cause concentration.<a href="#section-2.2.3-1" class="pilcrow">¶</a></p>
+<p id="section-2.2.3-2">Often, the factors driving concentration are related to the network effects that are so often seen on the Internet. While in theory every node on the Internet is equal, in practice some nodes are much more connected than others: for example, just a few sites drive much of the traffic on the Web. While expected and observed in many kinds of networks, network effects award asymmetric power to nodes that act as intermediaries to communication. <span>[<a href="#SCALE-FREE" class="xref">BARABASI</a>]</span><a href="#section-2.2.3-2" class="pilcrow">¶</a></p>
+<p id="section-2.2.3-3">For example, social networking is an application that is currently supplied by a few proprietary platforms despite standardization efforts (see, e.g., <span>[<a href="#ACTIVITYSTREAMS" class="xref">ACTIVITYSTREAMS</a>]</span>), because of the powerful network effects associated. While there has been some competition in social networking, a group of people who wish to communicate are often locked in by the choices that their peers make, because of the coordination required to move to a new service.<a href="#section-2.2.3-3" class="pilcrow">¶</a></p>
+<p id="section-2.2.3-4">See <span>[<a href="#ISOC" class="xref">ISOC</a>]</span> for a deeper exploration of concentration.<a href="#section-2.2.3-4" class="pilcrow">¶</a></p>
+<p id="section-2.2.3-5">Concentration is difficult to avoid in protocol design, and federated protocols are particularly vulnerable to it (see <a href="#federation" class="xref">Section 3.1.1</a>).<a href="#section-2.2.3-5" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="network">
+<section id="section-2.2.4">
+          <h4 id="name-inherited-centralization">
+<a href="#section-2.2.4" class="section-number selfRef">2.2.4. </a><a href="#name-inherited-centralization" class="section-name selfRef">Inherited Centralization</a>
+          </h4>
+<p id="section-2.2.4-1">Most Internet protocols and applications depend on other, "lower-layer" protocols and their implementations. The features, deployment, and operation of these dependencies can surface centralization into functions and applications built "on top" of them.<a href="#section-2.2.4-1" class="pilcrow">¶</a></p>
+<p id="section-2.2.4-2">For example, the network between endpoints can introduce centralization risk to application-layer protocols, because it is necessary for communication and therefore has power over it. A network might block access to, slow down, or change the content of various application protocols or specific services for financial, political, operational, or criminal reasons, creating pressure to use other services, which can cause their centralization.<a href="#section-2.2.4-2" class="pilcrow">¶</a></p>
+<p id="section-2.2.4-3">Likewise, having only a single implementation of a protocol is an inherited centralization risk, because applications that use it are vulnerable to the control it has over their operation. Even if it is Open Source, there might be inherited centralization if there are factors that make forking difficult (for example, the cost of maintaining that fork).<a href="#section-2.2.4-3" class="pilcrow">¶</a></p>
+<p id="section-2.2.4-4">Inherited centralization is often present when network effects restrict choices, but can also be created by legal mandates and incentives that restrict the options for a function (such as Internet access), its provision, or the range of implementations available.<a href="#section-2.2.4-4" class="pilcrow">¶</a></p>
+<p id="section-2.2.4-5">Some kinds of inherited centralization can be prevented by enforcing layer boundaries through use of techniques like encryption. When the number of parties who have access to content of communication are limited, parties at lower layers can be prevented from interfering with and observing it. Although those lower-layer parties might still prevent communication, encryption also makes it more difficult to discriminate a target from other traffic.<a href="#section-2.2.4-5" class="pilcrow">¶</a></p>
+<p id="section-2.2.4-6">Note that the prohibitive effect of encryption on inherited centralization is most pronounced when most (if not all) traffic is encrypted. See also <span>[<a href="#RFC7258" class="xref">RFC7258</a>]</span>.<a href="#section-2.2.4-6" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="platform">
+<section id="section-2.2.5">
+          <h4 id="name-platform-centralization">
+<a href="#section-2.2.5" class="section-number selfRef">2.2.5. </a><a href="#name-platform-centralization" class="section-name selfRef">Platform Centralization</a>
+          </h4>
+<p id="section-2.2.5-1">The complement to inherited centralization is platform centralization -- where a function does not directly define a central role, but could facilitate centralization in the applications it supports.<a href="#section-2.2.5-1" class="pilcrow">¶</a></p>
+<p id="section-2.2.5-2">For example, HTTP <span>[<a href="#HTTP" class="xref">HTTP</a>]</span> is not considered a centralized protocol; interoperable servers are  easy to instantiate, and multiple clients are available. It can be used without central coordination beyond that provided by DNS, as discussed above.<a href="#section-2.2.5-2" class="pilcrow">¶</a></p>
+<p id="section-2.2.5-3">However, applications built on top of HTTP (as well as the rest of the "Web Platform") often exhibit centralization (for example, social networking). HTTP is therefore an example of a platform for centralization -- while the protocol itself is not centralized, it facilitates the creation of centralized services and applications.<a href="#section-2.2.5-3" class="pilcrow">¶</a></p>
+<p id="section-2.2.5-4">Like concentration, platform centralization is difficult to prevent with protocol design. Because of the layered nature of the Internet, most protocols allow considerable flexibility in how they are used, often in a way that it becomes attractive to form a dependency on one party's operation.<a href="#section-2.2.5-4" class="pilcrow">¶</a></p>
+</section>
+</div>
+</section>
+</div>
+</section>
+</div>
+<div id="decentralization">
+<section id="section-3">
+      <h2 id="name-decentralization">
+<a href="#section-3" class="section-number selfRef">3. </a><a href="#name-decentralization" class="section-name selfRef">Decentralization</a>
+      </h2>
+<p id="section-3-1">While the term "decentralization" has a long history of use in economics, politics, religion, and international development, In <span>[<a href="#RAND" class="xref">BARAN</a>]</span>, Barans gave one of the first definitions relevant to computer networking, as a condition when "complete reliance upon a single point is not always required."<a href="#section-3-1" class="pilcrow">¶</a></p>
+<p id="section-3-2">This seemingly straightforward technical definition hides several issues.<a href="#section-3-2" class="pilcrow">¶</a></p>
+<p id="section-3-3">First, identifying which aspects of a function to decentralize and how to do so can be difficult, both because there are often many ways a function might be centralized, and because centralization sometimes only becomes evident after the function is deployed at scale.<a href="#section-3-3" class="pilcrow">¶</a></p>
+<p id="section-3-4">For example, a cloud storage function might be implemented using a distributed consensus protocol, assuring that the failure of any single node will not affect the system's operation or availability. In that sense, it is decentralized. However, if it is operated by a single legal entity, that brings a very different kind of centralization risk, especially if there are few other options available, or if there is friction against choosing other options.<a href="#section-3-4" class="pilcrow">¶</a></p>
+<p id="section-3-5">Another example is the Web, which was envisioned and widely held to be a decentralizing force in its early life. Its inherent platform centralization only became apparent when large sites successfully leveraged network effects for dominance of social networking, marketplaces, and similar functions.<a href="#section-3-5" class="pilcrow">¶</a></p>
+<p id="section-3-6">Second, different parties might have good-faith differences on what "sufficiently decentralized" means based upon their beliefs, perceptions and goals. Just as centralization is a continuum, so is decentralization, and not everyone agrees one what the "right" level or type is, how to weigh different forms of centralization against each other, or how to weigh centralization against other architectural goals (such as security or privacy).<a href="#section-3-6" class="pilcrow">¶</a></p>
+<p id="section-3-7">This is seen in the DNS as a single, global "source of truth" with inherent (if beneficial) centralization. The associated risk is mitigated through multi-stakeholder governance by ICANN (see <a href="#multi" class="xref">Section 3.1.2</a>). While many believe that this arrangement is sufficient and might even have desirable qualities (such as the ability to impose community standards over the operation of the name space), others reject ICANN's oversight of the DNS as illegitimate, favouring decentralization based upon distributed consensus protocols rather than multistakeholderism. <span>[<a href="#MUSIANI" class="xref">MUSIANI</a>]</span><a href="#section-3-7" class="pilcrow">¶</a></p>
+<p id="section-3-8">Third, decentralization unavoidably involves adjustments to the power relationships between protocol participants, especially when decentralizing a function opens up the possibility of centralization elsewhere. As Schneider notes in <span>[<a href="#AMBITION" class="xref">SCHNEIDER</a>]</span>, decentralization "appears to operate as a rhetorical strategy that directs attention toward some aspects of a proposed social order and away from others", so "we cannot accept technology as a substitute for taking social, cultural, and political considerations seriously." Or, as more bluntly stated in <span>[<a href="#PERSPECTIVE" class="xref">BODO</a>]</span>, "without governance mechanisms in place, nodes may collude, people may lie to each other, markets can be rigged, and there can be significant cost to people entering and exiting markets."<a href="#section-3-8" class="pilcrow">¶</a></p>
+<p id="section-3-9">For example, while blockchain-based cryptocurrencies might address the centralization inherent in traditional currencies through technical means, the concentration of power that many exhibit in terms of voting/mining power, distribution of funds, and diversity of codebase causes some to question how decentralized they actually are. <span>[<a href="#AREWEDECENTRALIZEDYET" class="xref">AREWEDECENTRALIZEDYET</a>]</span> The lack of formal structures brings an opportunity for latent, informal power structures that have their own risks -- including centralization. <span>[<a href="#STRUCTURELESS" class="xref">FREEMAN</a>]</span><a href="#section-3-9" class="pilcrow">¶</a></p>
+<p id="section-3-10">In practice, this means that decentralizing a function requires considerable work, is inherently political, and involves a large degree of uncertainty about the outcome. In particular, if one considers decentralization as a larger social goal (in the spirit of how the term is used in other, non-computing contexts), merely rearranging technical functions may lead to frustration. "A distributed network does not automatically yield an egalitarian, equitable or just social, economic, political landscape." <span>[<a href="#PERSPECTIVE" class="xref">BODO</a>]</span><a href="#section-3-10" class="pilcrow">¶</a></p>
+<div id="techniques">
+<section id="section-3.1">
+        <h3 id="name-decentralization-techniques">
+<a href="#section-3.1" class="section-number selfRef">3.1. </a><a href="#name-decentralization-techniques" class="section-name selfRef">Decentralization Techniques</a>
+        </h3>
+<p id="section-3.1-1">In the context of Internet standardization, decentralization is implemented as a two-step process: assessing the nature of centralization risk, followed by the application of techniques to reduce or mitigate it. The subsections below examine some of these techniques.<a href="#section-3.1-1" class="pilcrow">¶</a></p>
+<p id="section-3.1-2">Choosing the appropriate techniques for decentralization requires balancing the specific goals of the function against centralization risk, because completely precluding all forms of centralization through technical means is rarely achievable. When performed properly, decentralization might produce an outcome that still has centralization risk, but that risk should be understood, acceptable, and, where possible and appropriate, mitigated.<a href="#section-3.1-2" class="pilcrow">¶</a></p>
+<p id="section-3.1-3">Notably, decentralization does not require that provision of a function need be distributed in a particular fashion, or to a particular degree. For example, the Domain Name System <span>[<a href="#RFC1035" class="xref">RFC1035</a>]</span> is widely agreed to have acceptable centralization risk, despite it being provided by a limited set of entities.<a href="#section-3.1-3" class="pilcrow">¶</a></p>
+<div id="federation">
+<section id="section-3.1.1">
+          <h4 id="name-federation">
+<a href="#section-3.1.1" class="section-number selfRef">3.1.1. </a><a href="#name-federation" class="section-name selfRef">Federation</a>
+          </h4>
+<p id="section-3.1.1-1">A widely known technique for managing centralization in Internet protocols is federation -- designing them in such a way that new instances of any centralized function are easy to create and can maintain interoperability and connectivity with other instances.<a href="#section-3.1.1-1" class="pilcrow">¶</a></p>
+<p id="section-3.1.1-2">For example, SMTP <span>[<a href="#RFC5321" class="xref">RFC5321</a>]</span> is the basis of the e-mail suite of protocols, which has two functions that have centralization risk:<a href="#section-3.1.1-2" class="pilcrow">¶</a></p>
+<ol start="1" type="1" class="normal type-1" id="section-3.1.1-3">
+<li id="section-3.1.1-3.1">Giving each user a globally unique address, and<a href="#section-3.1.1-3.1" class="pilcrow">¶</a>
+</li>
+            <li id="section-3.1.1-3.2">Routing messages to the user, even when they change network locations or become disconnected for long periods of time.<a href="#section-3.1.1-3.2" class="pilcrow">¶</a>
+</li>
+          </ol>
+<p id="section-3.1.1-4">E-mail reuses DNS to help mitigate the first risk. To mitigate the second, it defines a specific role for routing users' messages, the Message Transfer Agent (MTA). By allowing anyone to deploy an MTA and defining rules for interconnecting them, the protocol's users avoid a requirement for a single central router.<a href="#section-3.1.1-4" class="pilcrow">¶</a></p>
+<p id="section-3.1.1-5">Users can (and often do) choose to delegate that role to someone else, or run their own MTA. However, running your own mail server has become difficult, because of the likelihood of a small MTA being classified as a spam source. Because large MTA operators are widely known and have greater impact if their operation is affected, they are less likely to be classified as such, concentrating the protocol's operation (see <a href="#indirect" class="xref">Section 2.2.3</a>).<a href="#section-3.1.1-5" class="pilcrow">¶</a></p>
+<p id="section-3.1.1-6">Another example of a federated Internet protocol is XMPP <span>[<a href="#RFC6120" class="xref">RFC6120</a>]</span>, supporting "instant messaging" and similar functionality. Like e-mail, it reuses DNS for naming and requires federation to facilitate rendezvous of users from different systems.<a href="#section-3.1.1-6" class="pilcrow">¶</a></p>
+<p id="section-3.1.1-7">While some deployments of XMPP do support truly federated messaging (i.e., a person using service A can interoperably chat with someone using service B), many of the largest do not. Because federation is voluntary, some operators captured their users into a single service, denying them the benefits of global interoperability.<a href="#section-3.1.1-7" class="pilcrow">¶</a></p>
+<p id="section-3.1.1-8">The examples above illustrate that, while federation can be a useful technique to avoid proprietary centralization and manage beneficial centralization, it does not prevent concentration or platform centralization. If a single entity can capture the value provided by a protocol, they may use the protocol as a platform to get a "winner take all" outcome -- a significant risk with many Internet protocols, since network effects often promote such outcomes. Likewise, external factors (such as spam control) might naturally "tilt the table" towards a few operators.<a href="#section-3.1.1-8" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="multi">
+<section id="section-3.1.2">
+          <h4 id="name-multi-stakeholder-governanc">
+<a href="#section-3.1.2" class="section-number selfRef">3.1.2. </a><a href="#name-multi-stakeholder-governanc" class="section-name selfRef">Multi-Stakeholder Governance</a>
+          </h4>
+<p id="section-3.1.2-1">Protocol designers sometime mitigate the risks associated with a beneficial centralized function (see <a href="#necessary" class="xref">Section 2.2.2</a>) by delegating that function's governance to a multi-stakeholder body -- an institution that includes representatives of the different kinds of parties that are affected by the system's operation ("stakeholders") in an attempt to make well-reasoned, legitimate, and authoritative decisions.<a href="#section-3.1.2-1" class="pilcrow">¶</a></p>
+<p id="section-3.1.2-2">The most widely studied example of this technique is the governance of the DNS, which as a "single source of truth" exhibits beneficial centralization in its naming function, as well as the operation of the system overall. To mitigate operational centralization, multiple root servers that are administered by separate operators (themselves diverse in geography) and a selection of corporate entities, non-profits, and government bodies from many jurisdictions and affiliations carry this task out.The name space itself is administered by <a href="https://www.icann.org/resources/pages/governance/governance-en">the Internet Corporation for Assigned Names and Numbers (ICANN)</a>, a global multi-stakeholder body with representation from end users, governments, operators, and others.<a href="#section-3.1.2-2" class="pilcrow">¶</a></p>
+<p id="section-3.1.2-3">Another example is the governance of the Web's trust model, implemented by Web browsers as relying parties and Certificate Authorities as trust anchors. To assure that all parties meet the operational and security requirements necessary to provide the desired properties, the <a href="https://cabforum.org">CA/Browser Forum</a> was established as an oversight body that involves both parties as stakeholders.<a href="#section-3.1.2-3" class="pilcrow">¶</a></p>
+<p id="section-3.1.2-4">Yet another example of multi-stakeholderism is the standardization of Internet protocols themselves. Because a specification controls implementation behavior, the standardization process can be seen as a single point of control. As a result, Internet standards bodies like the IETF allow open participation and contribution, make decisions in an open and accountable way, have a well-defined process for making (and when necessary, appealing) decisions, considering the views of different stakeholder groups <span>[<a href="#RFC8890" class="xref">RFC8890</a>]</span>.<a href="#section-3.1.2-4" class="pilcrow">¶</a></p>
+<p id="section-3.1.2-5">A major downside of this approach is that setup and ongoing operation of multi-stakeholder bodies is not trivial. Additionally, their legitimacy cannot be assumed, and may be difficult to establish and maintain (see, e.g., <span>[<a href="#MULTISTAKEHOLDER" class="xref">PALLADINO</a>]</span>). This concern is especially relevant if the function being coordinated is broad, complex, and/or contentious.<a href="#section-3.1.2-5" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="distributed">
+<section id="section-3.1.3">
+          <h4 id="name-distributed-consensus">
+<a href="#section-3.1.3" class="section-number selfRef">3.1.3. </a><a href="#name-distributed-consensus" class="section-name selfRef">Distributed Consensus</a>
+          </h4>
+<p id="section-3.1.3-1">Increasingly, distributed consensus technologies (such as the blockchain) are touted as a solution to centralization issues. A complete survey of this rapidly changing area is beyond the scope of this document, but we can generalise about their properties.<a href="#section-3.1.3-1" class="pilcrow">¶</a></p>
+<p id="section-3.1.3-2">These techniques attempt to avoid centralization risk by distributing functions to members of a sometimes large pool of protocol participants. They typically guarantee proper performance of a function using cryptographic techniques (often, an append-only transaction ledger). A particular task's assignment to a node for handling usually cannot be predicted or controlled.<a href="#section-3.1.3-2" class="pilcrow">¶</a></p>
+<p id="section-3.1.3-3">Sybil attacks (where a party or coordinated parties cheaply create enough protocol participants to affect how consensus is judged) are a major concern for these protocols. They encourage diversity in the pool of participants using indirect techniques, such as proof-of-work (where each participant has to show significant consumption of resources) or proof-of-stake (where each participant has some other incentive to execute correctly).<a href="#section-3.1.3-3" class="pilcrow">¶</a></p>
+<p id="section-3.1.3-4">Use of these techniques can create barriers to proprietary and inherited centralization. However, depending upon the application in question, both concentration and platform centralization are still possible.<a href="#section-3.1.3-4" class="pilcrow">¶</a></p>
+<p id="section-3.1.3-5">Furthermore, distributed consensus technologies have several potential shortcomings that may make them inappropriate -- or at least difficult to use -- for many Internet applications, because their use conflicts with other important goals:<a href="#section-3.1.3-5" class="pilcrow">¶</a></p>
+<ol start="1" type="1" class="normal type-1" id="section-3.1.3-6">
+<li id="section-3.1.3-6.1">Distributed consensus has significant implications for privacy. Because user activity (such as queries or transactions) is shared with many unknown parties (and often publicly visible due to the nature of the blockchain) they have very different privacy properties than traditional client/server protocols. Potential mitigations (e.g., Private Information Retrieval; see, e.g., <span>[<a href="#PIR" class="xref">OLUMOFIN</a>]</span>) are still not suitable for broad deployment.<a href="#section-3.1.3-6.1" class="pilcrow">¶</a>
+</li>
+            <li id="section-3.1.3-6.2">Their complexity and "chattiness" typically result in significantly less efficient use of the network (often, to several orders of magnitude). When distributed consensus protocols use proof-of-work, energy consumption can become significant (to the point where some jurisdictions have banned its use).<a href="#section-3.1.3-6.2" class="pilcrow">¶</a>
+</li>
+            <li id="section-3.1.3-6.3">Distributed consensus protocols are still not proven to scale to the degree expected of successful Internet protocols. In particular, relying on unknown third parties to deliver functionality can introduce significant variability in latency, availability, and throughput. This is a marked change for applications with high expectations for these properties (e.g., consumer-oriented Web sites).<a href="#section-3.1.3-6.3" class="pilcrow">¶</a>
+</li>
+            <li id="section-3.1.3-6.4">By design, distributed consensus protocols diffuse responsibility for a function among several difficult-to-identify parties. While this may be an effective way to prevent some kinds of centralization, it also means that making someone accountable for how the function is performed is difficult, and often impossible. While the protocol might use cryptographic techniques to assure correct operation, they may not capture all requirements, and may not be correctly used by the protocol designers.<a href="#section-3.1.3-6.4" class="pilcrow">¶</a>
+</li>
+            <li id="section-3.1.3-6.5">Distributed consensus protocols typically rely on cryptography for identity, rather than trusting a third party's assertions about identity. When a participant loses their keys, the process of recovering their identity exposes additional centralization risk.<a href="#section-3.1.3-6.5" class="pilcrow">¶</a>
+</li>
+          </ol>
+<p id="section-3.1.3-7">It is also important to recognise that a protocol or an application can use distributed consensus for some functions, but still have centralization risk elsewhere -- either because those functions cannot be decentralized (most commonly, rendezvous and global naming; see <a href="#necessary" class="xref">Section 2.2.2</a>) or because the designer has chosen not to because of the associated costs and lost opportunities.<a href="#section-3.1.3-7" class="pilcrow">¶</a></p>
+<p id="section-3.1.3-8">Even when distributed consensus is used for all technical functions of a service, some coordination is still necessary -- whether that be through governance of the function itself, creation of shared implementations, or documentation of shared wire protocols. That represents centralization risk, just at a different layer (inherited or platform).<a href="#section-3.1.3-8" class="pilcrow">¶</a></p>
+<p id="section-3.1.3-9">These potential shortcomings do not rule out the use of distributed consensus technologies in every instance. They do, however, caution against uncritically relying upon these technologies to avoid centralization.<a href="#section-3.1.3-9" class="pilcrow">¶</a></p>
+</section>
+</div>
+</section>
+</div>
+</section>
+</div>
+<div id="considerations">
+<section id="section-4">
+      <h2 id="name-what-should-internet-standa">
+<a href="#section-4" class="section-number selfRef">4. </a><a href="#name-what-should-internet-standa" class="section-name selfRef">What Should Internet Standards Do?</a>
+      </h2>
+<p id="section-4-1">Centralization is driven by powerful forces -- both economic and social -- as well as the network effects that come with Internet scale. Because permissionless innovation is a core value for the Internet, and yet much of the centralization seen on the Internet is performed by proprietary platforms that take advantage of this nature, the controls available to standards efforts are very limited.<a href="#section-4-1" class="pilcrow">¶</a></p>
+<p id="section-4-2">While standards bodies on their own cannot prevent centralization, the subsections below suggest meaningful steps that can be taken. There are also valuable contributions that standards efforts can make to other relevant forms of regulation.<a href="#section-4-2" class="pilcrow">¶</a></p>
+<div id="target">
+<section id="section-4.1">
+        <h3 id="name-be-realistic">
+<a href="#section-4.1" class="section-number selfRef">4.1. </a><a href="#name-be-realistic" class="section-name selfRef">Be Realistic</a>
+        </h3>
+<p id="section-4.1-1">Some kinds of centralization risk are easy to manage in standards efforts. For example, if a proprietary protocol were to be proposed to the IETF, it would be rejected out of hand. There is a growing body of knowledge and experience in managing the risk of beneficial centralization, and a strong inclination to reuse existing infrastructure where possible. As discussed above, encryption is often a way to manage inherited centralization, and has become the norm in standard protocols. These responses are appropriate ways for Internet standards to manage centralization risk.<a href="#section-4.1-1" class="pilcrow">¶</a></p>
+<p id="section-4.1-2">However, mitigating concentration and platform centralization is much more difficult in standards efforts. Because we have no "protocol police", it's not possible to demand that someone stop building a proprietary service using a purportedly federated protocol. We also cannot stop someone from building centralized services "on top" of standard protocols without abandoning architectural goals like permissionless innovation. While the imprimatur of an Internet Standard is not without value, merely withholding it cannot prevent these kinds of centralization.<a href="#section-4.1-2" class="pilcrow">¶</a></p>
+<p id="section-4.1-3">Therefore, committing significant resources to scrutinizing protocols for latent centralization risk -- especially for concentration and platform risks -- is unlikely to be effective in preventing Internet centralization. Almost all existing Internet protocols -- including IP, TCP, HTTP, and DNS -- exhibit concentration or platform centralization. Refusing to standardize a newer protocol because it faces similar risks would not be equitable, proportionate, or effective.<a href="#section-4.1-3" class="pilcrow">¶</a></p>
+<p id="section-4.1-4">When we find centralization risk, we should consider its relationship with other architectural goals as we consider how to address it. In particular, attention should be paid to how effective standards (as a form of architectural regulation) is in achieving each goal.<a href="#section-4.1-4" class="pilcrow">¶</a></p>
+<p id="section-4.1-5">For example, privacy is often more effectively ensured by ex ante technical constraints, as compared to ex post legal regulation. Conversely (as discussed) some kinds of centralization are likely better addressed through legal regulation. Thus, as a first order concern, a standards effort balancing these concerns might focus primarily on privacy. However, often these are not completely separable goals -- concentration can result in one or a few entities having greater volume and variety of data available exclusively to them, raising significant privacy and security concerns.<a href="#section-4.1-5" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="up">
+<section id="section-4.2">
+        <h3 id="name-decentralize-proprietary-fu">
+<a href="#section-4.2" class="section-number selfRef">4.2. </a><a href="#name-decentralize-proprietary-fu" class="section-name selfRef">Decentralize Proprietary Functions</a>
+        </h3>
+<p id="section-4.2-1">It is worthwhile to create specifications for functions that are currently only satisfied by proprietary providers. By building open specifications on top of already established standards, an alternative to a centralized function can be created.<a href="#section-4.2-1" class="pilcrow">¶</a></p>
+<p id="section-4.2-2">A common objection to such efforts is that adoption is voluntary, not mandatory; there are no "standards police" to mandate their use or enforce correct implementation. For example, specifications like <span>[<a href="#ACTIVITYSTREAMS" class="xref">ACTIVITYSTREAMS</a>]</span>) have been available for some time without broad adoption by social networking providers.<a href="#section-4.2-2" class="pilcrow">¶</a></p>
+<p id="section-4.2-3">However, while standards aren't mandatory, legal regulation is, and regulators around the globe are now focusing their efforts on the Internet. In particular, legal mandates for interoperability are increasingly discussed as a remedy for competition issues (see, e.g., <span>[<a href="#OECD" class="xref">OECD</a>]</span>).<a href="#section-4.2-3" class="pilcrow">¶</a></p>
+<p id="section-4.2-4">As such, appetite for Internet regulation presents not just a risk to the Internet; it also constitutes an opportunity for new specifications to decentralize these functions, backed by a legal mandate in combination with changing norms and the resulting market forces <span>[<a href="#NEW-CHICAGO" class="xref">LESSIG</a>]</span>.<a href="#section-4.2-4" class="pilcrow">¶</a></p>
+<p id="section-4.2-5">Successfully creating standards that work in concert with legal regulation is new ground for the IETF, presents many potential pitfalls, and will require new capabilities (especially liaison, likely originating in the IAB) and considerable effort. If the Internet community does not make that effort, it is likely that regulators will turn to other sources of interoperability specifications -- most likely, with less transparency, more narrow input, limited experience, and without reference to the Internet's architectural goals.<a href="#section-4.2-5" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="new">
+<section id="section-4.3">
+        <h3 id="name-evaluate-new-decentralizati">
+<a href="#section-4.3" class="section-number selfRef">4.3. </a><a href="#name-evaluate-new-decentralizati" class="section-name selfRef">Evaluate New Decentralization Techniques</a>
+        </h3>
+<p id="section-4.3-1">The decentralization techniques listed in <a href="#techniques" class="xref">Section 3.1</a> are not a closed set; wide interest has spurred development of new approaches, both in general and as solutions to specific problems.<a href="#section-4.3-1" class="pilcrow">¶</a></p>
+<p id="section-4.3-2">For example, secure multi-party computation techniques (see, e.g., <span>[<a href="#YAO" class="xref">YAO</a>]</span>) can be composed to allow parties to compute over private inputs without revealing them. Protocols like <span>[<a href="#ENPA" class="xref">ENPA</a>]</span> and <span>[<a href="#PRIO" class="xref">PRIO</a>]</span> use them to limit the information available to participants in protocols to realise privacy goals; as discussed in <a href="#intermediation" class="xref">Section 4.5</a> doing so might also counteract some kinds of centralization. However, as in other cases these techniques do not automatically preclude all centralization; such systems often still require trust, even if it is limited. That might cause other forms of centralization.<a href="#section-4.3-2" class="pilcrow">¶</a></p>
+<p id="section-4.3-3">Whether use of these techniques (or others) can meaningfully counteract centralization is still uncertain. Standards bodies (including the IETF) can serve an important function by incubating them, applying (and, where necessary, developing) architectural guidelines for privacy, security, operability, and other goals, and assuring interoperability. When appropriate, publication on the standards track or as experimental can signal implementers, users, and regulators about their fitness.<a href="#section-4.3-3" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="balance">
+<section id="section-4.4">
+        <h3 id="name-build-robust-ecosystems">
+<a href="#section-4.4" class="section-number selfRef">4.4. </a><a href="#name-build-robust-ecosystems" class="section-name selfRef">Build Robust Ecosystems</a>
+        </h3>
+<p id="section-4.4-1">To minimize inherited centralization risk, standards-defined functions should have an explicit goal of broad, diverse implementation and deployment so that users have as many choices as possible.<a href="#section-4.4-1" class="pilcrow">¶</a></p>
+<p id="section-4.4-2"><span><a href="https://rfc-editor.org/rfc/rfc5218#section-2.1" class="relref">Section 2.1</a> of [<a href="#RFC5218" class="xref">RFC5218</a>]</span> explores some factors in protocol design that encourage this outcome.<a href="#section-4.4-2" class="pilcrow">¶</a></p>
+<p id="section-4.4-3">This goal can also be furthered by ensuring that the cost of switching to a different implementation or deployment is as low as possible to facilitate subsequent substitution. This implies that the standard is functionally complete and specified precisely enough to result in meaningful interoperability.<a href="#section-4.4-3" class="pilcrow">¶</a></p>
+<p id="section-4.4-4">The goals of completeness and diversity are sometimes in tension. If a standard is extremely complex, it may discourage implementation diversity because the cost of a complete implementation is too high (consider: Web browsers). On the other hand, if the specification is too simple, it may not offer enough functionality to be complete, and the resulting proprietary extensions may make switching difficult (see <a href="#evolution" class="xref">Section 4.6</a>).<a href="#section-4.4-4" class="pilcrow">¶</a></p>
+<p id="section-4.4-5">Also worthy of attention are the underlying incentives for implementation. While a completely commoditized protocol might not allow implementations to differentiate themselves, they provide opportunities for specialization and improvement elsewhere in the value chain <span>[<a href="#ATTRACTIVE-PROFITS" class="xref">CHRISTENSEN</a>]</span>. Well-timed standards efforts leverage these forces to focus proprietary interests on top of open technology, rather than as a replacement for it.<a href="#section-4.4-5" class="pilcrow">¶</a></p>
+<p id="section-4.4-6">Balancing these factors to build robust ecosystems is difficult, but is often helped by community building and good design -- in particular, appropriate use of layering. It also requires continuing maintenance and evolution of protocols, to assure that they are still relevant and appropriate to their use.<a href="#section-4.4-6" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="intermediation">
+<section id="section-4.5">
+        <h3 id="name-control-delegation-of-power">
+<a href="#section-4.5" class="section-number selfRef">4.5. </a><a href="#name-control-delegation-of-power" class="section-name selfRef">Control Delegation of Power</a>
+        </h3>
+<p id="section-4.5-1">Some functions might see substantial benefits if they are performed by a third party in communication. When used well, adding a new party to communication can improve:<a href="#section-4.5-1" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-4.5-2.1">
+            <em>Efficiency</em>: Many functions on the Internet are more efficient when performed at a higher scale. For example, a content delivery network can offer services at a fraction of the financial and environmental cost that someone serving content themselves would otherwise pay, because of the scale they operate at. Likewise, a two-sided market platform can introduce sizeable efficiencies over pair-wise buyer/seller trading <span>[<a href="#CIRCULAR-CONUNDRUM" class="xref">SPULBER</a>]</span>.<a href="#section-4.5-2.1" class="pilcrow">¶</a>
+</li>
+          <li class="normal" id="section-4.5-2.2">
+            <em>Simplicity</em>: Completely disintermediating communication can shift the burden of functions onto endpoints. This can cause increased cognitive load for users; for example, compare commercial social networking platforms with self-hosted efforts.<a href="#section-4.5-2.2" class="pilcrow">¶</a>
+</li>
+          <li class="normal" id="section-4.5-2.3">
+            <em>Specialization</em>: Having a function concentrated into a few hands can improve outcomes because of the resulting specialization. For example, services overseen by professional administrators are often seen to have a better security posture and improved availability.<a href="#section-4.5-2.3" class="pilcrow">¶</a>
+</li>
+          <li class="normal" id="section-4.5-2.4">
+            <em>Privacy</em>: For some functions, user privacy can be improved by concentrating their activity to prevent individual behaviors from being discriminated from each other.<span>[<a href="#MIX" class="xref">CHAUM</a>]</span> Introduction of a third party can also enforce functional boundaries -- for example, to reduce the need for users to trust potentially malicious endpoints, as seen in the so-called "oblivious" protocols (e.g., <span>[<a href="#RFC9230" class="xref">RFC9230</a>]</span>) that allow end users to hide their identity from services, while still accessing them.<a href="#section-4.5-2.4" class="pilcrow">¶</a>
+</li>
+        </ul>
+<p id="section-4.5-3">However, introducing a new party to communication adds concentration and platform centralization risk to Internet protocols, because it brings opportunities for control and observation. While (as discussed above) standards efforts have a very limited capability to prevent or control these types of centralization, designing protocols with thoughtful constraints on third party functions can prevent at least the most egregious outcomes.<a href="#section-4.5-3" class="pilcrow">¶</a></p>
+<p id="section-4.5-4">Most often, third parties are added to protocols as "intermediaries" or in designated "agent" roles. In general, they should only be interposed because of the positive action of at least one endpoint, and should have their ability to observe or control communication limited to what is necessary to perform their intended function.<a href="#section-4.5-4" class="pilcrow">¶</a></p>
+<p id="section-4.5-5">For example, early deployments of HTTP allowed intermediaries to be interposed by the network without knowledge of the endpoints, and those intermediaries could see and change the full content of traffic by default -- even when they are only intended to perform basic functions such as caching. Because of the introduction of HTTPS and the CONNECT method (see <span><a href="https://rfc-editor.org/rfc/rfc9110#section-9.3.6" class="relref">Section 9.3.6</a> of [<a href="#HTTP" class="xref">HTTP</a>]</span>), combined with efforts to encourage its adoption, those intermediaries are now required to be explicitly interposed by one endpoint.<a href="#section-4.5-5" class="pilcrow">¶</a></p>
+<p id="section-4.5-6">See <span>[<a href="#I-D.thomson-tmi" class="xref">I-D.thomson-tmi</a>]</span> for more guidance on protocol intermediation.<a href="#section-4.5-6" class="pilcrow">¶</a></p>
+<p id="section-4.5-7">The term "intermediary" is also used (often in legal and regulatory contexts) more broadly than it has been in protocol design; for example, an auction Web site intermediates between buyers and sellers is considered an intermediary, even though it is not formally an intermediary in HTTP (see <span><a href="https://rfc-editor.org/rfc/rfc9110#section-3.7" class="relref">Section 3.7</a> of [<a href="#HTTP" class="xref">HTTP</a>]</span>). Protocol designers can address the centralization risk associated with this kind of intermediation by standardising the function, rather than restricting the capabilities of the underlying protocols; see <a href="#up" class="xref">Section 4.2</a>.<a href="#section-4.5-7" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="evolution">
+<section id="section-4.6">
+        <h3 id="name-target-extensibility">
+<a href="#section-4.6" class="section-number selfRef">4.6. </a><a href="#name-target-extensibility" class="section-name selfRef">Target Extensibility</a>
+        </h3>
+<p id="section-4.6-1">An important feature of Internet protocols is their ability to evolve, so that they can meet new requirements and adapt to new conditions without requiring a "flag day" to upgrade implementations. Typically, protocols accommodate evolution through extension mechanisms, which allow optional features to be added over time in an interoperable fashion.<a href="#section-4.6-1" class="pilcrow">¶</a></p>
+<p id="section-4.6-2">Extensibility can be viewed as a mechanism for decentralization as well -- by allowing uncoordinated evolution, it promotes autonomy and adaption of a function for local needs. However, protocol extensions can also increase the risk of platform centralization if a powerful entity can change the target for meaningful interoperability by adding proprietary extensions to a standard protocol. This is especially true when the core standard does not itself provide sufficient utility on its own.<a href="#section-4.6-2" class="pilcrow">¶</a></p>
+<p id="section-4.6-3">For example, the SOAP protocol's <span>[<a href="#SOAP" class="xref">SOAP</a>]</span> extreme flexibility and failure to provide significant standalone value allowed vendors to require use of their preferred extensions, favouring those who had more market power.<a href="#section-4.6-3" class="pilcrow">¶</a></p>
+<p id="section-4.6-4">Therefore, standards efforts should focus on providing concrete utility to the majority of their users as published, rather than being a "framework" where interoperability is not immediately available.  Internet protocols should not make every aspect of their operation extensible; extension points should be reasoned, appropriate boundaries for flexibility and control. When a protocol defines extension points, they should not allow an extension to declare itself to be mandatory-to-interoperate, as that pattern invites abuse.<a href="#section-4.6-4" class="pilcrow">¶</a></p>
+<p id="section-4.6-5">Where extensions are allowed, attention should be paid to those that emerge; where appropriate, widely adopted extensions should be put through a standards process to assure that the result adheres to architectural principles and shared goals (see also <a href="#up" class="xref">Section 4.2</a>).<a href="#section-4.6-5" class="pilcrow">¶</a></p>
+</section>
+</div>
+</section>
+</div>
+<div id="security-considerations">
+<section id="section-5">
+      <h2 id="name-security-considerations">
+<a href="#section-5" class="section-number selfRef">5. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
+      </h2>
+<p id="section-5-1">This document does not have a direct security impact on Internet protocols. However, failure to consider centralization risks might cause a myriad of security issues.<a href="#section-5-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<section id="section-6">
+      <h2 id="name-informative-references">
+<a href="#section-6" class="section-number selfRef">6. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
+      </h2>
+<dl class="references">
+<dt id="ACTIVITYSTREAMS">[ACTIVITYSTREAMS]</dt>
+      <dd>
+<span class="refAuthor">Snell, J.</span> and <span class="refAuthor">E. Prodromou</span>, <span class="refTitle">"Activity Streams 2.0"</span>, <span class="seriesInfo">World Wide Web Consortium CR CR-activitystreams-core-20161215</span>, <time datetime="2016-12-15" class="refDate">15 December 2016</time>, <span>&lt;<a href="https://www.w3.org/TR/2016/CR-activitystreams-core-20161215">https://www.w3.org/TR/2016/CR-activitystreams-core-20161215</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="POLYCENTRIC">[ALIGIA]</dt>
+      <dd>
+<span class="refAuthor">Aligia, P. D.</span> and <span class="refAuthor">V. Tarko</span>, <span class="refTitle">"Polycentricity: From Polanyi to Ostrom, and Beyond"</span>, <span class="refContent">Governance: An International Journal of Policy, Administration, and Institutions, Vol. 25, No. 2, p. 237</span>, <time datetime="2012-04" class="refDate">April 2012</time>, <span>&lt;<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2149165">https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2149165</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="AREWEDECENTRALIZEDYET">[AREWEDECENTRALIZEDYET]</dt>
+      <dd>
+<span class="refAuthor">bitcoinera</span>, <span class="refTitle">"Are We Decentralized Yet?"</span>, <time datetime="2022" class="refDate">2022</time>, <span>&lt;<a href="https://bitcoinera.app/arewedecentralizedyet/">https://bitcoinera.app/arewedecentralizedyet/</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="SCALE-FREE">[BARABASI]</dt>
+      <dd>
+<span class="refAuthor">Albert, R.</span>, <span class="refTitle">"Emergence of Scaling in Random Networks"</span>, <span class="refContent">SCIENCE, Vol. 286, No. 15, p. 509</span>, <time datetime="1999-10" class="refDate">October 1999</time>, <span>&lt;<a href="https://barabasi.com/f/67.pdf">https://barabasi.com/f/67.pdf</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RAND">[BARAN]</dt>
+      <dd>
+<span class="refAuthor">Baran, P.</span>, <span class="refTitle">"On Distributed Communications: Introduction to Distributed Communications Networks"</span>, <time datetime="1964" class="refDate">1964</time>, <span>&lt;<a href="https://www.rand.org/pubs/research_memoranda/RM3420.html">https://www.rand.org/pubs/research_memoranda/RM3420.html</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="BCP95">[BCP95]</dt>
+      <dd><div class="refInstance" id="RFC3935">
+          <span class="refAuthor">Alvestrand, H.</span>, <span class="refTitle">"A Mission Statement for the IETF"</span>, <span class="seriesInfo">BCP 95</span>, <span class="seriesInfo">RFC 3935</span>, <time datetime="2004-10" class="refDate">October 2004</time>. </div>
+<span>&lt;<a href="https://www.rfc-editor.org/info/bcp95">https://www.rfc-editor.org/info/bcp95</a>&gt;</span>
+</dd>
+<dd class="break"></dd>
+<dt id="PERSPECTIVE">[BODO]</dt>
+      <dd>
+<span class="refAuthor">Bodó, B.</span>, <span class="refAuthor">Brekke, J. K.</span>, and <span class="refAuthor">J.-H. Hoepman</span>, <span class="refTitle">"Decentralization: a multidisciplinary perspective"</span>, <span class="refContent">Internet Policy Review, Vol. 10, No. 2</span>, <time datetime="2021-06" class="refDate">June 2021</time>, <span>&lt;<a href="https://doi.org/10.14763/2021.2.1563">https://doi.org/10.14763/2021.2.1563</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="MIX">[CHAUM]</dt>
+      <dd>
+<span class="refAuthor">Chaum, D. L.</span>, <span class="refTitle">"Untraceable Electronic Mail, Return Addresses, and Digital Pseudonyms"</span>, <span class="refContent">Communications of the ACM, Vol. 24, No. 2</span>, <time datetime="1981-02" class="refDate">February 1981</time>, <span>&lt;<a href="https://dl.acm.org/doi/10.1145/358549.358563">https://dl.acm.org/doi/10.1145/358549.358563</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="ATTRACTIVE-PROFITS">[CHRISTENSEN]</dt>
+      <dd>
+<span class="refAuthor">Christensen, C.</span>, <span class="refTitle">"The Law of Conservation of Attractive Profits"</span>, <span class="refContent">Harvard Business Review, "Breakthrough Ideas for 2004"</span>, <time datetime="2004-02" class="refDate">February 2004</time>. </dd>
+<dd class="break"></dd>
+<dt id="ENPA">[ENPA]</dt>
+      <dd>
+<span class="refAuthor">Apple</span> and <span class="refAuthor">Google</span>, <span class="refTitle">"Exposure Notification Privacy-preserving Analytics (ENPA) White Paper"</span>, <time datetime="2021-04" class="refDate">April 2021</time>, <span>&lt;<a href="https://covid19-static.cdn-apple.com/applications/covid19/current/static/contact-tracing/pdf/ENPA_White_Paper.pdf">https://covid19-static.cdn-apple.com/applications/covid19/current/static/contact-tracing/pdf/ENPA_White_Paper.pdf</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="INTERDEPENDENCE">[FARRELL]</dt>
+      <dd>
+<span class="refAuthor">Farrell, H.</span> and <span class="refAuthor">A. L. Newman</span>, <span class="refTitle">"Weaponized Interdependence: How Global Economic Networks Shape State Coercion"</span>, <span class="refContent">International Security, Vol. 44, No. 1, p. 42</span>, <time datetime="2019" class="refDate">2019</time>, <span>&lt;<a href="https://doi.org/10.1162/ISEC_a_00351">https://doi.org/10.1162/ISEC_a_00351</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="STRUCTURELESS">[FREEMAN]</dt>
+      <dd>
+<span class="refAuthor">Freeman, J.</span>, <span class="refTitle">"The Tyranny of Structurelessness"</span>, <span class="refContent">Berkeley Journal of Sociology, Vol. 17</span>, <time datetime="1972" class="refDate">1972</time>, <span>&lt;<a href="https://www.jstor.org/stable/41035187">https://www.jstor.org/stable/41035187</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="HTTP">[HTTP]</dt>
+      <dd>
+<span class="refAuthor">Fielding, R., Ed.</span>, <span class="refAuthor">Nottingham, M., Ed.</span>, and <span class="refAuthor">J. Reschke, Ed.</span>, <span class="refTitle">"HTTP Semantics"</span>, <span class="seriesInfo">STD 97</span>, <span class="seriesInfo">RFC 9110</span>, <span class="seriesInfo">DOI 10.17487/RFC9110</span>, <time datetime="2022-06" class="refDate">June 2022</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9110">https://www.rfc-editor.org/rfc/rfc9110</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="I-D.thomson-tmi">[I-D.thomson-tmi]</dt>
+      <dd>
+<span class="refAuthor">Thomson, M.</span>, <span class="refTitle">"Principles for the Involvement of Intermediaries in Internet Protocols"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-thomson-tmi-03</span>, <time datetime="2022-03-07" class="refDate">7 March 2022</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-thomson-tmi-03">https://datatracker.ietf.org/doc/html/draft-thomson-tmi-03</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="ISOC">[ISOC]</dt>
+      <dd>
+<span class="refAuthor">Internet Society</span>, <span class="refTitle">"Consolidation in the Internet Economy"</span>, <span class="refContent">Internet Society Global Internet Report</span>, <time datetime="2019" class="refDate">2019</time>, <span>&lt;<a href="https://future.internetsociety.org/2019/">https://future.internetsociety.org/2019/</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="INTERMEDIARY-INFLUENCE">[JUDGE]</dt>
+      <dd>
+<span class="refAuthor">Judge, K.</span>, <span class="refTitle">"Intermediary Influence"</span>, <span class="refContent">University of Chicago Law Review, Vol. 82, p. 573</span>, <time datetime="2014" class="refDate">2014</time>, <span>&lt;<a href="https://scholarship.law.columbia.edu/faculty_scholarship/1856">https://scholarship.law.columbia.edu/faculty_scholarship/1856</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="SUCCESS">[KENDE]</dt>
+      <dd>
+<span class="refAuthor">Kende, M.</span>, <span class="refAuthor">Kvalbein, A.</span>, <span class="refAuthor">Allford, J.</span>, and <span class="refAuthor">D. Abecassis</span>, <span class="refTitle">"Study on the Internet's Technical Success Factors"</span>, <time datetime="2021-12" class="refDate">December 2021</time>, <span>&lt;<a href="https://blog.apnic.net/wp-content/uploads/2021/12/MKGRA669-Report-for-APNIC-LACNIC-V3.pdf">https://blog.apnic.net/wp-content/uploads/2021/12/MKGRA669-Report-for-APNIC-LACNIC-V3.pdf</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="NEW-CHICAGO">[LESSIG]</dt>
+      <dd>
+<span class="refAuthor">Lessig, L.</span>, <span class="refTitle">"The New Chicago School"</span>, <span class="refContent">Journal of Legal Studies, Vol. 27</span>, <time datetime="1998-06" class="refDate">June 1998</time>, <span>&lt;<a href="https://www.journals.uchicago.edu/doi/10.1086/468039">https://www.journals.uchicago.edu/doi/10.1086/468039</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="FEDERALIST-51">[MADISON]</dt>
+      <dd>
+<span class="refAuthor">Madison, J.</span>, <span class="refTitle">"The Structure of the Government Must Furnish the Proper Checks and Balances Between the Different Departments"</span>, <span class="refContent">The Federalist Papers, No. 51</span>, <time datetime="1788-02" class="refDate">February 1788</time>. </dd>
+<dd class="break"></dd>
+<dt id="MOXIE">[MOXIE]</dt>
+      <dd>
+<span class="refAuthor">Marlinspike, M.</span>, <span class="refTitle">"Reflections: The ecosystem is moving"</span>, <time datetime="2016-05" class="refDate">May 2016</time>, <span>&lt;<a href="https://signal.org/blog/the-ecosystem-is-moving/">https://signal.org/blog/the-ecosystem-is-moving/</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="MUSIANI">[MUSIANI]</dt>
+      <dd>
+<span class="refAuthor">Musiani, F.</span>, <span class="refTitle">"Alternative Technologies as Alternative Institutions: The Case of the Domain Name System"</span>, <span class="refContent">The Turn to Infrastructure in Internet Governance</span>, <time datetime="2016" class="refDate">2016</time>, <span>&lt;<a href="https://link.springer.com/chapter/10.1057/9781137483591_4">https://link.springer.com/chapter/10.1057/9781137483591_4</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="OECD">[OECD]</dt>
+      <dd>
+<span class="refAuthor">OECD</span>, <span class="refTitle">"Data portability, interoperability and digital platform competition"</span>, <time datetime="2021-06" class="refDate">June 2021</time>, <span>&lt;<a href="https://www.oecd.org/daf/competition/data-portability-interoperability-and-digital-platform-competition-2021.pdf">https://www.oecd.org/daf/competition/data-portability-interoperability-and-digital-platform-competition-2021.pdf</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="PIR">[OLUMOFIN]</dt>
+      <dd>
+<span class="refAuthor">Olumofin, F.</span> and <span class="refAuthor">I. Goldberg</span>, <span class="refTitle">"Revisiting the Computational Practicality of Private Information Retrieval"</span>, <time datetime="2010" class="refDate">2010</time>, <span>&lt;<a href="https://link.springer.com/chapter/10.1007/978-3-642-27576-0_13">https://link.springer.com/chapter/10.1007/978-3-642-27576-0_13</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="MULTISTAKEHOLDER">[PALLADINO]</dt>
+      <dd>
+<span class="refAuthor">Palladino, N.</span> and <span class="refAuthor">N. Santaniello</span>, <span class="refTitle">"Legitimacy, Power, and Inequalities in the Multistakeholder Internet Governance"</span>, <time datetime="2020" class="refDate">2020</time>, <span>&lt;<a href="https://link.springer.com/book/10.1007/978-3-030-56131-4">https://link.springer.com/book/10.1007/978-3-030-56131-4</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="PRIO">[PRIO]</dt>
+      <dd>
+<span class="refAuthor">Corrigan-Gibbs, H.</span> and <span class="refAuthor">D. Boneh</span>, <span class="refTitle">"Prio: Private, Robust, and Scalable Computation of Aggregate Statistics"</span>, <time datetime="2017-03" class="refDate">March 2017</time>, <span>&lt;<a href="https://crypto.stanford.edu/prio/paper.pdf">https://crypto.stanford.edu/prio/paper.pdf</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC1035">[RFC1035]</dt>
+      <dd>
+<span class="refAuthor">Mockapetris, P.</span>, <span class="refTitle">"Domain names - implementation and specification"</span>, <span class="seriesInfo">STD 13</span>, <span class="seriesInfo">RFC 1035</span>, <span class="seriesInfo">DOI 10.17487/RFC1035</span>, <time datetime="1987-11" class="refDate">November 1987</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc1035">https://www.rfc-editor.org/rfc/rfc1035</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC4271">[RFC4271]</dt>
+      <dd>
+<span class="refAuthor">Rekhter, Y., Ed.</span>, <span class="refAuthor">Li, T., Ed.</span>, and <span class="refAuthor">S. Hares, Ed.</span>, <span class="refTitle">"A Border Gateway Protocol 4 (BGP-4)"</span>, <span class="seriesInfo">RFC 4271</span>, <span class="seriesInfo">DOI 10.17487/RFC4271</span>, <time datetime="2006-01" class="refDate">January 2006</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc4271">https://www.rfc-editor.org/rfc/rfc4271</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC5218">[RFC5218]</dt>
+      <dd>
+<span class="refAuthor">Thaler, D.</span> and <span class="refAuthor">B. Aboba</span>, <span class="refTitle">"What Makes for a Successful Protocol?"</span>, <span class="seriesInfo">RFC 5218</span>, <span class="seriesInfo">DOI 10.17487/RFC5218</span>, <time datetime="2008-07" class="refDate">July 2008</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc5218">https://www.rfc-editor.org/rfc/rfc5218</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC5321">[RFC5321]</dt>
+      <dd>
+<span class="refAuthor">Klensin, J.</span>, <span class="refTitle">"Simple Mail Transfer Protocol"</span>, <span class="seriesInfo">RFC 5321</span>, <span class="seriesInfo">DOI 10.17487/RFC5321</span>, <time datetime="2008-10" class="refDate">October 2008</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc5321">https://www.rfc-editor.org/rfc/rfc5321</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC6120">[RFC6120]</dt>
+      <dd>
+<span class="refAuthor">Saint-Andre, P.</span>, <span class="refTitle">"Extensible Messaging and Presence Protocol (XMPP): Core"</span>, <span class="seriesInfo">RFC 6120</span>, <span class="seriesInfo">DOI 10.17487/RFC6120</span>, <time datetime="2011-03" class="refDate">March 2011</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc6120">https://www.rfc-editor.org/rfc/rfc6120</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC7258">[RFC7258]</dt>
+      <dd>
+<span class="refAuthor">Farrell, S.</span> and <span class="refAuthor">H. Tschofenig</span>, <span class="refTitle">"Pervasive Monitoring Is an Attack"</span>, <span class="seriesInfo">BCP 188</span>, <span class="seriesInfo">RFC 7258</span>, <span class="seriesInfo">DOI 10.17487/RFC7258</span>, <time datetime="2014-05" class="refDate">May 2014</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc7258">https://www.rfc-editor.org/rfc/rfc7258</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC791">[RFC791]</dt>
+      <dd>
+<span class="refAuthor">Postel, J.</span>, <span class="refTitle">"Internet Protocol"</span>, <span class="seriesInfo">STD 5</span>, <span class="seriesInfo">RFC 791</span>, <span class="seriesInfo">DOI 10.17487/RFC0791</span>, <time datetime="1981-09" class="refDate">September 1981</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc791">https://www.rfc-editor.org/rfc/rfc791</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC793">[RFC793]</dt>
+      <dd>
+<span class="refAuthor">Postel, J.</span>, <span class="refTitle">"Transmission Control Protocol"</span>, <span class="seriesInfo">STD 7</span>, <span class="seriesInfo">RFC 793</span>, <span class="seriesInfo">DOI 10.17487/RFC0793</span>, <time datetime="1981-09" class="refDate">September 1981</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc793">https://www.rfc-editor.org/rfc/rfc793</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC8890">[RFC8890]</dt>
+      <dd>
+<span class="refAuthor">Nottingham, M.</span>, <span class="refTitle">"The Internet is for End Users"</span>, <span class="seriesInfo">RFC 8890</span>, <span class="seriesInfo">DOI 10.17487/RFC8890</span>, <time datetime="2020-08" class="refDate">August 2020</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8890">https://www.rfc-editor.org/rfc/rfc8890</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC9230">[RFC9230]</dt>
+      <dd>
+<span class="refAuthor">Kinnear, E.</span>, <span class="refAuthor">McManus, P.</span>, <span class="refAuthor">Pauly, T.</span>, <span class="refAuthor">Verma, T.</span>, and <span class="refAuthor">C.A. Wood</span>, <span class="refTitle">"Oblivious DNS over HTTPS"</span>, <span class="seriesInfo">RFC 9230</span>, <span class="seriesInfo">DOI 10.17487/RFC9230</span>, <time datetime="2022-06" class="refDate">June 2022</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9230">https://www.rfc-editor.org/rfc/rfc9230</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="AMBITION">[SCHNEIDER]</dt>
+      <dd>
+<span class="refAuthor">Schneider, N.</span>, <span class="refTitle">"Decentralization: an incomplete ambition"</span>, <span class="refContent">Journal of Cultural Economy, Vol. 12, No. 4</span>, <time datetime="2019" class="refDate">2019</time>, <span>&lt;<a href="https://osf.io/m7wyj/">https://osf.io/m7wyj/</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="SOAP">[SOAP]</dt>
+      <dd>
+<span class="refAuthor">Mitra, N.</span> and <span class="refAuthor">Y. Lafon</span>, <span class="refTitle">"SOAP Version 1.2 Part 0: Primer (Second Edition)"</span>, <span class="seriesInfo">World Wide Web Consortium Recommendation REC-soap12-part0-20070427</span>, <time datetime="2007-04-27" class="refDate">27 April 2007</time>, <span>&lt;<a href="https://www.w3.org/TR/2007/REC-soap12-part0-20070427">https://www.w3.org/TR/2007/REC-soap12-part0-20070427</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="CIRCULAR-CONUNDRUM">[SPULBER]</dt>
+      <dd>
+<span class="refAuthor">Spulber, D. F.</span>, <span class="refTitle">"Solving The Circular Conundrum: Communication And Coordination In Internet Markets"</span>, <span class="refContent">Northwestern University Law Review, Vol. 104, No. 2</span>, <time datetime="2010" class="refDate">2010</time>, <span>&lt;<a href="https://wwws.law.northwestern.edu/research-faculty/clbe/workingpapers/documents/spulber_circularconundrum.pdf">https://wwws.law.northwestern.edu/research-faculty/clbe/workingpapers/documents/spulber_circularconundrum.pdf</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="ACCESS">[VESTAGER]</dt>
+      <dd>
+<span class="refAuthor">Vestager, M.</span>, <span class="refTitle">"Defending Competition in a Digitised World, Address at the European Consumer and Competition Day"</span>, <time datetime="2019-04" class="refDate">April 2019</time>, <span>&lt;<a href="https://wayback.archive-it.org/12090/20191129202059/https://ec.europa.eu/commission/commissioners/2014-2019/vestager/announcements/defending-competition-digitised-world_en">https://wayback.archive-it.org/12090/20191129202059/https://ec.europa.eu/commission/commissioners/2014-2019/vestager/announcements/defending-competition-digitised-world_en</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="YAO">[YAO]</dt>
+    <dd>
+<span class="refAuthor">Yao, A. C.</span>, <span class="refTitle">"Protocols for secure computations"</span>, <span class="refContent">SFCS '82</span>, <time datetime="1982-11" class="refDate">November 1982</time>, <span>&lt;<a href="https://dl.acm.org/doi/10.5555/1382436.1382751">https://dl.acm.org/doi/10.5555/1382436.1382751</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+</dl>
+</section>
+<div id="acknowledgements">
+<section id="appendix-A">
+      <h2 id="name-acknowledgements">
+<a href="#appendix-A" class="section-number selfRef">Appendix A. </a><a href="#name-acknowledgements" class="section-name selfRef">Acknowledgements</a>
+      </h2>
+<p id="appendix-A-1">This document benefits from discussions with Brian Trammell during our shared time on the Internet Architecture Board.<a href="#appendix-A-1" class="pilcrow">¶</a></p>
+<p id="appendix-A-2">Thanks to Jari Arkko, Christian Huitema, Eliot Lear, and Martin Thomson for their comments and suggestions.<a href="#appendix-A-2" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="authors-addresses">
+<section id="appendix-B">
+      <h2 id="name-authors-address">
+<a href="#name-authors-address" class="section-name selfRef">Author's Address</a>
+      </h2>
+<address class="vcard">
+        <div dir="auto" class="left"><span class="fn nameRole">Mark Nottingham</span></div>
+<div dir="auto" class="left"><span class="street-address">Prahran</span></div>
+<div dir="auto" class="left"><span class="country-name">Australia</span></div>
+<div class="email">
+<span>Email:</span>
+<a href="mailto:mnot@mnot.net" class="email">mnot@mnot.net</a>
+</div>
+<div class="url">
+<span>URI:</span>
+<a href="https://www.mnot.net/" class="url">https://www.mnot.net/</a>
+</div>
+</address>
+</section>
+</div>
+<script>const toc = document.getElementById("toc");
+toc.querySelector("h2").addEventListener("click", e => {
+  toc.classList.toggle("active");
+});
+toc.querySelector("nav").addEventListener("click", e => {
+  toc.classList.remove("active");
+});
+</script>
+</body>
+</html>
