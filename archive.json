@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2022-07-10T00:04:54.679921+00:00",
+  "timestamp": "2022-07-28T00:03:59.697319+00:00",
   "repo": "mnot/avoiding-internet-centralization",
   "labels": [
     {
@@ -544,7 +544,7 @@
       "labels": [],
       "body": "Jari says:\r\n\r\n> Section 6.1 talks about relationship between centralization and privacy, and points out that there's sometimes a tradeoff. I would argue that this is heavily dependent on what we're talking about. We're far along on the mission to encrypt all communications. Many of the remaining privacy issues are made worse, not better, by centralization. E.g., one entity has access to all your mail or browser history or other things. Perhaps the 6.1 language could be improved, as it currently reads a bit like focusing on privacy in standardisation and leaving centralisation to other entities. I\u2019m not sure that\u2019s always desirable, particularly if we want to address privacy.",
       "createdAt": "2022-03-24T22:56:24Z",
-      "updatedAt": "2022-05-23T03:01:29Z",
+      "updatedAt": "2022-07-26T10:55:31Z",
       "closedAt": "2022-05-23T03:01:29Z",
       "comments": [
         {
@@ -567,6 +567,13 @@
           "body": "Closing to keep the issues list clean :) but please say so if you're not happy with that.",
           "createdAt": "2022-05-23T03:01:29Z",
           "updatedAt": "2022-05-23T03:01:29Z"
+        },
+        {
+          "author": "jariarkko",
+          "authorAssociation": "NONE",
+          "body": "FWIW, the latest version is good on this issue.",
+          "createdAt": "2022-07-26T10:55:31Z",
+          "updatedAt": "2022-07-26T10:55:31Z"
         }
       ]
     },
@@ -584,7 +591,7 @@
       "labels": [],
       "body": "Jari says:\r\n\r\n> [O]ne thing that is not discussed but perhaps should be is the role of discovery. We seem to have an increasing number of solutions that are built for relatively fixed linkages between OS - device - browser - application - network services. For instance, a default service lead to a situation where a vast majority of users will use the default service. From a standards perspective it would be better to build on discovery such that for instance local services can be used. This is of course not always easy, but I think it needs to be looked at, at least on a per-case basis.\r\n\r\nThis is most closely related to the 'Decentralise Proprietary Functions' section, but it's not obvious / related enough; more examples and perhaps reframing might help.",
       "createdAt": "2022-03-24T22:59:54Z",
-      "updatedAt": "2022-06-26T06:22:42Z",
+      "updatedAt": "2022-07-27T08:33:47Z",
       "closedAt": null,
       "comments": [
         {
@@ -614,6 +621,20 @@
           "body": "Your new doc version is great otherwise, but I think we still need to do something on this. Let me come back with a proposal per your question marks above...",
           "createdAt": "2022-06-15T13:48:36Z",
           "updatedAt": "2022-06-15T13:48:36Z"
+        },
+        {
+          "author": "jariarkko",
+          "authorAssociation": "NONE",
+          "body": "Isn't the actions for standards bodies somewhat straightforward, still? For instance, due to lack of standards, it has been difficult to upgrade existing DNS servers to use DOH (albeit that is now being fixed in ADD), which lead to a situation where you have to be a party to a deal with Mozilla in order to get into their selected TRR list. Had both discovery and configuration been options from day one, then DOH deployment could have occurred both from the point of view of browsers pushing their model of TRRs *and* organic upgrades. As it was, more of the former happened. Of course there are many other factors as well (who wants to spend effort on DNS etc) but that's certainly one area where standards organizations could have helped. Removing gatekeepers is a useful service!\r\n\r\nAnd this isn't limited to DNS, of course, or even companies pushing their agendas and standards organizations being the good guys. Sometimes a standards organization has big players that want to keep a feature out so that they get to benefit from whatever current situation gives to them -- something which I recently encountered in an entirely different field. In that particular case it was important that architectures are flexible, components are pluggable, so that the standard organisations don't get to be too much of gatekeepers any more. I guess the flexibility of QUIC for new versions and new functionality is another example of this, something which we can perhaps benefit from in the future.\r\n\r\nObviously those discovery and flexibility mechanisms may also be misused. A dominant player use them to push (perhaps a proprietary version) of their thing, leaving others out.\r\n",
+          "createdAt": "2022-07-26T11:04:40Z",
+          "updatedAt": "2022-07-26T11:04:40Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "OWNER",
+          "body": "So, I think standards bodies could have shipped a more complete solution (and the draft already obliquely talks about that). However, an SDO couldn't compel Mozilla (or anyone else) not to use it in a 'locked in' fashion. \r\n\r\nAlso, one could argue the community wanted to prove the base technology before shipping other components to scale it out (in this case, oblivious DNS is one component that adds some very interesting properties from a centralizaton standpoint). I don't know that ADD _is_ the answer, in that letting a network interpose an intermediary removes much of the value of DoH.\r\n\r\nBack to this spec, I'm still struggling to see how it fits in. Discovery is one specific technology area that has impact on centralization, but there are many more -- e.g., identity. So far this draft doesn't go down to the level of exploring specific technological problems. It _could_ of course -- perhaps using DoH as a case study. I'm a bit concerned that it would make the draft more of a political football, however.\r\n\r\nThoughts? Can you give me an indication of how you'd like to see this surface in the draft -- is it fitting into one of the existing sections, or something new like a case study?\r\n\r\nSee also #54 which might be somewhat related. ",
+          "createdAt": "2022-07-27T08:33:47Z",
+          "updatedAt": "2022-07-27T08:33:47Z"
         }
       ]
     },
@@ -1499,6 +1520,22 @@
           "updatedAt": "2022-07-09T05:02:05Z"
         }
       ]
+    },
+    {
+      "number": 54,
+      "id": "I_kwDOGCfj785OoTvZ",
+      "title": "Structural Separation",
+      "url": "https://github.com/mnot/avoiding-internet-centralization/issues/54",
+      "state": "OPEN",
+      "author": "mnot",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "> A further regulatory problem with natural monopolies is to identify their boundaries. One of the key arguments in favour of the vertical separation of infrastructure industries, for example, has been that this allows the introduction of competition in potentially competitive areas of the industry. However, often the ability to \u2018separate out\u2019 particular parts of an industry is dependent on the availability of technological devices.\r\n\r\n-- Martin Lodge and Kai Wegrich, \"Managing Regulation\" (Macmillan, 2008), 20-1.\r\n\r\nThis ties nicely to SDO's ability to identify and create those 'pivot points' for separating out functions.",
+      "createdAt": "2022-07-27T08:15:58Z",
+      "updatedAt": "2022-07-27T08:15:58Z",
+      "closedAt": null,
+      "comments": []
     }
   ],
   "pulls": [
