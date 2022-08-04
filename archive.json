@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2022-07-28T00:03:59.697319+00:00",
+  "timestamp": "2022-08-04T00:04:14.597831+00:00",
   "repo": "mnot/avoiding-internet-centralization",
   "labels": [
     {
@@ -1536,6 +1536,30 @@
       "updatedAt": "2022-07-27T08:15:58Z",
       "closedAt": null,
       "comments": []
+    },
+    {
+      "number": 55,
+      "id": "I_kwDOGCfj785PFb6x",
+      "title": "Questions",
+      "url": "https://github.com/mnot/avoiding-internet-centralization/issues/55",
+      "state": "OPEN",
+      "author": "mnot",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "It might be interesting to pose some questions that should be asked about proposals for centralized _or_ decentralised technologies, in the spirit of ['What's the Problem Represented to be?'](https://library.oapen.org/bitstream/handle/20.500.12657/33181/560097.pdf?sequence=1#page=34).\r\n\r\nSome food for thought [here](https://www.varunsrinivasan.com//2022/01/11/sufficient-decentralization-for-social-networks).",
+      "createdAt": "2022-08-03T07:54:19Z",
+      "updatedAt": "2022-08-03T07:55:02Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "mnot",
+          "authorAssociation": "OWNER",
+          "body": "also maybe [here](https://nathanschneider.info/articles/DecentralHacker.html).",
+          "createdAt": "2022-08-03T07:55:02Z",
+          "updatedAt": "2022-08-03T07:55:02Z"
+        }
+      ]
     }
   ],
   "pulls": [
