@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2022-08-04T00:04:14.597831+00:00",
+  "timestamp": "2022-08-09T00:04:12.054337+00:00",
   "repo": "mnot/avoiding-internet-centralization",
   "labels": [
     {
@@ -591,7 +591,7 @@
       "labels": [],
       "body": "Jari says:\r\n\r\n> [O]ne thing that is not discussed but perhaps should be is the role of discovery. We seem to have an increasing number of solutions that are built for relatively fixed linkages between OS - device - browser - application - network services. For instance, a default service lead to a situation where a vast majority of users will use the default service. From a standards perspective it would be better to build on discovery such that for instance local services can be used. This is of course not always easy, but I think it needs to be looked at, at least on a per-case basis.\r\n\r\nThis is most closely related to the 'Decentralise Proprietary Functions' section, but it's not obvious / related enough; more examples and perhaps reframing might help.",
       "createdAt": "2022-03-24T22:59:54Z",
-      "updatedAt": "2022-07-27T08:33:47Z",
+      "updatedAt": "2022-08-08T04:08:29Z",
       "closedAt": null,
       "comments": [
         {
@@ -635,6 +635,13 @@
           "body": "So, I think standards bodies could have shipped a more complete solution (and the draft already obliquely talks about that). However, an SDO couldn't compel Mozilla (or anyone else) not to use it in a 'locked in' fashion. \r\n\r\nAlso, one could argue the community wanted to prove the base technology before shipping other components to scale it out (in this case, oblivious DNS is one component that adds some very interesting properties from a centralizaton standpoint). I don't know that ADD _is_ the answer, in that letting a network interpose an intermediary removes much of the value of DoH.\r\n\r\nBack to this spec, I'm still struggling to see how it fits in. Discovery is one specific technology area that has impact on centralization, but there are many more -- e.g., identity. So far this draft doesn't go down to the level of exploring specific technological problems. It _could_ of course -- perhaps using DoH as a case study. I'm a bit concerned that it would make the draft more of a political football, however.\r\n\r\nThoughts? Can you give me an indication of how you'd like to see this surface in the draft -- is it fitting into one of the existing sections, or something new like a case study?\r\n\r\nSee also #54 which might be somewhat related. ",
           "createdAt": "2022-07-27T08:33:47Z",
           "updatedAt": "2022-07-27T08:33:47Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "OWNER",
+          "body": "To tease that out a bit - #54 might result in a recommendation to assure there are appropriate, well-thought-out points of interoperability in the specifications we create. We could talk about discoverability there as a factor to making that 'pivot point' actually useful / complete.\r\n\r\nThat said, I'm wary of making blanket pronouncements that discovery is good / desirable - mostly because it ignores issues of trust / safety if you allow anyone to shove something into the users' face as an option. ",
+          "createdAt": "2022-08-08T04:08:29Z",
+          "updatedAt": "2022-08-08T04:08:29Z"
         }
       ]
     },
